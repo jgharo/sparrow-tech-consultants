@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SparrowNav</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+    <header>
+        <%= render 'layouts/navigation'%>
+    </header>
+    <main role="main">
+        <div class="container">
+            <%render 'layouts/messages' %>
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+            <%= yield %>
+</body>
+
+</html>
