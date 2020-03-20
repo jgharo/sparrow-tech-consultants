@@ -20,13 +20,13 @@
         <tr>
             <td><%= product.product_name %></td>
             <td><%= product.product_description %></td>
-            <td><%= number_to_currency(product.product_cost) %></td>
+            <td><%= number_to_currency(products.product_cost %></td>
             <td><%= product.product_category %></td>
             <td><%= product.product_status %></td>
             <td><%= product.date_modified %></td>
             <td><%= link_to 'Show', product %></td>
             <td><%= link_to 'Edit', edit_product_path(product) %></td>
-            <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
         <% end %>
     </tbody>
