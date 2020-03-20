@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :home
-  resources :products
   devise_for :users
 
   root to: "home#index"
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
   get 'home', to: 'home#index'
   get 'report', to: 'reports#show'
   get 'transportation', to: 'transportations#show'
-  get 'product', to: 'products#index'
+  get 'product', to: 'products#show'
   get 'chemical', to: 'chemicals#show'
   get 'employee', to: 'employees#show'
   get 'stlclient', to: 'stlclients#show'

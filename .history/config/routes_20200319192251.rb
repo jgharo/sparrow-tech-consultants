@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'home', to: 'home#index'
   get 'report', to: 'reports#show'
   get 'transportation', to: 'transportations#show'
-  get 'product', to: 'products#index'
+  get 'product', to: 'products#new'
   get 'chemical', to: 'chemicals#show'
   get 'employee', to: 'employees#show'
   get 'stlclient', to: 'stlclients#show'
