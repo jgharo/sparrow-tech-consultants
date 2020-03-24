@@ -4,14 +4,14 @@ one:
   product_name: MyString
   product_description: MyText
   product_cost: 9.99
-  product_category: MyString
-  product_status: MyString
-  date_modified: 2020-03-19
+  prod_category: one
+  prod_status: one
+  date_modified: 2020-03-24
 
 two:
   product_name: MyString
   product_description: MyText
   product_cost: 9.99
-  product_category: MyString
-  product_status: MyString
-  date_modified: 2020-03-19
+  prod_category: two
+  prod_status: two
+  date_modified: 2020-03-24

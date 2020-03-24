@@ -10,20 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_235601) do
+ActiveRecord::Schema.define(version: 2020_03_24_223853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "prod_categories", force: :cascade do |t|
+    t.string "prod_category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "prod_statuses", force: :cascade do |t|
+    t.string "prod_status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "product_categories", force: :cascade do |t|
+    t.string "product_category_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "product_statuses", force: :cascade do |t|
+    t.string "product_status_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "product_name"
     t.text "product_description"
     t.decimal "product_cost"
-    t.string "product_category"
-    t.string "product_status"
+    t.bigint "prod_category_id", null: false
+    t.bigint "prod_status_id", null: false
     t.date "date_modified"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["prod_category_id"], name: "index_products_on_prod_category_id"
+    t.index ["prod_status_id"], name: "index_products_on_prod_status_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,4 +74,6 @@ ActiveRecord::Schema.define(version: 2020_03_19_235601) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "products", "prod_categories"
+  add_foreign_key "products", "prod_statuses"
 end
