@@ -8,8 +8,8 @@
       <th><%= sort_link(@q, :product_name, 'Name') %></th>
       <th>Description</th>
       <th><%= sort_link(@q, :product_cost, 'Cost') %></th>
-      <th><%= sort_link(@q, :prod_categories, 'Category') %></th>
-      <th><%= sort_link(@q, :prod_statuses, 'Status') %></th>
+      <th><%= sort_link(@q, :prod_categories_prod_category, Product.human_attribute_name(:prod_category), 'Category') %></th>
+      <th><%= sort_link(@q, :prod_statuses_prod_status, Product.human_attribute_name(:prod_status), 'Status') %></th>
       <th><%= sort_link(@q, :date_modified, 'Date modified') %></th>
       <th colspan="3"></th>
     </tr>

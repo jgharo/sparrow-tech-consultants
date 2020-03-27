@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
-    @q = Product.ransack(params[:q])
+    @q = Product.joins(:prod_category).select('id', 'prod_category').ransack(params[:q])
     @productss = @q.result
   end
 

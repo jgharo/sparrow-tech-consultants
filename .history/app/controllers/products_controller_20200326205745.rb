@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @q = Product.ransack(params[:q])
-    @productss = @q.result
+    @productss = @q.result.includes(:articles).page(params[:page])
   end
 
   # GET /products/1
