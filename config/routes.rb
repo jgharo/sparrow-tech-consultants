@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :products
-  resources :prod_categories
-  resources :prod_statuses
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :home
   devise_for :users
