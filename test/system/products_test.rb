@@ -15,8 +15,8 @@ class ProductsTest < ApplicationSystemTestCase
     click_on "New Product"
 
     fill_in "Date modified", with: @product.date_modified
-    fill_in "Prod category", with: @product.prod_category_id
-    fill_in "Prod status", with: @product.prod_status_id
+    fill_in "Prodcategory", with: @product.prodcategory_id
+    fill_in "Prodstatus", with: @product.prodstatus_id
     fill_in "Product cost", with: @product.product_cost
     fill_in "Product description", with: @product.product_description
     fill_in "Product name", with: @product.product_name
@@ -31,8 +31,8 @@ class ProductsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Date modified", with: @product.date_modified
-    fill_in "Prod category", with: @product.prod_category_id
-    fill_in "Prod status", with: @product.prod_status_id
+    fill_in "Prodcategory", with: @product.prodcategory_id
+    fill_in "Prodstatus", with: @product.prodstatus_id
     fill_in "Product cost", with: @product.product_cost
     fill_in "Product description", with: @product.product_description
     fill_in "Product name", with: @product.product_name

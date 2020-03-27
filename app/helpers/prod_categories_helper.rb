@@ -1,2 +1,0 @@
-module ProdCategoriesHelper
-end
