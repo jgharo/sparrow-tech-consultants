@@ -1,0 +1,2 @@
+module ProdCategoriesHelper
+end

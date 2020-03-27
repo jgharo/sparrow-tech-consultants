@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Prod status:</strong>
+  <%= @prod_status.prod_status %>
+</p>
+
+<%= link_to 'Edit', edit_prod_status_path(@prod_status) %> |
+<%= link_to 'Back', prod_statuses_path %>
