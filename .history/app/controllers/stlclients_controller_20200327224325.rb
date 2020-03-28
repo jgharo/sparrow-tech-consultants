@@ -1,5 +1,4 @@
 class StlclientsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_stlclient, only: [:show, :edit, :update, :destroy]
 
   # GET /stlclients
@@ -43,7 +42,7 @@ class StlclientsController < ApplicationController
   def update
     respond_to do |format|
       if @stlclient.update(stlclient_params)
-        format.html { redirect_to @stlclient, notice: 'Client was successfully updated.' }
+        format.html { redirect_to @stlclient, notice: 'Stlclient was successfully updated.' }
         format.json { render :show, status: :ok, location: @stlclient }
       else
         format.html { render :edit }
@@ -57,7 +56,7 @@ class StlclientsController < ApplicationController
   def destroy
     @stlclient.destroy
     respond_to do |format|
-      format.html { redirect_to stlclients_url, notice: 'Client was successfully deleted.' }
+      format.html { redirect_to stlclients_url, notice: 'Stlclient was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

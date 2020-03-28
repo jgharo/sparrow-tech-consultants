@@ -1,5 +1,5 @@
 class StlclientsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user! 
   before_action :set_stlclient, only: [:show, :edit, :update, :destroy]
 
   # GET /stlclients
