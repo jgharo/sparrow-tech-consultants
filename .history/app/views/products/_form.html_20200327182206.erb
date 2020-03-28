@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :prodcategory_id %>
-    <%= form.collection_select :prodcategory_id, Prodcategory.all, :id, :category %>
+    <%= form.collect_select :prodcategory_id, Prodcategory.all, :id, :category %>
   </div>
 
   <div class="field">
     <%= form.label :prodstatus_id %>
-    <%= form.collection_select :prodstatus_id, Prodstatus.all, :id, :status%>
+    <%= form.collect_select :prodstatus_id, Prodstatus.all, :id, :status%>
   </div>
 
   <div class="field">

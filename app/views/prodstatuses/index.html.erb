@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Prodstatuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prodstatuses.each do |prodstatus| %>
+      <tr>
+        <td><%= prodstatus.status %></td>
+        <td><%= link_to 'Show', prodstatus %></td>
+        <td><%= link_to 'Edit', edit_prodstatus_path(prodstatus) %></td>
+        <td><%= link_to 'Destroy', prodstatus, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prodstatus', new_prodstatus_path %>

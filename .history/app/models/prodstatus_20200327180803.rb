@@ -1,0 +1,2 @@
+class Prodstatus < ApplicationRecord
+end

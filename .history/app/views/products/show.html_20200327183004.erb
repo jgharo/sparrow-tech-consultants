@@ -4,32 +4,32 @@
 
 <p>
   <strong>Name:</strong>
-  <%= sanitize @product.product_name.html_safe %>
+  <%= @product.product_name %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= sanitize @product.product_description.html_safe %>
+  <%= @product.product_description %>
 </p>
 
 <p>
   <strong>Cost:</strong>
-  <%= sanitize @product.product_cost.html_safe %>
+  <%= @product.product_cost %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= sanitize @product.prodcategory.category.html_safe %>
+  <%= @product.prodcategory.category %>
 </p>
 
 <p>
   <strong>Status:</strong>
-  <%= sanitize @product.prodstatus.status.html_safe %>
+  <%= @product.prodstatus.status %>
 </p>
 
 <p>
   <strong>Date Modified:</strong>
-  <%= sanitize @product.date_modified.html_safe %>
+  <%= @product.date_modified %>
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
