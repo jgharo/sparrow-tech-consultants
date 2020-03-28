@@ -34,10 +34,8 @@ en:
     attributes:
       user:
         login: "Username"
-
     errors:
       models:
-
         employee:
           attributes:
             employee_fname:
@@ -48,7 +46,6 @@ en:
               blank: " is required."
             employee_salary:
               blank: " is required."
-              
         product:
           attributes:
             product_name:

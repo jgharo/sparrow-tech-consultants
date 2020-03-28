@@ -34,28 +34,10 @@ en:
     attributes:
       user:
         login: "Username"
-
-    errors:
-      models:
-
-        employee:
-          attributes:
-            employee_fname:
-              blank: " is required."
-            employee_lname:
-              blank: " is required."
-            employee_email:
-              blank: " is required."
-            employee_salary:
-              blank: " is required."
-              
-        product:
-          attributes:
-            product_name:
-              blank: " is required."
-            product_description:
-              blank: " is required."
-            product_cost:
-              blank: " is required."
-
+        errors:
+          models:
+            user:
+              attributes:
+                email:
+                  blank: "is required"
     

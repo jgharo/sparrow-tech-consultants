@@ -8,9 +8,10 @@ class Product < ApplicationRecord
 
   #rename attributes in error message
   HUMANIZED_ATTRIBUTES = {
-    :employee_fname => "Name",
-    :employee_lname => "Description",
-    :employee_email => "Cost"
+    :employee_fname => "First Name",
+    :employee_lname => "Last Name",
+    :employee_email => "Email",
+    :employee_salary => "Salary"
   }
 
   def self.human_attribute_name(attr, options = {}) # 'options' wasn't available in Rails 3, and prior versions.
