@@ -23,7 +23,7 @@
         <td><%= number_to_currency(product.product_cost) %></td>
         <td><%= product.prodcategory.category %></td>
         <td><%= product.prodstatus.status %></td>
-        <td><%= product.date_modified.strftime("%B %-d, %Y") %></td>
+        <td><%= product.date_modified %></td>
         <td><%= link_to 'Details', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

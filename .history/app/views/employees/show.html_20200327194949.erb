@@ -3,27 +3,27 @@
 <h2>Employee</h2>
 
 <p>
-  <strong>First Name:</strong>
+  <strong>Employee fname:</strong>
   <%= sanitize @employee.employee_fname.html_safe %>
 </p>
 
 <p>
-  <strong>Last Name:</strong>
+  <strong>Employee lname:</strong>
   <%= sanitize @employee.employee_lname.html_safe %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>Employee email:</strong>
   <%= sanitize @employee.employee_email.html_safe %>
 </p>
 
 <p>
-  <strong>Salary:</strong>
+  <strong>Employee salary:</strong>
   <%= number_to_currency @employee.employee_salary %>
 </p>
 
 <p>
-  <strong>Hire Date:</strong>
+  <strong>Employee hiredate:</strong>
   <%= @employee.employee_hiredate.strftime("%B %-d, %Y") %>
 </p>
 

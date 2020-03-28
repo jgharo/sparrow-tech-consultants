@@ -32,12 +32,12 @@
   </div>
 
   <div class="field">
-    <%= form.label :prodstatus_id, 'Status:' %>
+    <%= form.label :prodstatus_id, 'Status' %>
     <%= form.collection_select :prodstatus_id, Prodstatus.all, :id, :status%>
   </div>
 
   <div class="field">
-    <%= form.label :date_modified, 'Date Modified:' %>
+    <%= form.label :date_modified, 'Date Modified' %>
     <%= form.date_select :date_modified %>
   </div>
 

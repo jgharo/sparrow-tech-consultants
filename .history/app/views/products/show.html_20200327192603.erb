@@ -14,7 +14,7 @@
 
 <p>
   <strong>Cost:</strong>
-  <%= number_to_currency @product.product_cost %>
+  <%= @product.product_cost %>
 </p>
 
 <p>
@@ -29,7 +29,7 @@
 
 <p>
   <strong>Date Modified:</strong>
-  <%= @product.date_modified.strftime("%B %-d, %Y") %>
+  <%= sanitize @product.date_modified %>
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
