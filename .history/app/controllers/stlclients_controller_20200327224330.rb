@@ -1,5 +1,4 @@
 class StlclientsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_stlclient, only: [:show, :edit, :update, :destroy]
 
   # GET /stlclients
@@ -57,7 +56,7 @@ class StlclientsController < ApplicationController
   def destroy
     @stlclient.destroy
     respond_to do |format|
-      format.html { redirect_to stlclients_url, notice: 'Client was successfully deleted.' }
+      format.html { redirect_to stlclients_url, notice: 'Stlclient was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

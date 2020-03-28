@@ -70,9 +70,5 @@ en:
               blank: " is required."
             client_companyname:
               blank: " is required."
-            client_shippingaddress:
-              blank: " is required."
-            client_billingaddress:
-              blank: " is required."
 
     
