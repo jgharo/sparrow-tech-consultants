@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Client</h2>
+
+<p>
+  <strong>First Name:</strong>
+  <%= sanitize @stlclient.client_fname.html_safe %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= sanitize @stlclient.client_lname.html_safe %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= sanitize @stlclient.client_email.html_safe %>
+</p>
+
+<p>
+  <strong>Phone Number:</strong>
+  <%= sanitize @stlclient.client_phonenumber.html_safe %>
+</p>
+
+<p>
+  <strong>Company Name:</strong>
+  <%= @stlclient.client_companyname %>
+</p>
+
+<p>
+  <strong>Shipping Address:</strong>
+  <%= @stlclient.client_shippingaddress %>
+</p>
+
+<p>
+  <strong>Billing Address:</strong>
+  <%= @stlclient.client_billingaddress %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @stlclient.employee_id %>
+</p>
+
+<%= link_to 'Edit', edit_stlclient_path(@stlclient) %> |
+<%= link_to 'Back', stlclients_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee fname:</strong>
+  <%= sanitize @employee.employee_fname.html_safe %>
+</p>
+
+<p>
+  <strong>Employee lname:</strong>
+  <%= sanitize @employee.employee_lname.html_safe %>
+</p>
+
+<p>
+  <strong>Employee email:</strong>
+  <%= sanitize @employee.employee_email.html_safe %>
+</p>
+
+<p>
+  <strong>Employee salary:</strong>
+  <%= @employee.employee_salary %>
+</p>
+
+<p>
+  <strong>Employee hiredate:</strong>
+  <%= @employee.employee_hiredate.strftime("%B %-d, %Y") %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

@@ -10,20 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_235601) do
+ActiveRecord::Schema.define(version: 2020_03_27_231006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "employees", force: :cascade do |t|
+    t.string "employee_fname"
+    t.string "employee_lname"
+    t.string "employee_email"
+    t.decimal "employee_salary"
+    t.date "employee_hiredate"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "prodcategories", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "prodstatuses", force: :cascade do |t|
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "product_name"
     t.text "product_description"
     t.decimal "product_cost"
-    t.string "product_category"
-    t.string "product_status"
+    t.bigint "prodcategory_id", null: false
+    t.bigint "prodstatus_id", null: false
     t.date "date_modified"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["prodcategory_id"], name: "index_products_on_prodcategory_id"
+    t.index ["prodstatus_id"], name: "index_products_on_prodstatus_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,4 +72,6 @@ ActiveRecord::Schema.define(version: 2020_03_19_235601) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "products", "prodcategories"
+  add_foreign_key "products", "prodstatuses"
 end
