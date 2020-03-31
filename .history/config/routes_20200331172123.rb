@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :suppliers
-  resources :supplierpaymentinfos
   resources :supporting_companies
   resources :scpaymentinfos
   resources :stlservices

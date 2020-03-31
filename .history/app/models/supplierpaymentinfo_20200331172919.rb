@@ -1,0 +1,2 @@
+class Supplierpaymentinfo < ApplicationRecord
+end
