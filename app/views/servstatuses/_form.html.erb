@@ -1,0 +1,22 @@
+<%= form_with(model: servstatus, local: true) do |form| %>
+  <% if servstatus.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(servstatus.errors.count, "error") %> prohibited this servstatus from being saved:</h2>
+
+      <ul>
+        <% servstatus.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Supportingcomp name:</strong>
+  <%= @supporting_company.supportingcomp_name %>
+</p>
+
+<p>
+  <strong>Supportingcomp email:</strong>
+  <%= @supporting_company.supportingcomp_email %>
+</p>
+
+<p>
+  <strong>Scpaymentinfo:</strong>
+  <%= @supporting_company.scpaymentinfo_id %>
+</p>
+
+<p>
+  <strong>Stlservice:</strong>
+  <%= @supporting_company.stlservice_id %>
+</p>
+
+<%= link_to 'Edit', edit_supporting_company_path(@supporting_company) %> |
+<%= link_to 'Back', supporting_companies_path %>

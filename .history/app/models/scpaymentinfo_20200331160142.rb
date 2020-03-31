@@ -1,0 +1,2 @@
+class Scpaymentinfo < ApplicationRecord
+end
