@@ -14,16 +14,16 @@
     <header>
         <header>
             <nav>
+                <%= image_tag("logo/logo.jpg", width: '140px', height: '120px')%>
                 <div>
-                <%= image_tag("logo/logo.jpg", width: '80px', height: '60px')%>
-                    <% if user_signed_in? %>
-                    <%= current_user.username %>
-                    <%= link_to "Home", '/home', method: :get%>
-                    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-                    <% else %>
-                    <%= link_to "Login", new_user_session_path %>
-                    <%# <%= link_to "Sign Up", new_user_registration_path %>
-                    <% end %>
+                <% if user_signed_in? %>
+                <%= current_user.username %>
+                <%= link_to "Home", '/home', method: :get%>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                <% else %>
+                <%= link_to "Login", new_user_session_path %>
+                <%# <%= link_to "Sign Up", new_user_registration_path %>
+                <% end %>
                 </div>
             </nav>
         </header>
