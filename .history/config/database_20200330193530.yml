@@ -45,5 +45,5 @@ test:
   encoding: unicode
   database: sparrow_tech_consultants_test
   pool: 5
-  username: admin
-  password:
+  username: admin1
+  password: admin

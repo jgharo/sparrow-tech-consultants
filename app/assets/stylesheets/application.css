@@ -14,9 +14,10 @@
  *= require_self
  */
 
-html {
-    background-color: lightskyblue;
+ html {
+    background-color:lightblue;
 }
+
 .wrapper {
     display: flex;
     align-items: center;
@@ -36,7 +37,7 @@ html {
     justify-content: center;
     width: 20%;
     min-height: 10%;
-    padding: 20px;
+    padding: 10px;
     padding-bottom: 100px;
     
   }
@@ -63,5 +64,3 @@ html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-right: 25px;
   }
-
-  
