@@ -46,4 +46,4 @@ test:
   database: sparrow_tech_consultants_test
   pool: 5
   username: admin
-  password: 
+  password:

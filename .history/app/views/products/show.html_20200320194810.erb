@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Product Name:</strong>
+    <%= sanitize @product.product_name.html_safe %>
+</p>
+
+<p>
+    <strong>Product Description:</strong>
+    <%= sanitize @product.product_description.html_safe %>
+</p>
+
+<p>
+    <strong>Product Cost:</strong>
+    <%= sanitize number_to_currency @product.product_cost.html_safe %>
+</p>
+
+<p>
+    <strong>Product Category:</strong>
+    <%= sanitize @product.product_category.product_category_name.html_safe %>
+</p>
+
+<p>
+    <strong>Product Status:</strong>
+    <%= sanitize @product.product_status.product_status_name.html_safe %>
+</p>
+
+<p>
+    <strong>Date Modified:</strong>
+    <%= sanitize @product.date_modified.html_safe %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

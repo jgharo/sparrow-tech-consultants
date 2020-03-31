@@ -1,0 +1,22 @@
+<%= form_with(model: prodstatus, local: true) do |form| %>
+  <% if prodstatus.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prodstatus.errors.count, "error") %> prohibited this prodstatus from being saved:</h2>
+
+      <ul>
+        <% prodstatus.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
