@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Payment address:</strong>
+  <%= @scpaymentinfo.payment_address %>
+</p>
+
+<p>
+  <strong>Account name:</strong>
+  <%= @scpaymentinfo.account_name %>
+</p>
+
+<p>
+  <strong>Account number:</strong>
+  <%= @scpaymentinfo.account_number %>
+</p>
+
+<p>
+  <strong>Routing number:</strong>
+  <%= @scpaymentinfo.routing_number %>
+</p>
+
+<p>
+  <strong>Aba number:</strong>
+  <%= @scpaymentinfo.aba_number %>
+</p>
+
+<p>
+  <strong>Swift code:</strong>
+  <%= @scpaymentinfo.swift_code %>
+</p>
+
+<%= link_to 'Edit', edit_scpaymentinfo_path(@scpaymentinfo) %> |
+<%= link_to 'Back', scpaymentinfos_path %>

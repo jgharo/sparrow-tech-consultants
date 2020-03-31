@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payment_address: MyText
+  account_name: MyString
+  account_number: 1
+  routing_number: 1
+  aba_number: 1
+  swift_code: MyString
+
+two:
+  payment_address: MyText
+  account_name: MyString
+  account_number: 1
+  routing_number: 1
+  aba_number: 1
+  swift_code: MyString

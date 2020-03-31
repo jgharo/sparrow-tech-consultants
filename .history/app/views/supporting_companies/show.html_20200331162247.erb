@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Supporting Company</h2>
+
+<p>
+  <strong>Name:</strong>
+  <%= sanitize @supporting_company.supportingcomp_name.html_safe %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= sanitize @supporting_company.supportingcomp_email.html_safe %>
+</p>
+
+<p>
+  <strong>Payment Info:</strong>
+  <%= sanitize @supporting_company.scpaymentinfo.account_name.html_safe %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= sanitize @supporting_company.stlservice.service_name %>
+</p>
+
+<%= link_to 'Edit', edit_supporting_company_path(@supporting_company) %> |
+<%= link_to 'Back', supporting_companies_path %>
