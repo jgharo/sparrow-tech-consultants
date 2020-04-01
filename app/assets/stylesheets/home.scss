@@ -1,6 +1,9 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
+body{
+  background-color:lightblue;
+}
+
+
 
 #button1{
     padding: 2px;
@@ -74,3 +77,21 @@
     color: #fff;
     transform: translateY(-7px);
   }
+
+
+  .home_container{
+    background-color:lightgray;
+ 
+  }
+
+  #home_navbar{
+    background-color:white;
+    width:13%;
+    border:groove 2px;
+  }
+  #home_content{
+    background-color:white;
+    width:25%;
+    border:groove 2px;
+  }
+

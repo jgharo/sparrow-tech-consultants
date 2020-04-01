@@ -1,19 +1,7 @@
-
-.application_header{
-    background-color:white;
-    padding-top: 1px;
-    padding-bottom:3px;
-    padding-left:3px;
-    border: solid 2px;
-}
-
-
-
- html {
-    background-color:lightblue;
-}
-
-.wrapper {
+html {
+    background-color: lightblue;
+  }
+  .wrapper {
     display: flex;
     align-items: center;
     flex-direction: column; 
@@ -37,7 +25,7 @@
     
   }
   
-
+  
   #login_form {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
@@ -52,11 +40,12 @@
     text-align: center;
     padding-bottom: 20px;
     padding-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   #header_style{
     position: relative;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-right: 25px;
+   background-color:lightblue;
   }
-
