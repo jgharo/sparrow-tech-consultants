@@ -1,0 +1,57 @@
+<%= form_with(model: stlclient, local: true) do |form| %>
+  <% if stlclient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stlclient.errors.count, "error") %> prohibited this stlclient from being saved:</h2>
+
+      <ul>
+        <% stlclient.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :client_fname, 'First Name:' %>
+    <%= form.text_field :client_fname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_lname, 'Last Name:' %>
+    <%= form.text_field :client_lname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_email, 'Email:' %>
+    <%= form.email_field :client_email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_phonenumber, 'Phone Number:' %>
+    <%= form.telephone_field :client_phonenumber , class: 'form-control', autofocus: true, placeholder: 'XXX-XXX-XXXX', pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_companyname, 'Company Name:' %>
+    <%= form.text_field :client_companyname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_shippingaddress, 'Shipping Address:' %>
+    <%= form.text_field :client_shippingaddress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_billingaddress, 'Billing Address:' %>
+    <%= form.text_field :client_billingaddress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employee_id, 'Employee' %>
+    <%= form.collection_select :employee_id, Employee.all, :id, :employee_fname %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit%>
+  </div>
+<% end %>
