@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_name: MyString
+  service_description: MyText
+  service_cost: 9.99
+  servcategory: one
+  servstatus: one
+  date_modified: 2020-03-31
+
+two:
+  service_name: MyString
+  service_description: MyText
+  service_cost: 9.99
+  servcategory: two
+  servstatus: two
+  date_modified: 2020-03-31

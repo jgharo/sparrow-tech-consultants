@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Suppliers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Supplier name</th>
+      <th>Supplier email</th>
+      <th>Product</th>
+      <th>Supplierpaymentinfo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suppliers.each do |supplier| %>
+      <tr>
+        <td><%= supplier.supplier_name %></td>
+        <td><%= supplier.supplier_email %></td>
+        <td><%= supplier.product_id %></td>
+        <td><%= supplier.supplierpaymentinfo_id %></td>
+        <td><%= link_to 'Details', supplier %></td>
+        <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+        <td><%= link_to 'Delete', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supplier', new_supplier_path %>

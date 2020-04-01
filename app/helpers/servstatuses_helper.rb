@@ -1,0 +1,2 @@
+module ServstatusesHelper
+end

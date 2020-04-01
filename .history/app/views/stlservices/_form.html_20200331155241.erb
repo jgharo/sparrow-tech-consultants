@@ -1,0 +1,47 @@
+<%= form_with(model: stlservice, local: true) do |form| %>
+  <% if stlservice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stlservice.errors.count, "error") %> prohibited this stlservice from being saved:</h2>
+
+      <ul>
+        <% stlservice.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :service_name %>
+    <%= form.text_field :service_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :service_description %>
+    <%= form.text_area :service_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :service_cost %>
+    <%= form.text_field :service_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :servcategory_id %>
+    <%= form.text_field :servcategory_id, Servcategory.all, :id, :category %
+  </div>
+
+  <div class="field">
+    <%= form.label :servstatus_id %>
+    <%= form.text_field :servstatus_id, Servstatus.all, :id, :status%>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_modified %>
+    <%= form.date_select :date_modified %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

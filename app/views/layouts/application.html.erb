@@ -13,28 +13,22 @@
 
 <body>
     <header>
-        <header>
-            <nav>
+           <nav>
             <div class = "application_header">
-            
             <%= image_tag("logo/logo.jpg", width: '140px', height: '120px')%>
-            
             <div id ="application_login_header">
                 <% if user_signed_in? %>
                 <%= current_user.username %>
-                <%= link_to "Home", '/home', method: :get%>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                  <%= link_to "Home", '/home', method: :get%>
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
                 <% else %>
-                <%= link_to "Login", new_user_session_path %>
-                <%# <%= link_to "Sign Up", new_user_registration_path %>
+                  <%= link_to "Login", new_user_session_path %>
+                  <%# <%= link_to "Sign Up", new_user_registration_path %>
                 <% end %>
-                </div>
-                
-                
+              </div>
             </nav>
         </header>
         <main>
-            <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
             <%= yield %>
         </main>

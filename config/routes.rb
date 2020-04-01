@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :suppliers
+  resources :supplierpaymentinfos
+  resources :supporting_companies
+  resources :scpaymentinfos
+  resources :stlservices
+  resources :servstatuses
+  resources :servcategories
   resources :stlclients
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :products
@@ -17,6 +24,6 @@ Rails.application.routes.draw do
   get 'chemical', to: 'chemicals#show'
   get 'employee', to: 'employees#index'
   get 'stlclient', to: 'stlclients#index'
-  get 'supporting', to: 'supportingcs#show'
-  get 'supplier', to: 'suppliers#show'
+  get 'supporting', to: 'supporting_companies#index'
+  get 'supplier', to: 'suppliers#index'
 end
