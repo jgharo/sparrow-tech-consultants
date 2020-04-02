@@ -24,10 +24,5 @@
     <%= f.collection_select :prodstatus_id, Prodstatus.all, :id, :status%>
   </div>
 
-  <div class="field">
-    <%= f.label :date_modified, 'Date Modified:' %>
-    <%= f.date_select :date_modified %>
-  </div>
-
   <%= link_to_remove_association "Remove Product", f%>
 </div>

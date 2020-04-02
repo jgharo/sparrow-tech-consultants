@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_192129) do
+ActiveRecord::Schema.define(version: 2020_03_31_222920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2020_04_02_192129) do
     t.bigint "prodstatus_id", null: false
     t.date "date_modified"
     t.bigint "supplier_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["prodcategory_id"], name: "index_products_on_prodcategory_id"
     t.index ["prodstatus_id"], name: "index_products_on_prodstatus_id"
     t.index ["supplier_id"], name: "index_products_on_supplier_id"
@@ -111,9 +113,9 @@ ActiveRecord::Schema.define(version: 2020_04_02_192129) do
     t.integer "routing_number"
     t.integer "aba_number"
     t.string "swift_code"
+    t.bigint "supplier_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "supplier_id", null: false
     t.index ["supplier_id"], name: "index_supplierpaymentinfos_on_supplier_id"
   end
 
