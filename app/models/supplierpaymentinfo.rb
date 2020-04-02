@@ -1,3 +1,3 @@
 class Supplierpaymentinfo < ApplicationRecord
-    has_many :suppliers
+    belongs_to :supplier
 end
