@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_01_180201) do
+ActiveRecord::Schema.define(version: 2020_03_31_222959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,13 +39,11 @@ ActiveRecord::Schema.define(version: 2020_04_01_180201) do
 
   create_table "products", force: :cascade do |t|
     t.string "product_name"
-    t.text "product_description"
+    t.string "product_description"
     t.decimal "product_cost"
     t.bigint "prodcategory_id", null: false
     t.bigint "prodstatus_id", null: false
     t.date "date_modified"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.index ["prodcategory_id"], name: "index_products_on_prodcategory_id"
     t.index ["prodstatus_id"], name: "index_products_on_prodstatus_id"
   end
@@ -57,8 +55,10 @@ ActiveRecord::Schema.define(version: 2020_04_01_180201) do
     t.integer "routing_number"
     t.integer "aba_number"
     t.string "swift_code"
+    t.bigint "supporting_company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["supporting_company_id"], name: "index_scpaymentinfos_on_supporting_company_id"
   end
 
   create_table "servcategories", force: :cascade do |t|
@@ -94,10 +94,12 @@ ActiveRecord::Schema.define(version: 2020_04_01_180201) do
     t.bigint "servcategory_id", null: false
     t.bigint "servstatus_id", null: false
     t.date "date_modified"
+    t.bigint "supporting_company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["servcategory_id"], name: "index_stlservices_on_servcategory_id"
     t.index ["servstatus_id"], name: "index_stlservices_on_servstatus_id"
+    t.index ["supporting_company_id"], name: "index_stlservices_on_supporting_company_id"
   end
 
   create_table "supplierpaymentinfos", force: :cascade do |t|
@@ -153,9 +155,11 @@ ActiveRecord::Schema.define(version: 2020_04_01_180201) do
 
   add_foreign_key "products", "prodcategories"
   add_foreign_key "products", "prodstatuses"
+  add_foreign_key "scpaymentinfos", "supporting_companies"
   add_foreign_key "stlclients", "employees"
   add_foreign_key "stlservices", "servcategories"
   add_foreign_key "stlservices", "servstatuses"
+  add_foreign_key "stlservices", "supporting_companies"
   add_foreign_key "suppliers", "products"
   add_foreign_key "suppliers", "supplierpaymentinfos"
 end
