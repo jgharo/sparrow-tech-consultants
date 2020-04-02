@@ -7,8 +7,6 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Product</th>
-      <th>Payment Info</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,8 +16,6 @@
       <tr>
         <td><%= supplier.supplier_name %></td>
         <td><%= supplier.supplier_email %></td>
-        <td><%= supplier.product.product_name %></td>
-        <td><%= supplier.supplierpaymentinfo.account_name %></td>
         <td><%= link_to 'Details', supplier %></td>
         <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
         <td><%= link_to 'Delete', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>

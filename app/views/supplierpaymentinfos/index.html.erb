@@ -11,6 +11,7 @@
       <th>Routing number</th>
       <th>Aba number</th>
       <th>Swift code</th>
+      <th>Supplier</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
         <td><%= supplierpaymentinfo.routing_number %></td>
         <td><%= supplierpaymentinfo.aba_number %></td>
         <td><%= supplierpaymentinfo.swift_code %></td>
+        <td><%= supplierpaymentinfo.supplier_id %></td>
         <td><%= link_to 'Show', supplierpaymentinfo %></td>
         <td><%= link_to 'Edit', edit_supplierpaymentinfo_path(supplierpaymentinfo) %></td>
         <td><%= link_to 'Destroy', supplierpaymentinfo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

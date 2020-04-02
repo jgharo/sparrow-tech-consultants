@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_222959) do
+ActiveRecord::Schema.define(version: 2020_04_02_000810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,17 +109,15 @@ ActiveRecord::Schema.define(version: 2020_03_31_222959) do
     t.string "swift_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "supplier_id", null: false
+    t.index ["supplier_id"], name: "index_supplierpaymentinfos_on_supplier_id"
   end
 
   create_table "suppliers", force: :cascade do |t|
     t.string "supplier_name"
     t.string "supplier_email"
-    t.bigint "product_id", null: false
-    t.bigint "supplierpaymentinfo_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_suppliers_on_product_id"
-    t.index ["supplierpaymentinfo_id"], name: "index_suppliers_on_supplierpaymentinfo_id"
   end
 
   create_table "supporting_companies", force: :cascade do |t|
@@ -160,8 +158,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_222959) do
   add_foreign_key "stlclients", "employees"
   add_foreign_key "stlservices", "servcategories"
   add_foreign_key "stlservices", "servstatuses"
-  add_foreign_key "suppliers", "products"
-  add_foreign_key "suppliers", "supplierpaymentinfos"
+  add_foreign_key "supplierpaymentinfos", "suppliers"
   add_foreign_key "supporting_companies", "scpaymentinfos"
   add_foreign_key "supporting_companies", "stlservices"
 end

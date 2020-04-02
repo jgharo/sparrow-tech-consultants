@@ -21,16 +21,14 @@
     <%= form.email_field :supplier_email %>
   </div>
 
-  <div class="field">
-    <%= form.label :product_id, "Product" %>
-    <%= form.collection_select :product_id, Product.all, :id, :product_name %>
+  <div id='supplierpaymentinfos'>
+    <%=form.fields_for :supplierpaymentinfos do |supplierpaymentinfo| %>
+      <%= render 'supplierpaymentinfo_fields', :f => supplierpaymentinfo %>
+    <% end %>
+    <div class = 'links'>
+      <%= link_to_add_association 'Add Supplierpaymentinfo', form, :supplierpaymentinfos %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :supplierpaymentinfo_id, "Payment Info" %>
-    <%= form.collection_select :supplierpaymentinfo_id, Supplierpaymentinfo.all, :id, :account_name %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
