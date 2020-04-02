@@ -1,10 +1,10 @@
 class SupportingCompany < ApplicationRecord
-  has_many :scpaymentinfos, inverse_of: :supporting_company
-  accepts_nested_attributes_for :scpaymentinfos, reject_if: :all_blank, allow_destroy: true
-  
-  has_many :stlservices, inverse_of: :supporting_company
-  accepts_nested_attributes_for :stlservices, reject_if: :all_blank, allow_destroy: true
-  
+  belongs_to :scpaymentinfo
+  belongs_to :stlservice
+
+  has_many :stlservices
+  has_many :scpaymentinfos
+
   validates :supportingcomp_name, presence: true
   validates :supportingcomp_email, presence: true
 

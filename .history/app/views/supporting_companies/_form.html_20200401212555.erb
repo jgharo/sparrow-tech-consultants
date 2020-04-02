@@ -27,7 +27,7 @@
       <%= render 'scpaymentinfo_fields', :f => scpaymentinfo %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'Add Payment Information', form, :scpaymentinfos %>
+      <%= link_to_add_association 'Add a Payment Information', form, :scpaymentinfos %>
     </div>
   </div>
 
@@ -37,7 +37,7 @@
       <%= render 'stlservice_fields', :f => stlservice %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'Add a Service', form, :stlservices %>
+      <%= link_to_add_association 'Add a Service', form_object, :stlservices %>
     </div>
   </div> 
 
