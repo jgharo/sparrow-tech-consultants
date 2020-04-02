@@ -70,6 +70,6 @@ class SupplierpaymentinfosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def supplierpaymentinfo_params
-      params.require(:supplierpaymentinfo).permit(:payment_address, :account_name, :account_number, :routing_number, :aba_number, :swift_code)
+      params.require(:supplierpaymentinfo).permit(:payment_address, :account_name, :account_number, :routing_number, :aba_number, :swift_code, :supplier_id)
     end
 end

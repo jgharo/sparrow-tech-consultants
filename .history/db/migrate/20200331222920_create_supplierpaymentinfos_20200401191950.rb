@@ -7,7 +7,6 @@ class CreateSupplierpaymentinfos < ActiveRecord::Migration[6.0]
       t.integer :routing_number
       t.integer :aba_number
       t.string :swift_code
-      t.references :supplier, null: false, foreign_key: true
 
       t.timestamps
     end

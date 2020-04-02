@@ -7,9 +7,6 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.references :prodcategory, null: false, foreign_key: true
       t.references :prodstatus, null: false, foreign_key: true
       t.date :date_modified
-      t.references :supplier, null: false, foreign_key: true
-
-      t.timestamps
     end
   end
 end
