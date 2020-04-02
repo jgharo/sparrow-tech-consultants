@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Supporting Companies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supporting_companies.each do |supporting_company| %>
+      <tr>
+        <td><%= supporting_company.supportingcomp_name %></td>
+        <td><%= supporting_company.supportingcomp_email %></td>
+        <td><%= supporting_company.scpaymentinfo.account_name %></td>
+        <td><%= supporting_company.stlservice.service_name %></td>
+        <td><%= link_to 'Details', supporting_company %></td>
+        <td><%= link_to 'Edit', edit_supporting_company_path(supporting_company) %></td>
+        <td><%= link_to 'Delete', supporting_company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supporting Company', new_supporting_company_path %>

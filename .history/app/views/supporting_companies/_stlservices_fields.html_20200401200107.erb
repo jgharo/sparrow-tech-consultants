@@ -1,0 +1,37 @@
+<div class='nested-fields'>
+    <div class="field">
+        <%= form.label :service_name %>
+        <%= form.text_field :service_name %>
+    </div>
+
+    <div class="field">
+        <%= form.label :service_description %>
+        <%= form.text_area :service_description %>
+    </div>
+
+    <div class="field">
+        <%= form.label :service_cost %>
+        <%= form.text_field :service_cost %>
+    </div>
+
+    <div class="field">
+        <%= form.label :servcategory_id %>
+        <%= form.collection_select :servcategory_id, Servcategory.all, :id, :category %>
+    </div>
+
+    <div class="field">
+        <%= form.label :servstatus_id %>
+        <%= form.collection_select :servstatus_id, Servstatus.all, :id, :status%>
+    </div>
+
+    <div class="field">
+        <%= form.label :physician_id %>
+        <%= form.text_field :physician_id %>
+    </div>
+
+    <div class="field">
+        <%= form.label :supporting_company_id %>
+        <%= form.text_field :supporting_company_id %>
+    </div>
+    <%= link_to_remove_association "Remove Service", f%>
+</div>

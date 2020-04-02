@@ -1,0 +1,47 @@
+<%= form_with(model: supporting_company, local: true) do |form| %>
+  <% if supporting_company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(supporting_company.errors.count, "error") %> prohibited this Supporting Company from being saved:</h2>
+
+      <ul>
+        <% supporting_company.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :supportingcomp_name, 'Name' %>
+    <%= form.text_field :supportingcomp_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :supportingcomp_email, 'Email' %>
+    <%= form.email_field :supportingcomp_email %>
+  </div>
+
+  <h3>Payment Information</h3>
+  <div id='scpaymentinfos'>
+    <%= form.fields_for :scpaymentinfos do |scpaymentinfo| %>
+      <%= render 'scpaymentinfo_fields', :f => scpaymentinfo %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Ad Payment Information', form, :scpaymentinfos %>
+    </div>
+  </div>
+
+  <h3>Services</h3>
+  <div id='stlservices'>
+    <%= form.fields_for :stlservices do |stlservice| %>
+      <%= render 'stlservice_fields', :f => stlservice %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Service', form, :stlservices %>
+    </div>
+  </div> 
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
