@@ -7,7 +7,6 @@ class CreateStlservices < ActiveRecord::Migration[6.0]
       t.references :servcategory, null: false, foreign_key: true
       t.references :servstatus, null: false, foreign_key: true
       t.date :date_modified
-      t.references :supporting_company, null: false, foreign_key: true
 
       t.timestamps
     end

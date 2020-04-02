@@ -7,7 +7,6 @@ class CreateScpaymentinfos < ActiveRecord::Migration[6.0]
       t.integer :routing_number
       t.integer :aba_number
       t.string :swift_code
-      t.references :supporting_company, null: false, foreign_key: true
 
       t.timestamps
     end

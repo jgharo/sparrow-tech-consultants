@@ -30,17 +30,7 @@
       <%= link_to_add_association 'Add a Payment Information', form, :scpaymentinfo %>
     </div>
   </div>
-
-  <h3>Services</h3>
-  <div id='stlservices'>
-    <%= form.fields_for :stlservices do |stlservice| %>
-      <%= render 'stlservice_fields', :f => stlservice %>
-    <% end %>
-    <div class='links'>
-      <%= link_to_add_association 'Add a Service', form, :stlservice %>
-    </div>
-  </div> 
-
+  
   <div class="actions">
     <%= form.submit %>
   </div>

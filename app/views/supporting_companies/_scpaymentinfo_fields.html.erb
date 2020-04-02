@@ -1,17 +1,5 @@
-<%= form_with(model: scpaymentinfo, local: true) do |form| %>
-  <% if scpaymentinfo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(scpaymentinfo.errors.count, "error") %> prohibited this scpaymentinfo from being saved:</h2>
-
-      <ul>
-        <% scpaymentinfo.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
+<div class='nested-fields'>
+<div class="field">
     <%= form.label :payment_address %>
     <%= form.text_area :payment_address %>
   </div>
@@ -41,12 +29,5 @@
     <%= form.text_field :swift_code %>
   </div>
 
-  <div class="field">
-    <%= form.label :supporting_company_id %>
-    <%= form.text_field :supporting_company_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <%= link_to_remove_association "Remove Payment Information", f %>
+</div>

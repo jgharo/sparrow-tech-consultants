@@ -32,12 +32,12 @@
   </div>
 
   <h3>Services</h3>
-  <div id='stlservices'>
-    <%= form.fields_for :stlservices do |stlservice| %>
-      <%= render 'stlservice_fields', :f => stlservice %>
+  <div id='scpaymentinfos'>
+    <%= form.fields_for :scpaymentinfos do |scpaymentinfo| %>
+      <%= render 'scpaymentinfo_fields', :f => scpaymentinfo %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'Add a Service', form, :stlservice %>
+      <%= link_to_add_association 'Add a Payment Information', form, :scpaymentinfo %>
     </div>
   </div> 
 
