@@ -14,5 +14,30 @@
   <%= sanitize @supplier.supplier_email.html_safe %>
 </p>
 
+<p>
+<h3>Products</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Cost</th>
+    <th>Category</th>
+    <th>Status</th>
+    <th>Date Modified</th>
+
+  </tr>
+  <% @supplier.products.each do |product| %>
+    <tr> <td><%= product.product_name.html_safe %></td>
+      <td> <%= product.product_description.html_safe  %></td>
+      <td> <%= product.product_cost %></td>
+      <td> <%= product.prodcategory.category %></td>
+      <td> <%= product.prodstatus.status %></td>
+      <td> <%= product.date_modified.strftime("%B %-d, %Y") %></td>
+
+    </tr>
+  <% end %>
+</table>
+</p>
+
 <%= link_to 'Edit', edit_supplier_path(@supplier) %> |
 <%= link_to 'Back', suppliers_path %>
