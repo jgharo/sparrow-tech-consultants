@@ -27,12 +27,12 @@
 
 <p>
   <strong>Swift code:</strong>
-  <%= sanitize @scpaymentinfo.swift_code.html_safe %>
+  <%= sanitize @scpaymentinfo.swift_code %>
 </p>
 
 <p>
   <strong>Supporting Company:</strong>
-  <%= sanitize @scpaymentinfo.supporting_company_id %>
+  <%= @scpaymentinfo.supporting_company_id %>
 </p>
 
 <%= link_to 'Edit', edit_scpaymentinfo_path(@scpaymentinfo) %> |
