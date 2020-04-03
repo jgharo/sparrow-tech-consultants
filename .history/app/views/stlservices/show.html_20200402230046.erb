@@ -2,7 +2,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="subpage_header">
+<div class="transport_header">
 <h1>Transportation</h1>
 </div>
 
@@ -22,17 +22,17 @@
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong>Servcategory:</strong>
   <%= @stlservice.servcategory.category %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong>Servstatus:</strong>
   <%= @stlservice.servstatus.status %>
 </p>
 
 <p>
-  <strong>Date Modified:</strong>
+  <strong>Date modified:</strong>
   <%= @stlservice.date_modified.strftime("%B %-d, %Y") %>
 </p>
 

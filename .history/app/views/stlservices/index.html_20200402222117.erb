@@ -1,6 +1,8 @@
+<%= stylesheet_link_tag "stlservices", :media => "all" %>
+
 <p id="notice"><%= notice %></p>
 
-<div class="subpage_header">
+<div class="transport_header">
 <h1>Transportations</h1>
 </div>
 
@@ -28,10 +30,14 @@
         <td><%= stlservice.servstatus.status %></td>
         <td><%= stlservice.date_modified.strftime("%B %-d, %Y") %></td>
         <td><%= stlservice.supporting_company.supportingcomp_name %></td>
-        <td><%= link_to 'Details', stlservice %></td>
+        <td><%= link_to 'Show', stlservice %></td>
         <td><%= link_to 'Edit', edit_stlservice_path(stlservice) %></td>
         <td><%= link_to 'Destroy', stlservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<%= link_to 'New Stlservice', new_stlservice_path %>

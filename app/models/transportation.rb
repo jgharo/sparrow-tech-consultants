@@ -1,3 +1,0 @@
-class Transportation < ApplicationRecord
-  
-end
