@@ -1,8 +1,8 @@
 class Supplier < ApplicationRecord
-  has_many :supplierpaymentinfos, inverse_of: :supplier
+  has_many :supplierpaymentinfos, inverse_of: :supplier, dependent: :destroy
   accepts_nested_attributes_for :supplierpaymentinfos, reject_if: :all_blank, allow_destroy: true
 
-  has_many :products, inverse_of: :supplier
+  has_many :products, inverse_of: :supplier, dependent: :destroy
   accepts_nested_attributes_for :products, reject_if: :all_blank, allow_destroy: true
 
   validates :supplier_name, presence: true
