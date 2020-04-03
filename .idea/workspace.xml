@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81161b67-994d-4627-b2bb-395be7e1f29b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sparrow-tech-consultants.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sparrow-tech-consultants.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/supplier.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/supplier.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/supporting_companies/_stlservice_fields.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/supporting_companies/_stlservice_fields.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/suppliers/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/suppliers/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/supporting_companies/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/supporting_companies/show.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +25,7 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sparrow-tech-consultants3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HW3" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RunDashboard">
@@ -138,7 +136,7 @@
       <updated>1585849990204</updated>
       <workItem from="1585849991361" duration="6161000" />
       <workItem from="1585863410665" duration="845000" />
-      <workItem from="1585865758511" duration="5261000" />
+      <workItem from="1585865758511" duration="7171000" />
     </task>
     <servers />
   </component>
