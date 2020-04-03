@@ -70,6 +70,6 @@ class TransportationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transportation_params
-      params.require(:stlservice).permit(:service_name, :service_description, :service_cost, :servcategory_id, :servstatus_id, :date_modified, :supporting_company_id)
+      params.require(:transportation).permit(:service_name, :service_description, :service_cost, :servcategory_id, :servstatus_id, :date_modified, :supporting_company_id)
     end
 end

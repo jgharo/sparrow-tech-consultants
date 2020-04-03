@@ -19,7 +19,7 @@
   <div class="field">
     <%= form.label :service_description %>
     <%= form.text_area :service_description %>
-  </div>
+  </div> 
 
   <div class="field">
     <%= form.label :service_cost %>
@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :supporting_company_id %>
-    <%= form.collection_select :supporting_company_id, SupportingCompany.all, :id, :supportingcomp_name %>
+    <%= form.text_field :supporting_company_id %>
   </div>
 
   <div class="actions">

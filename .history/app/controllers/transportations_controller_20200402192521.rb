@@ -57,19 +57,19 @@ class TransportationsController < ApplicationController
   def destroy
     @stlservice.destroy
     respond_to do |format|
-      format.html { redirect_to stlservices_url, notice: 'Transportation was successfully deleted.' }
+      format.html { redirect_to transportations_url, notice: 'Transportation was successfully deleted.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_transportation
+    def set_stlservice
       @stlservice = Stlservice.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def transportation_params
+    def stlservice_params
       params.require(:stlservice).permit(:service_name, :service_description, :service_cost, :servcategory_id, :servstatus_id, :date_modified, :supporting_company_id)
     end
 end

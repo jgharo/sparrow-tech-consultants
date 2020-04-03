@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :transportations
   resources :suppliers
   resources :supplierpaymentinfos
   resources :supporting_companies

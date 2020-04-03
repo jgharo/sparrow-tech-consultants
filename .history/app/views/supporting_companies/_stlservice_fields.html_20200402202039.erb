@@ -25,9 +25,9 @@
     </div>
 
     <div class="field">
-        <%= f.label :date_modified %>
-        <%= f.date_select :date_modified %>
-    </div>
+    <%= form.label :date_modified, 'Date Modified:' %>
+    <%= form.date_select :date_modified %>
+  </div>
 
     <%= link_to_remove_association "Remove Service", f%>
 </div>

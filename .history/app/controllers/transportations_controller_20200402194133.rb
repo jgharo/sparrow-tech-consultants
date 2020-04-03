@@ -29,7 +29,7 @@ class TransportationsController < ApplicationController
 
     respond_to do |format|
       if @stlservice.save
-        format.html { redirect_to @stlservice, notice: 'Transportation was successfully created.' }
+        format.html { redirect_to @stlservice, notice: 'Stlservice was successfully created.' }
         format.json { render :show, status: :created, location: @stlservice }
       else
         format.html { render :new }
@@ -42,12 +42,12 @@ class TransportationsController < ApplicationController
   # PATCH/PUT /transportations/1.json
   def update
     respond_to do |format|
-      if @stlservice.update(stlservice_params)
-        format.html { redirect_to @stlservice, notice: 'Transportation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @stlservice }
+      if @transportation.update(transportation_params)
+        format.html { redirect_to @transportation, notice: 'Transportation was successfully updated.' }
+        format.json { render :show, status: :ok, location: @transportation }
       else
         format.html { render :edit }
-        format.json { render json: @stlservice.errors, status: :unprocessable_entity }
+        format.json { render json: @transportation.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -55,9 +55,9 @@ class TransportationsController < ApplicationController
   # DELETE /transportations/1
   # DELETE /transportations/1.json
   def destroy
-    @stlservice.destroy
+    @transportation.destroy
     respond_to do |format|
-      format.html { redirect_to stlservices_url, notice: 'Transportation was successfully deleted.' }
+      format.html { redirect_to transportations_url, notice: 'Transportation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,11 +65,11 @@ class TransportationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_transportation
-      @stlservice = Stlservice.find(params[:id])
+      @transportation = Transportation.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def transportation_params
-      params.require(:stlservice).permit(:service_name, :service_description, :service_cost, :servcategory_id, :servstatus_id, :date_modified, :supporting_company_id)
+      params.require(:transportation).permit(:service_name, :service_description, :service_cost, :servcategory_id, :servstatus_id, :date_modified, :supporting_company_id)
     end
 end
