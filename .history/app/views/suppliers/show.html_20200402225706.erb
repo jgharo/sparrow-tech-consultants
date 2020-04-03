@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Suppliers</h1>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= sanitize @supplier.supplier_name.html_safe %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= sanitize @supplier.supplier_email.html_safe %>
+</p>
+
+<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
+<%= link_to 'Back', suppliers_path %>

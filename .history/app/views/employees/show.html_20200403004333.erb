@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Employee</h1>
+</div>
+
+<p>
+  <strong>First Name:</strong>
+  <%= sanitize @employee.employee_fname.html_safe %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= sanitize @employee.employee_lname.html_safe %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= sanitize @employee.employee_email.html_safe %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= sanitize number_to_currency @employee.employee_salary %>
+</p>
+
+<p>
+  <strong>Hire Date:</strong>
+  <%= @employee.employee_hiredate.strftime("%B %-d, %Y") %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

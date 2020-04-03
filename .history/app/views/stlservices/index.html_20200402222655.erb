@@ -1,0 +1,39 @@
+<%= stylesheet_link_tag "stlservices", :media => "all" %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Transportations</h1>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Cost/Mile</th>
+      <th>Category</th>
+      <th>Status</th>
+      <th>Date Modified</th>
+      <th>Supporting Company</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stlservices.each do |stlservice| %>
+      <tr>
+        <td><%= stlservice.service_name %></td>
+        <td><%= stlservice.service_description %></td>
+        <td><%= stlservice.service_cost %></td>
+        <td><%= stlservice.servcategory.category %></td>
+        <td><%= stlservice.servstatus.status %></td>
+        <td><%= stlservice.date_modified.strftime("%B %-d, %Y") %></td>
+        <td><%= stlservice.supporting_company.supportingcomp_name %></td>
+        <td><%= link_to 'Show', stlservice %></td>
+        <td><%= link_to 'Edit', edit_stlservice_path(stlservice) %></td>
+        <td><%= link_to 'Destroy', stlservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

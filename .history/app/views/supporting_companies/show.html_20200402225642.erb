@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Supporting Companies</h1>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= sanitize @supporting_company.supportingcomp_name.html_safe %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= sanitize @supporting_company.supportingcomp_email.html_safe %>
+</p>
+
+<%= link_to 'Edit', edit_supporting_company_path(@supporting_company) %> |
+<%= link_to 'Back', supporting_companies_path %>

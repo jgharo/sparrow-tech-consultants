@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag "stlservices", :media => "all" %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Transportation</h1>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stlservice.service_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @stlservice.service_description %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= number_to_currency @stlservice.service_cost %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @stlservice.servcategory.category %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @stlservice.servstatus.status %>
+</p>
+
+<p>
+  <strong>Date Modified:</strong>
+  <%= @stlservice.date_modified.strftime("%B %-d, %Y") %>
+</p>
+
+<p>
+  <strong>Supporting Company:</strong>
+  <%= @stlservice.supporting_company.supportingcomp_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_stlservice_path(@stlservice) %> |
+<%= link_to 'Back', stlservices_path %>

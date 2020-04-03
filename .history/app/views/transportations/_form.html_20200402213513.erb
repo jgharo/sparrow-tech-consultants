@@ -1,0 +1,52 @@
+<%= form_with(model: transportation, local: true) do |form| %>
+  <% if transportation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(transportation.errors.count, "error") %> prohibited this transportation from being saved:</h2>
+
+      <ul>
+        <% transportation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :service_name %>
+    <%= form.text_field :service_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :service_description %>
+    <%= form.text_area :service_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :service_cost %>
+    <%= form.text_field :service_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :servcategory_id %>
+    <%= form.collection_select :servcategory_id, Servcategory.all, :id, :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :servstatus_id %>
+    <%= form.collection_select :servstatus_id, Servstatus.all, :id, :status%>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_modified %>
+    <%= form.date_select :date_modified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :supporting_company_id %>
+    <%= form.collection_select :supporting_company_id, SupportingCompany.all, :id, :supportingcomp_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
