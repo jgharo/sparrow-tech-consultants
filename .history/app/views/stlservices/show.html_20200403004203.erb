@@ -18,22 +18,22 @@
 
 <p>
   <strong>Cost:</strong>
-  <%= sanitize number_to_currency @stlservice.service_cost %>
+  <%= sanitize number_to_currency @stlservice.service_cost.html_safe %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= sanitize @stlservice.servcategory.category %>
+  <%= @stlservice.servcategory.category %>
 </p>
 
 <p>
   <strong>Status:</strong>
-  <%= sanitize @stlservice.servstatus.status %>
+  <%= @stlservice.servstatus.status %>
 </p>
 
 <p>
   <strong>Date Modified:</strong>
-  <%= sanitize @stlservice.date_modified.strftime("%B %-d, %Y") %>
+  <%= @stlservice.date_modified.strftime("%B %-d, %Y") %>
 </p>
 
 <p>

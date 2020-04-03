@@ -2,7 +2,7 @@
 
 <p>
   <strong>Category:</strong>
-  <%= sanitize @prodcategory.category.html_safe %>
+  <%= @prodcategory.category %>
 </p>
 
 <%= link_to 'Edit', edit_prodcategory_path(@prodcategory) %> |

@@ -13,27 +13,27 @@
 
 <p>
   <strong>Description:</strong>
-  <%= sanitize @stlservice.service_description.html_safe %>
+  <%= @stlservice.service_description %>
 </p>
 
 <p>
   <strong>Cost:</strong>
-  <%= sanitize number_to_currency @stlservice.service_cost %>
+  <%= number_to_currency @stlservice.service_cost %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= sanitize @stlservice.servcategory.category %>
+  <%= @stlservice.servcategory.category %>
 </p>
 
 <p>
   <strong>Status:</strong>
-  <%= sanitize @stlservice.servstatus.status %>
+  <%= @stlservice.servstatus.status %>
 </p>
 
 <p>
   <strong>Date Modified:</strong>
-  <%= sanitize @stlservice.date_modified.strftime("%B %-d, %Y") %>
+  <%= @stlservice.date_modified.strftime("%B %-d, %Y") %>
 </p>
 
 <p>

@@ -5,7 +5,7 @@ class StlservicesController < ApplicationController
   # GET /stlservices
   # GET /stlservices.json
   def index
-    @stlservices = Stlservice.where(servcategory: '2')
+    @stlservices = Servcategory.find_by(category: 'Transportation')
   end
 
   # GET /stlservices/1

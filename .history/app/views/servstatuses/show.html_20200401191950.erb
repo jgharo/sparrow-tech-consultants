@@ -2,7 +2,7 @@
 
 <p>
   <strong>Status:</strong>
-  <%= sanitize @servstatus.status.html_safe %>
+  <%= @servstatus.status %>
 </p>
 
 <%= link_to 'Edit', edit_servstatus_path(@servstatus) %> |

@@ -26,7 +26,7 @@
 
 <p>
   <strong>Hire Date:</strong>
-  <%= sanitize @employee.employee_hiredate.strftime("%B %-d, %Y") %>
+  <%= @employee.employee_hiredate.strftime("%B %-d, %Y") %>
 </p>
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |

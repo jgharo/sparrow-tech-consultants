@@ -28,12 +28,12 @@
 
 <p>
   <strong>Status:</strong>
-  <%= sanitize @stlservice.servstatus.status %>
+  <%= @stlservice.servstatus.status %>
 </p>
 
 <p>
   <strong>Date Modified:</strong>
-  <%= sanitize @stlservice.date_modified.strftime("%B %-d, %Y") %>
+  <%= @stlservice.date_modified.strftime("%B %-d, %Y") %>
 </p>
 
 <p>

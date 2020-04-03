@@ -17,12 +17,12 @@
 
 <p>
   <strong>Routing number:</strong>
-  <%= @scpaymentinfo.routing_number %>
+  <%= sanitize @scpaymentinfo.routing_number %>
 </p>
 
 <p>
   <strong>Aba number:</strong>
-  <%= @scpaymentinfo.aba_number %>
+  <%= sanitize @scpaymentinfo.aba_number %>
 </p>
 
 <p>
@@ -32,7 +32,7 @@
 
 <p>
   <strong>Supporting Company:</strong>
-  <%= @scpaymentinfo.supporting_company_id %>
+  <%= @scpaymentinfo.supporting_company.supporting_company_id %>
 </p>
 
 <%= link_to 'Edit', edit_scpaymentinfo_path(@scpaymentinfo) %> |

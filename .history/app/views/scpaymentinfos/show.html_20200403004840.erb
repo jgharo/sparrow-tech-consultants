@@ -32,7 +32,7 @@
 
 <p>
   <strong>Supporting Company:</strong>
-  <%= @scpaymentinfo.supporting_company_id %>
+  <%= sanitize @scpaymentinfo.supporting_company_id %>
 </p>
 
 <%= link_to 'Edit', edit_scpaymentinfo_path(@scpaymentinfo) %> |
