@@ -1,10 +1,10 @@
 <%= form_with(model: transportation, local: true) do |form| %>
   <% if stlservice.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(stlservice.errors.count, "error") %> prohibited this e from being saved:</h2>
+      <h2><%= pluralize(transportation.errors.count, "error") %> prohibited this transportation from being saved:</h2>
 
       <ul>
-        <% stlservice.errors.full_messages.each do |message| %>
+        <% transportation.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
