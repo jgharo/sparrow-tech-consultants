@@ -33,7 +33,7 @@
       <% end %>
         <td><%= link_to 'Transportation (Details)', @transportation %></td>
         <td><%= link_to 'Transportation (Edit)', edit_transportation_path(@transportation) %></td>
-        <td><%= link_to 'Transportation (Delete)', @transportation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Transportation (Delete)', @stlservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     
   </tbody>

@@ -21,21 +21,20 @@
   </thead>
 
   <tbody>
+    <% @stlservices.each do |transportation| %>
       <tr>
-      <% @stlservices.each do |transportation| %>
         <td><%= transportation.service_name %></td>
         <td><%= transportation.service_description %></td>
-        <td><%= number_to_currency transportation.service_cost %></td>
+        <td><%= transportation.service_cost %></td>
         <td><%= transportation.servcategory.category %></td>
         <td><%= transportation.servstatus.status %></td>
         <td><%= transportation.date_modified %></td>
         <td><%= transportation.supporting_company.supportingcomp_name %></td>
-      <% end %>
-        <td><%= link_to 'Transportation (Details)', @transportation %></td>
-        <td><%= link_to 'Transportation (Edit)', edit_transportation_path(@transportation) %></td>
-        <td><%= link_to 'Transportation (Delete)', @transportation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Details', transportation %></td>
+        <td><%= link_to 'Edit', edit_transportation_path(transportation) %></td>
+        <td><%= link_to 'Delete', stlservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    
+    <% end %>
   </tbody>
 </table>
 
