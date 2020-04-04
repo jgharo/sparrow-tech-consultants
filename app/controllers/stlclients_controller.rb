@@ -4,8 +4,9 @@ class StlclientsController < ApplicationController
 
   # GET /stlclients
   # GET /stlclients.json
+   helper_method :sort_column, :sort_direction
   def index
-    @stlclients = Stlclient.all
+    @stlclients = Stlclient.order(sort_column + " " + sort_direction)
   end
 
   # GET /stlclients/1
@@ -72,4 +73,12 @@ class StlclientsController < ApplicationController
     def stlclient_params
       params.require(:stlclient).permit(:client_fname, :client_lname, :client_email, :client_phonenumber, :client_companyname, :client_shippingaddress, :client_billingaddress, :employee_id)
     end
+
+  def sort_column
+    Stlclient.column_names.include?(params[:sort]) ? params[:sort] : "client_fname"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end
