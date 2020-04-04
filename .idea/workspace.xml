@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="81161b67-994d-4627-b2bb-395be7e1f29b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/suppliers/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/suppliers/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/supporting_companies/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/supporting_companies/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/stlclients_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/stlclients_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/stlservices_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/stlservices_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/suppliers_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/suppliers_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/supporting_companies_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/supporting_companies_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/products/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/stlclients/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/stlclients/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/stlservices/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/stlservices/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/suppliers/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/suppliers/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/supporting_companies/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/supporting_companies/index.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="chemical_page" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,7 +33,7 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HW3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RunDashboard">
@@ -137,6 +145,8 @@
       <workItem from="1585849991361" duration="6161000" />
       <workItem from="1585863410665" duration="845000" />
       <workItem from="1585865758511" duration="7171000" />
+      <workItem from="1585965837921" duration="8001000" />
+      <workItem from="1586018640194" duration="2403000" />
     </task>
     <servers />
   </component>
