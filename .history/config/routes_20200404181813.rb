@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :transportations
   resources :chemicals
   resources :suppliers
   resources :supplierpaymentinfos
@@ -21,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'home', to: 'home#index'
   get 'report', to: 'reports#show'
-  get 'transportation', to: 'transportations#index'
+  get 'transportation', to: 'stlservices#index'
   get 'product', to: 'products#index'
   get 'chemical', to: 'chemicals#index'
   get 'employee', to: 'employees#index'

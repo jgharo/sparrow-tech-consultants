@@ -70,14 +70,6 @@ class ChemicalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def chemical_params
-      params.require(:product).permit(:product_name, :product_description, :product_cost, :prodcategory_id, :prodstatus_id, :date_modified, :supplier_id)
-    end
-    
-    def sort_column
-      Product.column_names.include?(params[:sort]) ? params[:sort] : "product_name"
-    end
-    
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      params.require(:chemical).permit(:product_name, :product_description, :product_cost, :prodcategory_id, :prodstatus_id, :date_modified, :supplier_id)
     end
 end

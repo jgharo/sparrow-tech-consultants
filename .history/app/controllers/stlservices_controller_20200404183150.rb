@@ -75,11 +75,11 @@ class StlservicesController < ApplicationController
       params.require(:stlservice).permit(:service_name, :service_description, :service_cost, :servcategory_id, :servstatus_id, :date_modified, :supporting_company_id)
     end
 
-    def sort_column
-      Stlservice.column_names.include?(params[:sort]) ? params[:sort] : "service_name"
-    end
+  def sort_column
+    Stlservice.column_names.include?(params[:sort]) ? params[:sort] : "service_name"
+  end
 
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-    end
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Service name:</strong>
+  <%= @transportation.service_name %>
+</p>
+
+<p>
+  <strong>Service description:</strong>
+  <%= @transportation.service_description %>
+</p>
+
+<p>
+  <strong>Service cost:</strong>
+  <%= @transportation.service_cost %>
+</p>
+
+<p>
+  <strong>Servcategory:</strong>
+  <%= @transportation.servcategory_id %>
+</p>
+
+<p>
+  <strong>Servstatus:</strong>
+  <%= @transportation.servstatus_id %>
+</p>
+
+<p>
+  <strong>Date modified:</strong>
+  <%= @transportation.date_modified %>
+</p>
+
+<p>
+  <strong>Supporting company:</strong>
+  <%= @transportation.supporting_company_id %>
+</p>
+
+<%= link_to 'Edit', edit_transportation_path(@transportation) %> |
+<%= link_to 'Back', transportations_path %>

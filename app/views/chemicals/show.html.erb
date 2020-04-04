@@ -1,1 +1,39 @@
-<h1>Chemicals</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product name:</strong>
+  <%= @chemical.product_name %>
+</p>
+
+<p>
+  <strong>Product description:</strong>
+  <%= @chemical.product_description %>
+</p>
+
+<p>
+  <strong>Product cost:</strong>
+  <%= @chemical.product_cost %>
+</p>
+
+<p>
+  <strong>Prodcategory:</strong>
+  <%= @chemical.prodcategory_id %>
+</p>
+
+<p>
+  <strong>Prodstatus:</strong>
+  <%= @chemical.prodstatus_id %>
+</p>
+
+<p>
+  <strong>Date modified:</strong>
+  <%= @chemical.date_modified %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @chemical.supplier_id %>
+</p>
+
+<%= link_to 'Edit', edit_chemical_path(@chemical) %> |
+<%= link_to 'Back', chemicals_path %>
