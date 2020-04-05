@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Supporting Companies</h1>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= sanitize @supporting_company.supportingcomp_name.html_safe %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= sanitize @supporting_company.supportingcomp_email.html_safe %>
+</p>
+
+<p>
+<h3>Services</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Cost</th>
+    <th>Category</th>
+    <th>Status</th>
+    <th>Date Modified</th>
+
+  </tr>
+  <% @supporting_company.stlservices.each do |stlservice| %>
+    <tr> <td><%= sanitize stlservice.service_name.html_safe %></td>
+      <td> <%= sanitize stlservice.service_description.html_safe %></td>
+      <td> <%= sanitize number_to_currency stlservice.service_cost %></td>
+      <td> <%= sanitize stlservice.servcategory.category %></td>
+      <td> <%= sanitize stlservice.servstatus.status %></td>
+      <td> <%= sanitize stlservice.date_modified.strftime("%B %-d, %Y") %></td>
+
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<%= link_to 'Edit', edit_supporting_company_path(@supporting_company) %> |
+<%= link_to 'Back', supporting_companies_path %>

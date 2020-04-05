@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Servcategories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @servcategories.each do |servcategory| %>
+      <tr>
+        <td><%= servcategory.category %></td>
+        <td><%= link_to 'Show', servcategory %></td>
+        <td><%= link_to 'Edit', edit_servcategory_path(servcategory) %></td>
+        <td><%= link_to 'Destroy', servcategory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Servcategory', new_servcategory_path %>

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Chemical</h1>
+</div>
+
+<p>
+  <strong>Product name:</strong>
+  <%= sanitize @chemical.product_name.html_safe %>
+</p>
+
+<p>
+  <strong>Product description:</strong>
+  <%= sanitize @chemical.product_description.html_safe %>
+</p>
+
+<p>
+  <strong>Product cost:</strong>
+  <%= sanitize number_to_currency @chemical.product_cost.html_safe %>
+</p>
+
+<p>
+  <strong>Prodcategory:</strong>
+  <%= sanitize @chemical.prodcategory.category %>
+</p>
+
+<p>
+  <strong>Prodstatus:</strong>
+  <%= sanitize @chemical.prodstatus.status %>
+</p>
+
+<p>
+  <strong>Date modified:</strong>
+  <%= sanitize @chemical.date_modified.strftime("%B %-d, %Y") %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= sanitize @chemical.supplier.supplier_name %>
+</p>
+
+<%= link_to 'Edit', edit_chemical_path(@chemical) %> |
+<%= link_to 'Back', chemicals_path %>

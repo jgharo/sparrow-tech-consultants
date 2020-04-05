@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Transportation</h1>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= sanitize @transportation.service_name.html_safe %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= sanitize @transportation.service_description.html_safe %>
+</p>
+
+<p>
+  <strong>Cost/Gallon:</strong>
+  <%= sanitize number_to_currency @transportation.service_cost %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= sanitize @transportation.servcategory.category.html_safe %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= sanitize @transportation.servstatus.status.html_safe %>
+</p>
+
+<p>
+  <strong>Date Modified:</strong>
+  <%= sanitize @transportation.date_modified.strftime("%B %-d, %Y") %>
+</p>
+
+<p>
+  <strong>Supporting Company:</strong>
+  <%= @transportation.supporting_company_id %>
+</p>
+
+<%= link_to 'Edit', edit_transportation_path(@transportation) %> |
+<%= link_to 'Back', transportations_path %>

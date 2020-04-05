@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Chemicals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product name</th>
+      <th>Product description</th>
+      <th>Product cost</th>
+      <th>Prodcategory</th>
+      <th>Prodstatus</th>
+      <th>Date modified</th>
+      <th>Supplier</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chemicals.each do |chemical| %>
+      <tr>
+        <td><%= chemical.product_name %></td>
+        <td><%= chemical.product_description %></td>
+        <td><%= chemical.product_cost %></td>
+        <td><%= chemical.prodcategory.category %></td>
+        <td><%= chemical.prodstatus.status %></td>
+        <td><%= chemical.date_modified %></td>
+        <td><%= chemical.supplier.supplier_name %></td>
+        <td><%= link_to 'Show', chemical %></td>
+        <td><%= link_to 'Edit', edit_chemical_path(chemical) %></td>
+        <td><%= link_to 'Destroy', chemical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chemical', new_chemical_path %>
