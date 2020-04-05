@@ -13,7 +13,7 @@
   <tbody>
     <% @servstatuses.each do |servstatus| %>
       <tr>
-        <td><%= sanitize servstatus.status.html_safe %></td>
+        <td><%= servstatus.status %></td>
         <td><%= link_to 'Show', servstatus %></td>
         <td><%= link_to 'Edit', edit_servstatus_path(servstatus) %></td>
         <td><%= link_to 'Destroy', servstatus, method: :delete, data: { confirm: 'Are you sure?' } %></td>

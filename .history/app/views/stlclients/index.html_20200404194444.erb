@@ -22,14 +22,14 @@
   <tbody>
     <% @stlclients.each do |stlclient| %>
       <tr>
-        <td><%= sanitize stlclient.client_fname.html_safe %></td>
-        <td><%= sanitize stlclient.client_lname.html_safe %></td>
-        <td><%= sanitize stlclient.client_email.html_safe %></td>
-        <td><%= sanitize stlclient.client_phonenumber.html_safe %></td>
-        <td><%= sanitize stlclient.client_companyname.html_safe %></td>
-        <td><%= sanitize stlclient.client_shippingaddress.html_safe %></td>
-        <td><%= sanitize stlclient.client_billingaddress.html_safe %></td>
-        <td><%= sanitize stlclient.employee.employee_fname.html_safe %></td>
+        <td><%= sanitize stlclient.client_fname %></td>
+        <td><%= sanitize stlclient.client_lname %></td>
+        <td><%= sanitize stlclient.client_email %></td>
+        <td><%= sanitize stlclient.client_phonenumber %></td>
+        <td><%= sanitize stlclient.client_companyname %></td>
+        <td><%= sanitize stlclient.client_shippingaddress %></td>
+        <td><%= sanitize stlclient.client_billingaddress %></td>
+        <td><%= sanitize stlclient.employee.employee_fname %></td>
         <td><%= link_to 'Details', stlclient %></td>
         <td><%= link_to 'Edit', edit_stlclient_path(stlclient) %></td>
         <td><%= link_to 'Delete', stlclient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

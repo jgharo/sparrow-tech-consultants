@@ -12,7 +12,7 @@
 
 <p>
   <strong>Account number:</strong>
-  <%= @supplierpaymentinfo.account_number %>
+  <%=  before_action :authenticate_user!@supplierpaymentinfo.account_number %>
 </p>
 
 <p>

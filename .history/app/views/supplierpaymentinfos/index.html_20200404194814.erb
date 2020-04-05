@@ -18,12 +18,12 @@
   <tbody>
     <% @supplierpaymentinfos.each do |supplierpaymentinfo| %>
       <tr>
-        <td><%= sanitize supplierpaymentinfo.payment_address.html_safe %></td>
-        <td><%= sanitize supplierpaymentinfo.account_name.html_safe %></td>
+        <td><%= sanitize supplierpaymentinfo.payment_address %></td>
+        <td><%= sanitize supplierpaymentinfo.account_name %></td>
         <td><%= supplierpaymentinfo.account_number %></td>
         <td><%= supplierpaymentinfo.routing_number %></td>
         <td><%= supplierpaymentinfo.aba_number %></td>
-        <td><%= sanitize supplierpaymentinfo.swift_code.html_safe %></td>
+        <td><%= sanitize supplierpaymentinfo.swift_code %></td>
         <td><%= link_to 'Show', supplierpaymentinfo %></td>
         <td><%= link_to 'Edit', edit_supplierpaymentinfo_path(supplierpaymentinfo) %></td>
         <td><%= link_to 'Destroy', supplierpaymentinfo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

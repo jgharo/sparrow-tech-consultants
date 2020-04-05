@@ -30,9 +30,9 @@
     <tr> <td><%= sanitize stlservice.service_name.html_safe %></td>
       <td> <%= sanitize stlservice.service_description.html_safe %></td>
       <td> <%= sanitize number_to_currency stlservice.service_cost %></td>
-      <td> <%= sanitize stlservice.servcategory.category.html_safe %></td>
-      <td> <%= sanitize stlservice.servstatus.status.html_safe %></td>
-      <td> <%= sanitize stlservice.date_modified.strftime("%B %-d, %Y").html_safe %></td>
+      <td> <%= sanitize stlservice.servcategory.category %></td>
+      <td> <%= sanitize stlservice.servstatus.status %></td>
+      <td> <%= sanitize stlservice.date_modified.strftime("%B %-d, %Y") %></td>
 
     </tr>
   <% end %>

@@ -11,6 +11,7 @@
       <th>Routing number</th>
       <th>Aba number</th>
       <th>Swift code</th>
+      <th>Supporting Company</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,11 +20,12 @@
     <% @scpaymentinfos.each do |scpaymentinfo| %>
       <tr>
         <td><%= sanitize scpaymentinfo.payment_address.html_safe %></td>
-        <td><%= sanitize scpaymentinfo.account_name.html_safe %></td>
+        <td><%= sanitize scpaymentinfo.account_name %></td>
         <td><%= scpaymentinfo.account_number %></td>
-        <td><%= scpaymentinfo.routing_number %></td>
-        <td><%= scpaymentinfo.aba_number %></td>
-        <td><%= sanitize scpaymentinfo.swift_code.html_safe %></td>
+        <td><%= sanitize scpaymentinfo.routing_number %></td>
+        <td><%= sanitize scpaymentinfo.aba_number %></td>
+        <td><%= sanitize scpaymentinfo.swift_code %></td>
+        <td><%= sanitize scpaymentinfo.supporting_company_id %></td>
         <td><%= link_to 'Show', scpaymentinfo %></td>
         <td><%= link_to 'Edit', edit_scpaymentinfo_path(scpaymentinfo) %></td>
         <td><%= link_to 'Destroy', scpaymentinfo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

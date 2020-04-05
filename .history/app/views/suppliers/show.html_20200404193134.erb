@@ -28,11 +28,11 @@
   </tr>
   <% @supplier.products.each do |product| %>
     <tr> <td><%= sanitize product.product_name.html_safe %></td>
-      <td> <%= sanitize product.product_description.html_safe  %></td>
-      <td> <%= sanitize number_to_currency product.product_cost %></td>
-      <td> <%= sanitize product.prodcategory.category.html_safe %></td>
-      <td> <%= sanitize product.prodstatus.status.html_safe %></td>
-      <td> <%= sanitize product.date_modified.strftime("%B %-d, %Y") %></td>
+      <td> <%= product.product_description.html_safe  %></td>
+      <td> <%= number_to_currency product.product_cost %></td>
+      <td> <%= product.prodcategory.category %></td>
+      <td> <%= product.prodstatus.status %></td>
+      <td> <%= product.date_modified.strftime("%B %-d, %Y") %></td>
 
     </tr>
   <% end %>

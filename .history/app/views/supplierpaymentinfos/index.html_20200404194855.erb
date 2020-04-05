@@ -19,7 +19,7 @@
     <% @supplierpaymentinfos.each do |supplierpaymentinfo| %>
       <tr>
         <td><%= sanitize supplierpaymentinfo.payment_address.html_safe %></td>
-        <td><%= sanitize supplierpaymentinfo.account_name.html_safe %></td>
+        <td><%= sanitize supplierpaymentinfo.account_name %></td>
         <td><%= supplierpaymentinfo.account_number %></td>
         <td><%= supplierpaymentinfo.routing_number %></td>
         <td><%= supplierpaymentinfo.aba_number %></td>

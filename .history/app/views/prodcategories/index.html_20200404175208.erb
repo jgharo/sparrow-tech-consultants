@@ -13,7 +13,7 @@
   <tbody>
     <% @prodcategories.each do |prodcategory| %>
       <tr>
-        <td><%= sanitize prodcategory.category.html_safe %></td>
+        <td><%= prodcategory.category %></td>
         <td><%= link_to 'Show', prodcategory %></td>
         <td><%= link_to 'Edit', edit_prodcategory_path(prodcategory) %></td>
         <td><%= link_to 'Destroy', prodcategory, method: :delete, data: { confirm: 'Are you sure?' } %></td>

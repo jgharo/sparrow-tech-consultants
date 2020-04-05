@@ -20,13 +20,13 @@
   <tbody>
     <% @chemicals.each do |chemical| %>
       <tr>
-        <td><%= sanitize chemical.product_name.html_safe %></td>
-        <td><%= sanitize chemical.product_description.html_safe %></td>
-        <td><%= sanitize number_to_currency(chemical.product_cost).html_safe %></td>
-        <td><%= sanitize chemical.prodcategory.category.html_safe %></td>
-        <td><%= sanitize chemical.prodstatus.status.html_safe %></td>
-        <td><%= sanitize chemical.date_modified.strftime("%B %-d, %Y").html_safe %></td>
-        <td><%= sanitize chemical.supplier.supplier_name.html_safe %></td>
+        <td><%= sanitize chemical.product_name %></td>
+        <td><%= chemical.product_description %></td>
+        <td><%= number_to_currency(chemical.product_cost) %></td>
+        <td><%= chemical.prodcategory.category %></td>
+        <td><%= chemical.prodstatus.status %></td>
+        <td><%= chemical.date_modified.strftime("%B %-d, %Y") %></td>
+        <td><%= chemical.supplier.supplier_name %></td>
         <td><%= link_to 'Details', chemical_path(chemical) %></td>
         <td><%= link_to 'Edit', edit_chemical_path(chemical) %></td>
         <td><%= link_to 'Delete', chemical, method: :delete, data: { confirm: 'Are you sure?' } %></td>

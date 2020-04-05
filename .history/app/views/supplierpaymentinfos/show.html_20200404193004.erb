@@ -12,12 +12,12 @@
 
 <p>
   <strong>Account number:</strong>
-  <%= @supplierpaymentinfo.account_number %>
+  <%= sanitize @supplierpaymentinfo.account_number %>
 </p>
 
 <p>
   <strong>Routing number:</strong>
-  <%= @supplierpaymentinfo.routing_number %>
+  <%= sanitize @supplierpaymentinfo.routing_number %>
 </p>
 
 <p>

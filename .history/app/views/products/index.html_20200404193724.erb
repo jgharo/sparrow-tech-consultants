@@ -23,11 +23,11 @@
       <tr>
         <td><%= sanitize product.product_name.html_safe %></td>
         <td><%= sanitize product.product_description.html_safe %></td>
-        <td><%= sanitize number_to_currency(product.product_cost).html_safe %></td>
-        <td><%= sanitize product.prodcategory.category.html_safe %></td>
-        <td><%= sanitize product.prodstatus.status.html_safe %></td>
-        <td><%= sanitize product.date_modified.strftime("%B %-d, %Y").html_safe %></td>
-        <td><%= sanitize product.supplier.supplier_name.html_safe %></td>
+        <td><%= sanitize number_to_currency(product.product_cost) %></td>
+        <td><%= sanitize product.prodcategory.category %></td>
+        <td><%= sanitize product.prodstatus.status %></td>
+        <td><%= sanitize product.date_modified.strftime("%B %-d, %Y") %></td>
+        <td><%= sanitize product.supplier.supplier_name %></td>
         <td><%= link_to 'Details', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

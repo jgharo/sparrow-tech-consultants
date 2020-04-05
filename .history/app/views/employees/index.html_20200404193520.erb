@@ -22,7 +22,7 @@
         <td><%= sanitize employee.employee_fname.html_safe %></td>
         <td><%= sanitize employee.employee_lname.html_safe %></td>
         <td><%= sanitize employee.employee_email.html_safe %></td>
-        <td><%= sanitize number_to_currency(employee.employee_salary).html_safe %></td>
+        <td><%= sanitize number_to_currency(employee.employee_salary) %></td>
         <td><%= sanitize employee.employee_hiredate.strftime("%B %-d, %Y").html_safe %></td>
         <td><%= link_to 'Details', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>

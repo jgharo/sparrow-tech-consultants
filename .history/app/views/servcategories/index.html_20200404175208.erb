@@ -13,7 +13,7 @@
   <tbody>
     <% @servcategories.each do |servcategory| %>
       <tr>
-        <td><%= sanitize servcategory.category.html_safe %></td>
+        <td><%= servcategory.category %></td>
         <td><%= link_to 'Show', servcategory %></td>
         <td><%= link_to 'Edit', edit_servcategory_path(servcategory) %></td>
         <td><%= link_to 'Destroy', servcategory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
