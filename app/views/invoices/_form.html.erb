@@ -17,14 +17,46 @@
   </div>
 
   <div class="field">
-    <%= form.label :invoice_status %>
-    <%= form.text_area :invoice_status %>
+    <%= form.label :invstatus_id, 'Invoice Status' %>
+    <%= form.collection_select :invstatus_id, Invstatus.all, :id, :status %>
   </div>
 
   <div class="field">
-    <%= form.label :stlclient_id %>
-    <%= form.text_field :stlclient_id %>
+    <%= form.label :stlclient_id, 'Client' %>
+    <%= form.collection_select :stlclient_id, Stlclient.all, :id, :client_fname %>
   </div>
+
+  <h3>Product Orders</h3>
+  <div id='product_orders'>
+    <%= form.fields_for :product_orders do |product_order| %>
+      <%= render 'product_order_fields', :f => product_order %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Product', form, :product_orders %>
+    </div>
+  </div>
+
+  <h3>Service Orders</h3>
+  <div id='service_orders'>
+    <%= form.fields_for :service_orders do |service_order| %>
+      <%= render 'service_order_fields', :f => service_order %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Service', form, :service_orders %>
+    </div>
+  </div>
+
+  <h3>Notes</h3>
+  <div id='notes'>
+    <%= form.fields_for :notes do |note| %>
+      <%= render 'note_fields', :f => note %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Note', form, :notes %>
+    </div>
+  </div>
+
+
 
   <div class="actions">
     <%= form.submit %>

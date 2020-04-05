@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Date updated</th>
-      <th>Invoice status</th>
       <th>Stlclient</th>
+      <th>Invoice status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +16,8 @@
     <% @invoices.each do |invoice| %>
       <tr>
         <td><%= invoice.date_updated %></td>
-        <td><%= invoice.invoice_status %></td>
-        <td><%= invoice.stlclient_id %></td>
+        <td><%= invoice.stlclient.client_fname %></td>
+        <td><%= invoice.invstatus.status %></td>
         <td><%= link_to 'Show', invoice %></td>
         <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
         <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>

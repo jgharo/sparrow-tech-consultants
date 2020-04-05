@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81161b67-994d-4627-b2bb-395be7e1f29b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/views/invoices/_note_fields.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/invoices/_product_order_fields.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/invoices/_service_order_fields.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/prodstatuses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/prodstatuses_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/stlclients_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/stlclients_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/invoices_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/invoices_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/service_orders_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/service_orders_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/invoice.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/invoice.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/invoices/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/invoices/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/invoices/_invoice.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/invoices/_invoice.json.jbuilder" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/invoices/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/invoices/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/invoices/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/invoices/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/product_orders/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/product_orders/show.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
@@ -147,7 +154,7 @@
       <workItem from="1586056490100" duration="2136000" />
       <workItem from="1586063624254" duration="208000" />
       <workItem from="1586063848488" duration="1245000" />
-      <workItem from="1586107629246" duration="4859000" />
+      <workItem from="1586107629246" duration="11503000" />
     </task>
     <servers />
   </component>

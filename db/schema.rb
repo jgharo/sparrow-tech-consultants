@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_182923) do
+ActiveRecord::Schema.define(version: 2020_04_05_214755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,18 @@ ActiveRecord::Schema.define(version: 2020_04_05_182923) do
 
   create_table "invoices", force: :cascade do |t|
     t.date "date_updated"
-    t.text "invoice_status"
     t.bigint "stlclient_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "invstatus_id", null: false
+    t.index ["invstatus_id"], name: "index_invoices_on_invstatus_id"
     t.index ["stlclient_id"], name: "index_invoices_on_stlclient_id"
+  end
+
+  create_table "invstatuses", force: :cascade do |t|
+    t.text "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "notes", force: :cascade do |t|
@@ -106,6 +113,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_182923) do
     t.bigint "invoice_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "service_quantity"
     t.index ["invoice_id"], name: "index_service_orders_on_invoice_id"
     t.index ["stlservice_id"], name: "index_service_orders_on_stlservice_id"
   end
@@ -194,6 +202,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_182923) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "invoices", "invstatuses"
   add_foreign_key "invoices", "stlclients"
   add_foreign_key "notes", "invoices"
   add_foreign_key "product_orders", "invoices"

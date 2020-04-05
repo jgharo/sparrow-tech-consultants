@@ -7,12 +7,61 @@
 
 <p>
   <strong>Invoice status:</strong>
-  <%= @invoice.invoice_status %>
+  <%= @invoice.invstatus.status%>
 </p>
 
 <p>
   <strong>Stlclient:</strong>
-  <%= @invoice.stlclient_id %>
+  <%= @invoice.stlclient.client_fname %>
+</p>
+
+<p>
+<h3>Product Order</h3>
+<table>
+  <tr>
+    <th>Product Quantity</th>
+    <th>Product Cost Total</th>
+    <th>Product</th>
+  </tr>
+  <% @invoice.product_orders.each do |product_order| %>
+    <tr><td><%= product_order.product_quantity %></td>
+      <td><%= product_order.product_cost_total %></td>
+      <td><%= product_order.product.product_name %></td>
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<p>
+<h3>Service Order</h3>
+<table>
+  <tr>
+    <th>Service Quantity</th>
+    <th>Service Cost Total</th>
+    <th>Service </th>
+  </tr>
+  <% @invoice.service_orders.each do |service_order| %>
+    <tr><td><%= service_order.service_quantity %></td>
+      <td><%= service_order.service_cost_total %></td>
+      <td><%= service_order.stlservice.service_name %></td>
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<p>
+<h3>Notes</h3>
+<table>
+  <tr>
+    <th>Comment</th>
+    <th>Date Modified</th>
+  </tr>
+  <% @invoice.notes.each do |note| %>
+    <tr> <td><%= sanitize note.comment.html_safe %></td>
+      <td> <%= sanitize note.date_updated.strftime("%B %-d, %Y") %></td>
+    </tr>
+  <% end %>
+</table>
 </p>
 
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |

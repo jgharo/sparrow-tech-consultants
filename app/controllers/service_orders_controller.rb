@@ -69,6 +69,6 @@ class ServiceOrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def service_order_params
-      params.require(:service_order).permit(:service_cost_total, :stlservice_id, :invoice_id)
+      params.require(:service_order).permit(:service_quantity, :service_cost_total, :stlservice_id, :invoice_id)
     end
 end
