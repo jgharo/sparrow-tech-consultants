@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_222920) do
+ActiveRecord::Schema.define(version: 2020_04_05_182923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,24 @@ ActiveRecord::Schema.define(version: 2020_03_31_222920) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "invoices", force: :cascade do |t|
+    t.date "date_updated"
+    t.text "invoice_status"
+    t.bigint "stlclient_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["stlclient_id"], name: "index_invoices_on_stlclient_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.text "comment"
+    t.date "date_updated"
+    t.bigint "invoice_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["invoice_id"], name: "index_notes_on_invoice_id"
+  end
+
   create_table "prodcategories", force: :cascade do |t|
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
@@ -35,6 +53,17 @@ ActiveRecord::Schema.define(version: 2020_03_31_222920) do
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "product_orders", force: :cascade do |t|
+    t.integer "product_quantity"
+    t.decimal "product_cost_total"
+    t.bigint "product_id", null: false
+    t.bigint "invoice_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["invoice_id"], name: "index_product_orders_on_invoice_id"
+    t.index ["product_id"], name: "index_product_orders_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -69,6 +98,16 @@ ActiveRecord::Schema.define(version: 2020_03_31_222920) do
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "service_orders", force: :cascade do |t|
+    t.decimal "service_cost_total"
+    t.bigint "stlservice_id", null: false
+    t.bigint "invoice_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["invoice_id"], name: "index_service_orders_on_invoice_id"
+    t.index ["stlservice_id"], name: "index_service_orders_on_stlservice_id"
   end
 
   create_table "servstatuses", force: :cascade do |t|
@@ -155,10 +194,16 @@ ActiveRecord::Schema.define(version: 2020_03_31_222920) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "invoices", "stlclients"
+  add_foreign_key "notes", "invoices"
+  add_foreign_key "product_orders", "invoices"
+  add_foreign_key "product_orders", "products"
   add_foreign_key "products", "prodcategories"
   add_foreign_key "products", "prodstatuses"
   add_foreign_key "products", "suppliers"
   add_foreign_key "scpaymentinfos", "supporting_companies"
+  add_foreign_key "service_orders", "invoices"
+  add_foreign_key "service_orders", "stlservices"
   add_foreign_key "stlclients", "employees"
   add_foreign_key "stlservices", "servcategories"
   add_foreign_key "stlservices", "servstatuses"

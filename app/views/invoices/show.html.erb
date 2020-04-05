@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date updated:</strong>
+  <%= @invoice.date_updated %>
+</p>
+
+<p>
+  <strong>Invoice status:</strong>
+  <%= @invoice.invoice_status %>
+</p>
+
+<p>
+  <strong>Stlclient:</strong>
+  <%= @invoice.stlclient_id %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>

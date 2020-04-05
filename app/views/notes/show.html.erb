@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @note.comment %>
+</p>
+
+<p>
+  <strong>Date updated:</strong>
+  <%= @note.date_updated %>
+</p>
+
+<p>
+  <strong>Invoice:</strong>
+  <%= @note.invoice_id %>
+</p>
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>

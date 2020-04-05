@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="81161b67-994d-4627-b2bb-395be7e1f29b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/prodstatuses_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/prodstatuses_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/stlclients_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/stlclients_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/stlservices_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/stlservices_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/suppliers_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/suppliers_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/supporting_companies_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/supporting_companies_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/products/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/stlclients/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/stlclients/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/stlservices/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/stlservices/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/suppliers/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/suppliers/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/supporting_companies/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/supporting_companies/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,6 +144,10 @@
       <workItem from="1585865758511" duration="7171000" />
       <workItem from="1585965837921" duration="8001000" />
       <workItem from="1586018640194" duration="2403000" />
+      <workItem from="1586056490100" duration="2136000" />
+      <workItem from="1586063624254" duration="208000" />
+      <workItem from="1586063848488" duration="1245000" />
+      <workItem from="1586107629246" duration="4859000" />
     </task>
     <servers />
   </component>
