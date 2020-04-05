@@ -19,7 +19,7 @@
   </thead>
 
   <tbody>
-    <% @stlservices.each do |stlservice| %>
+    <% @transportations.each do |transportation| %>
       <tr>
         <td><%= stlservice.service_name %></td>
         <td><%= stlservice.service_description %></td>
@@ -35,3 +35,7 @@
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<%= link_to 'New Transportation', new_transportation_path %>

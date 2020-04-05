@@ -66,7 +66,7 @@ class TransportationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_transportation
-      @transportation = Stlservice.find(params[:id])
+      @transportation = Transportation.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

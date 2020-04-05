@@ -26,9 +26,9 @@
         <td><%= number_to_currency transportation.service_cost %></td>
         <td><%= transportation.servcategory.category %></td>
         <td><%= transportation.servstatus.status %></td>
-        <td><%= transportation.date_modified.strftime("%B %-d, %Y") %></td>
+        <td><%= transportation.date_modified %></td>
         <td><%= transportation.supporting_company.supportingcomp_name %></td>
-        <td><%= link_to 'Details', transportation_path(transportation) %></td>
+        <td><%= link_to 'Show', transportation %></td>
         <td><%= link_to 'Edit', edit_transportation_path(transportation) %></td>
         <td><%= link_to 'Delete', transportation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

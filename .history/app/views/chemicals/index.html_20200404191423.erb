@@ -9,7 +9,7 @@
     <tr>
       <th><%= sortable "product_name", "Name"%></th>
       <th><%= sortable "product_description", "Description"%></th>
-      <th><%= sortable "product_cost", "Cost/Gallon"%></th>
+      <th><%= sortable "product_cost", "Cost"%></th>
       <th><%= sortable "product_category", "Category"%></th>
       <th><%= sortable "product_status", "Status"%></th>
       <th><%= sortable "date_modified", "Date Modified"%></th>
@@ -22,14 +22,14 @@
       <tr>
         <td><%= chemical.product_name %></td>
         <td><%= chemical.product_description %></td>
-        <td><%= number_to_currency(chemical.product_cost) %></td>
+        <td><%= chemical.product_cost %></td>
         <td><%= chemical.prodcategory.category %></td>
         <td><%= chemical.prodstatus.status %></td>
-        <td><%= chemical.date_modified.strftime("%B %-d, %Y") %></td>
+        <td><%= chemical.date_modified %></td>
         <td><%= chemical.supplier.supplier_name %></td>
-        <td><%= link_to 'Details', chemical_path(chemical) %></td>
+        <td><%= link_to 'Show', chemical %></td>
         <td><%= link_to 'Edit', edit_chemical_path(chemical) %></td>
-        <td><%= link_to 'Delete', chemical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', chemical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

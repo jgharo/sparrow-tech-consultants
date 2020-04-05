@@ -21,22 +21,22 @@
 
 <p>
   <strong>Prodcategory:</strong>
-  <%= sanitize @chemical.prodcategory.category.html_safe %>
+  <%= sanitize @chemical.prodcategory.category %>
 </p>
 
 <p>
   <strong>Prodstatus:</strong>
-  <%= sanitize @chemical.prodstatus.status.html_safe %>
+  <%= sanitize @chemical.prodstatus.category %>
 </p>
 
 <p>
   <strong>Date modified:</strong>
-  <%= sanitize @chemical.date_modified.strftime("%B %-d, %Y") %>
+  <%= sanitize @chemical.date_modified %>
 </p>
 
 <p>
   <strong>Supplier:</strong>
-  <%= sanitize @chemical.supplier.supplier_name.html_safe %>
+  <%= sanitize @chemical.supplier.supplier_name %>
 </p>
 
 <%= link_to 'Edit', edit_chemical_path(@chemical) %> |

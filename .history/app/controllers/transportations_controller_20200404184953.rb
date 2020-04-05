@@ -3,8 +3,6 @@ class TransportationsController < ApplicationController
 
   # GET /transportations
   # GET /transportations.json
-  helper_method :sort_column, :sort_direction
-
   def index
     @transportations = Stlservice.where(servcategory: '1').order(sort_column + " " + sort_direction)
   end
@@ -58,7 +56,7 @@ class TransportationsController < ApplicationController
   def destroy
     @transportation.destroy
     respond_to do |format|
-      format.html { redirect_to transportations_url, notice: 'Transportation was successfully deleted.' }
+      format.html { redirect_to transportations_url, notice: 'Transportation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

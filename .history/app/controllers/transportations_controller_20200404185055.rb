@@ -58,7 +58,7 @@ class TransportationsController < ApplicationController
   def destroy
     @transportation.destroy
     respond_to do |format|
-      format.html { redirect_to transportations_url, notice: 'Transportation was successfully deleted.' }
+      format.html { redirect_to transportations_url, notice: 'Transportation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

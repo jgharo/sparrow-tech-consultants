@@ -12,6 +12,7 @@ class TransportationsController < ApplicationController
   # GET /transportations/1
   # GET /transportations/1.json
   def show
+    @transportation = Transportation.show
   end
 
   # GET /transportations/new
