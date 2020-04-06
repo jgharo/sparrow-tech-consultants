@@ -1,0 +1,33 @@
+<div class='nested-fields'>
+
+  <div class="field">
+    <%= f.label :product_id, "Product:" %>
+    <%= f.collection_select :product_id, Product.all, :id, :product_name%>
+  </div>
+
+  <div class="field">
+    <%= f.label :product_id, "Cost:" %>
+    <%= f.collection_select :product_id, Product.all, :id, :product_cost%>
+  </div>
+
+  <div class="field">
+    <%= f.label :product_quantity, "Quantity:" %>
+    <%= f.number_field :product_quantity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :product_cost_total, "Total Cost:" %>
+    <%= f.hidden_field :product_orders_cost, value: @calculate_product_cost_total %>
+
+    <% content_for :javascript do %> 
+      $('.text_field[name="product_quantity"]').keyup(function() {
+        var a = $('hidden_field[name=""]').val();
+        var b = $(this).val();
+        $('.text_field[name="product_cost_total"]').val(parseFloat(a) * parseFloat(b));
+      });
+    <% end %>
+  </div>
+
+
+  <%= link_to_remove_association "Remove Product", f%>
+</div>

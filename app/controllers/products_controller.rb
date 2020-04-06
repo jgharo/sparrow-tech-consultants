@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   def index
     @search = Product.search(params[:q])
     @products = @search.result.includes(:supplier, :prodcategory, :prodstatus)
+
   end
 
   # GET /products/1

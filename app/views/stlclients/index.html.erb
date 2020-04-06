@@ -4,6 +4,25 @@
 <h1>Clients</h1>
 </div>
 
+<%= search_form_for @search do |f|%>
+  <div class="field">
+    <%=f.label :client_fname_cont, "Name contains" %>
+    <%=f.text_field :client_fname_cont %>
+  </div>
+  <div class="field">
+    <%=f.label :client_lname_cont, "Last Name contains" %>
+    <%=f.text_field :client_lname_cont %>
+  </div>
+
+  <div class="field">
+    <%=f.label :employee_employee_fname_cont, "Employee Assigned contains" %>
+    <%=f.text_field :employee_employee_fname_cont %>
+  </div>
+
+  <div class="actions"><%=f.submit "Search" %></div>
+<%end %>
+
+
 <table>
   <thead>
     <tr>

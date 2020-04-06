@@ -4,6 +4,20 @@
 <h1>Supplier</h1>
 </div>
 
+<%= search_form_for @search do |f|%>
+  <div class="field">
+    <%=f.label :supplier_name_cont, "Name contains" %>
+    <%=f.text_field :supplier_name_cont %>
+  </div>
+  <div class="field">
+    <%=f.label :supplier_email_cont, "Email contains" %>
+    <%=f.text_field :supplier_email_cont %>
+  </div>
+
+
+  <div class="actions"><%=f.submit "Search" %></div>
+<%end %>
+
 <table>
   <thead>
     <tr>
