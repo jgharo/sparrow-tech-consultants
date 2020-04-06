@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_quantity: 1
+  product_cost_total: 9.99
+  product: one
+  invoice: one
+
+two:
+  product_quantity: 1
+  product_cost_total: 9.99
+  product: two
+  invoice: two

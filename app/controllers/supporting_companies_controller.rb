@@ -5,9 +5,10 @@ class SupportingCompaniesController < ApplicationController
   # GET /supporting_companies
   # GET /supporting_companies.json
 
-  helper_method :sort_column, :sort_direction
+
   def index
-    @supporting_companies = SupportingCompany.order(sort_column + " " + sort_direction)
+    @search = SupportingCompany.search(params[:q])
+    @supporting_companies = @search.result
   end
 
   # GET /supporting_companies/1

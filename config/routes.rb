@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :invstatuses
+  resources :product_orders
+  resources :service_orders
+  resources :notes
+  resources :invoices
   resources :transportations
   resources :chemicals
   resources :suppliers
@@ -28,4 +33,5 @@ Rails.application.routes.draw do
   get 'stlclient', to: 'stlclients#index'
   get 'supporting', to: 'supporting_companies#index'
   get 'supplier', to: 'suppliers#index'
+  get 'invoice', to: 'invoices#index'
 end

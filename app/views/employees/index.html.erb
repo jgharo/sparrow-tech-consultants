@@ -4,14 +4,22 @@
 <h1>Employees</h1>
 </div>
 
+<%= search_form_for @search do |f|%>
+  <div class="field">
+    <%=f.label :employee_fname_cont, "Name contains" %>
+    <%=f.text_field :employee_fname_cont %>
+  </div>
+  <div class="actions"><%=f.submit "Search" %></div>
+<%end %>
+
 <table>
   <thead>
     <tr>
-      <th><%= sortable "employee_fname", "First Name"%></th>
-      <th><%= sortable "employee_lname","Last Name"%></th>
-      <th><%= sortable "employee_email", "Email"%></th>
-      <th><%= sortable "employee_salary", "Salary"%></th>
-      <th><%= sortable "employee_hiredate", "Hire Date"%></th>
+      <th><%= sort_link @search, :employee_fname, "First Name" %></th>
+      <th><%= sort_link @search, :employee_lname, "Last Name" %></th>
+      <th><%= sort_link @search, :employee_email, "Email" %></th>
+      <th><%= sort_link @search, :employee_salary, "Salary" %></th>
+      <th><%= sort_link @search, :employee_hiredate, "Hire Date" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>

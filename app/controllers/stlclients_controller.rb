@@ -4,9 +4,10 @@ class StlclientsController < ApplicationController
 
   # GET /stlclients
   # GET /stlclients.json
-   helper_method :sort_column, :sort_direction
+
   def index
-    @stlclients = Stlclient.order(sort_column + " " + sort_direction)
+    @search = Stlclient.search(params[:q])
+    @stlclients = @search.result.includes(:employee)
   end
 
   # GET /stlclients/1
@@ -62,6 +63,7 @@ class StlclientsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

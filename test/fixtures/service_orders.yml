@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_cost_total: 9.99
+  stlservice: one
+  invoice: one
+
+two:
+  service_cost_total: 9.99
+  stlservice: two
+  invoice: two
