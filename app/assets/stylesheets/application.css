@@ -10,7 +10,7 @@
 
 
 body {
-  background-color:rgb(180, 180, 180);
+  background-color:rgb(174, 239, 255);
 }
 
 .wrapper {
@@ -63,7 +63,7 @@ body {
   .subpage_header {
     padding: 5px;
     text-align: left;
-    background: #9cffeb;
+    background: #d1d1d1;
     color: black;
     font-size: 10px;
     border: solid black 1px;
@@ -72,7 +72,7 @@ body {
     border-collapse: collapse;
     width: 100%;
     border: solid black 1.5px;
-    background-color: rgb(151, 217, 243);
+    background-color: rgb(214, 255, 210);
   }
   
   th, td {
