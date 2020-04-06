@@ -1,4 +1,10 @@
 <div class='nested-fields'>
+
+  <div class="field">
+    <%= f.label :service_id %>
+    <%= f.collection_select :stlservice_id, Stlservice.all, :id, :service_name%>
+  </div>
+
   <div class="field">
     <%= f.label :service_quantity %>
     <%= f.number_field :service_quantity %>
@@ -9,10 +15,6 @@
     <%= f.text_field :service_cost_total %>
   </div>
 
-  <div class="field">
-    <%= f.label :service_id %>
-    <%= f.collection_select :stlservice_id, Stlservice.all, :id, :service_name%>
-  </div>
 
   <%= link_to_remove_association "Remove Service", f%>
 </div>
