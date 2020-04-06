@@ -4,12 +4,11 @@ class ProductsController < ApplicationController
 
   # GET /products
   # GET /products.json
-  helper_method :sort_column, :sort_direction
+
   def index
-    @products = Product.order(sort_column + " " + sort_direction)
-
+    @search = Product.search(params[:q])
+    @products = @search.result.includes(:supplier, :prodcategory, :prodstatus)
   end
-
 
   # GET /products/1
   # GET /products/1.json
@@ -80,11 +79,5 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:product_name, :product_description, :product_cost, :prodcategory_id, :prodstatus_id, :date_modified, :supplier_id)
     end
 
-    def sort_column
-      Product.column_names.include?(params[:sort]) ? params[:sort] : "product_name"
-    end
 
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-    end
 end

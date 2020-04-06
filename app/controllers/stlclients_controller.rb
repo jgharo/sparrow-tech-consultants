@@ -4,9 +4,10 @@ class StlclientsController < ApplicationController
 
   # GET /stlclients
   # GET /stlclients.json
-   helper_method :sort_column, :sort_direction
+
   def index
-    @stlclients = Stlclient.order(sort_column + " " + sort_direction)
+    @search = Stlclient.search(params[:q])
+    @stlclients = @search.result
   end
 
   # GET /stlclients/1

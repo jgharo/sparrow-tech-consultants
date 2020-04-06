@@ -7,13 +7,13 @@
 <table>
   <thead>
     <tr>
-      <th><%= sortable "product_name", "Name"%></th>
-      <th><%= sortable "product_description", "Description"%></th>
-      <th><%= sortable "product_cost", "Cost/Gallon"%></th>
-      <th><%= sortable "product_category", "Category"%></th>
-      <th><%= sortable "product_status", "Status"%></th>
-      <th><%= sortable "date_modified", "Date Modified"%></th>
-      <th><%= sortable "supplier_name", "Supplier"%></th>
+      <th><%= sort_link @search, :product_name, "Name" %></th>
+      <th><%= sort_link @search, :product_description, "Description" %></th>
+      <th><%= sort_link @search, :product_cost, "Cost/Gallon" %></th>
+      <th><%= sort_link @search, :category, "Category" %></th>
+      <th><%= sort_link @search, :status, "Status" %></th>
+      <th><%= sort_link @search, :date_modified, "Date Modified" %></th>
+      <th><%= sort_link @search, :supplier_name, "Supplier" %></th>
     </tr>
   </thead>
 
