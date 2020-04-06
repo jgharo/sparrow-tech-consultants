@@ -2,6 +2,28 @@
 
 <h1>Invoices</h1>
 
+<%= search_form_for @search do |f|%>
+  <div class="field">
+    <%=f.label :stlclient_client_fname_cont, "Client Name contains " %>
+    <%=f.text_field :stlclient_client_fname_cont %>
+  </div>
+
+  <div class="field">
+    <%=f.label :invstatus_status_cont, "Status contains" %>
+    <%=f.text_field :invstatus_status_cont %>
+  </div>
+
+<div class="field">
+    Date between
+    <% f.label :date_updated_gteq, "Date between" %>
+    <%=f.text_field :date_updated_gteq %>
+    <%=f.label :date_updated_lteq, "and" %>
+    <%=f.text_field :date_updated_lteq %>
+</div>
+
+  <div class="actions"><%=f.submit "Search" %></div>
+<%end %>
+
 <table>
   <thead>
     <tr>
