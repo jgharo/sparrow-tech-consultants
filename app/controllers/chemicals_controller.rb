@@ -8,7 +8,7 @@ class ChemicalsController < ApplicationController
 
   def index
     @search = Product.search(params[:q])
-    @chemicals = @search.result.where(prodcategory: '1')
+    @chemicals = @search.result.where(prodcategory: '1').includes(:supplier, :prodcategory, :prodstatus)
   end
 
   # GET /chemicals/1

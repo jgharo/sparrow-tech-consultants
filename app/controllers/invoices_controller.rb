@@ -5,7 +5,7 @@ class InvoicesController < ApplicationController
   # GET /invoices.json
   def index
     @search = Invoice.search(params[:q])
-    @invoices = @search.result
+    @invoices = @search.result.includes(:stlclient, :invstatus)
   end
 
   # GET /invoices/1

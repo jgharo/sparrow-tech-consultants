@@ -8,7 +8,7 @@ class TransportationsController < ApplicationController
 
   def index
     @search = Stlservice.search(params[:q])
-    @transportations = @search.result.where(servcategory: '1')
+    @transportations = @search.result.where(servcategory: '1').includes(:supporting_company, :servcategory, :servstatus)
   end
 
   # GET /transportations/1

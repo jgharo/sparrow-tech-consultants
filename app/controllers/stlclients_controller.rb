@@ -7,7 +7,7 @@ class StlclientsController < ApplicationController
 
   def index
     @search = Stlclient.search(params[:q])
-    @stlclients = @search.result
+    @stlclients = @search.result.includes(:employee)
   end
 
   # GET /stlclients/1
