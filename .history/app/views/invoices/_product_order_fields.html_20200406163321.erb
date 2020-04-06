@@ -1,19 +1,20 @@
 <div class='nested-fields'>
 
   <div class="field">
-    <%= f.label :product_id, "Product:" %>
+    <%= f.label :product_id %>
     <%= f.collection_select :product_id, Product.all, :id, :product_name%>
   </div>
 
   <div class="field">
-    <%= f.label :product_id, "Cost:" %>
-    <%= f.collection_select :product_id, Product.all, :id, :product_cost%>
+    <%= f.label :product_quantity %>
+    <%= f.number_field :product_quantity %>
   </div>
 
   <div class="field">
-    <%= f.label :product_quantity, "Quantity:" %>
-    <%= f.number_field :product_quantity %>
+    <%= f.label :product_cost_total %>
+    <%= f.text_field :product_cost_total %>
   </div>
+
 
   <%= link_to_remove_association "Remove Product", f%>
 </div>

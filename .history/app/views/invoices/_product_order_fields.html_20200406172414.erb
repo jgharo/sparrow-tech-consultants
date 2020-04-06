@@ -7,13 +7,14 @@
 
   <div class="field">
     <%= f.label :product_id, "Cost:" %>
-    <%= f.collection_select :product_id, Product.all, :id, :product_cost%>
+    <%= f.select(:product_id, Product.all, :id, :product_cost)%>
   </div>
 
   <div class="field">
     <%= f.label :product_quantity, "Quantity:" %>
     <%= f.number_field :product_quantity %>
   </div>
+
 
   <%= link_to_remove_association "Remove Product", f%>
 </div>

@@ -20,17 +20,16 @@
 <table>
   <tr>
     <th>Product</th>
-    <th>Cost</th>
-    <th>Quantity</th>
-    <th>Cost Total</th>
+    <th>Product Cost</th>
+    <th>Product Quantity</th>
+    <th>Product Cost Total</th>
 
   </tr>
   <% @invoice.product_orders.each do |product_order| %>
-    <tr>
-      <td><%= sanitize product_order.product.product_name.html_safe %></td>
-      <td><%= sanitize number_to_currency(product_order.product.product_cost).html_safe %></td>
+    <tr><td><%= product_order.product.product_name %></td>
+        <td><%= product_order.product.product_cost %></td>
       <td><%= product_order.product_quantity %></td>
-      <td><%= sanitize number_to_currency(product_order.product_cost_total).html_safe %></td>
+      <td><%= product_order.product_cost_total %></td>
 
     </tr>
   <% end %>
@@ -41,18 +40,18 @@
 <h3>Service Order</h3>
 <table>
   <tr>
-    <th>Service</th>
-    <th>Cost</th>
-    <th>Quantity</th>
-    <th>Cost Total</th>
+    <th>Service </th>
+    <th>Service Cost</th>
+    <th>Service Quantity</th>
+    <th>Service Cost Total</th>
 
   </tr>
   <% @invoice.service_orders.each do |service_order| %>
     <tr>
-      <td><%= sanitize service_order.stlservice.service_name.html_safe %></td>
-      <td><%= sanitize number_to_currency(service_order.stlservice.service_cost).html_safe %></td>
+      <td><%= service_order.stlservice.service_name %></td>
+      <td><%= service_order.stlservice.service_cost %></td>
       <td><%= service_order.service_quantity %></td>
-      <td><%= sanitize number_to_currency(service_order.service_cost_total).html_safe %></td>
+      <td><%= service_order.service_cost_total %></td>
 
     </tr>
   <% end %>

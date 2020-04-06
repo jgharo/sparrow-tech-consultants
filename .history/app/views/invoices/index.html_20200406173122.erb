@@ -40,9 +40,9 @@
         <td><%= invoice.date_updated %></td>
         <td><%= invoice.stlclient.client_fname %></td>
         <td><%= invoice.invstatus.status %></td>
-        <td><%= link_to 'Details', invoice %></td>
+        <td><%= link_to 'Detail', invoice %></td>
         <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-        <td><%= link_to 'Delete', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

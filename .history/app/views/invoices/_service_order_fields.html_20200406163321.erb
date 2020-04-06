@@ -1,19 +1,20 @@
 <div class='nested-fields'>
 
   <div class="field">
-    <%= f.label :service_id, "Service:" %>
+    <%= f.label :service_id %>
     <%= f.collection_select :stlservice_id, Stlservice.all, :id, :service_name%>
   </div>
 
   <div class="field">
-    <%= f.label :stlservice_id, "Cost:" %>
-    <%= f.collection_select :stlservice_id, Stlservice.all, :id, :service_cost%>
+    <%= f.label :service_quantity %>
+    <%= f.number_field :service_quantity %>
   </div>
 
   <div class="field">
-    <%= f.label :service_quantity, "Quantity:" %>
-    <%= f.number_field :service_quantity %>
+    <%= f.label :service_cost_total %>
+    <%= f.text_field :service_cost_total %>
   </div>
+
 
   <%= link_to_remove_association "Remove Service", f%>
 </div>

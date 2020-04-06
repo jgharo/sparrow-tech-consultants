@@ -11,9 +11,15 @@
   </div>
 
   <div class="field">
-    <%= f.label :service_quantity, "Quantity:" %>
+    <%= f.label :service_quantity %>
     <%= f.number_field :service_quantity %>
   </div>
+
+  <div class="field">
+    <%= f.label :service_cost_total %>
+    <%= f.text_field :service_cost_total %>
+  </div>
+
 
   <%= link_to_remove_association "Remove Service", f%>
 </div>

@@ -15,5 +15,11 @@
     <%= f.number_field :product_quantity %>
   </div>
 
+  <div class="field">
+    <%= f.label :product_cost_total %>
+    <%= f.hidden_field :product_cost_total, value: @product_cost_total %>
+  </div>
+
+
   <%= link_to_remove_association "Remove Product", f%>
 </div>
