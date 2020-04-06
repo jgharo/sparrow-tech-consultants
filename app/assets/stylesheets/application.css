@@ -9,8 +9,8 @@
 
 
 
- html {
-    background-color:rgb(184, 232, 248);
+body {
+  background-color:rgb(180, 180, 180);
 }
 
 .wrapper {
@@ -72,6 +72,7 @@
     border-collapse: collapse;
     width: 100%;
     border: solid black 1.5px;
+    background-color: rgb(151, 217, 243);
   }
   
   th, td {
@@ -79,7 +80,7 @@
     padding: 8px;
   }
   
-  tr:nth-child(even){background-color: #f2f2f2}
+  tr:nth-child(even){background-color: #ffffff}
   
   th {
     background-color: rgb(111, 255, 116);
