@@ -21,27 +21,27 @@
     <%= form.email_field :supportingcomp_email %>
   </div>
 
-  <h3>Services</h3>
+  <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Services</h4></strong>
   <div id='stlservices'>
     <%= form.fields_for :stlservices do |stlservice| %>
       <%= render 'stlservice_fields', :f => stlservice %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'Add a Service', form, :stlservices %>
+      <%= link_to_add_association 'Add a Service', form, :stlservices, :class=>"btn btn-info text-light pt-2" %>
     </div>
   </div>
 
-  <h3>Payment Information</h3>
+  <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Payment Information</h4></strong>
   <div id='scpaymentinfos'>
     <%= form.fields_for :scpaymentinfos do |scpaymentinfo| %>
       <%= render 'scpaymentinfo_fields', :f => scpaymentinfo %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'Add Payment Information', form, :scpaymentinfos %>
+      <%= link_to_add_association 'Add Payment Information', form, :scpaymentinfos, :class=>"btn btn-info text-light pt-2" %>
     </div>
   </div> 
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions pt-2">
+    <%= form.submit "Save Supporting Company", :class=>"btn btn-primary" %>
   </div>
 <% end %>
