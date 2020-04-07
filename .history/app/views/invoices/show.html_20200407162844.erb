@@ -68,7 +68,7 @@
   </tr>
   <% @invoice.notes.each do |note| %>
     <tr> <td><%= sanitize note.comment.html_safe %></td>
-      <td> <%= sanitize note.date_updated.strftime("%B %-d, %Y").html_safe %></td>
+      <td> <%= sanitize note.date_updated.strftime("%B %-d, %Y") %></td>
     </tr>
   <% end %>
 </table>
