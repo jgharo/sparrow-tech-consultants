@@ -35,7 +35,6 @@
         <td><%= sanitize supplier.supplier_name.html_safe %></td>
         <td><%= sanitize supplier.supplier_phone.html_safe %></td>
         <td><%= sanitize supplier.supplier_email.html_safe %></td>
-        <td><%= sanitize supplier.supplier_address.html_safe %></td>
         <td><%= link_to 'Details', supplier %></td>
         <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
         <td><%= link_to 'Delete', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -11,7 +11,7 @@
 
 <p>
   <strong>Phone:</strong>
-  <%= sanitize @supplier.supplier_phone %>
+  <%= sanitize @supplier.supplier_phone.html_safe %>
 </p>
 
 <p>

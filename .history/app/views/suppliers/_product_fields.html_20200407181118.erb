@@ -10,17 +10,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :product_cost, "Cost:" %>
+    <%= f.label :product_cost, "Cost" %>
     <%= f.text_field :product_cost, :required => true %>
   </div>
 
   <div class="field">
-    <%= f.label :prodcategory_id, "Category:" %>
+    <%= f.label :prodcategory_id, "Category" %>
     <%= f.collection_select :prodcategory_id, Prodcategory.all, :id, :category, :required => true %>
   </div>
 
   <div class="field">
-    <%= f.label :prodstatus_id, "Status:" %>
+    <%= f.label :prodstatus_id, "Category" %>
     <%= f.collection_select :prodstatus_id, Prodstatus.all, :id, :status%>
   </div>
 

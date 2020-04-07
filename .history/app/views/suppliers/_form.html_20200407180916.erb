@@ -18,7 +18,7 @@
   
   <div class="field">
     <%= form.label :supplier_phone, "Phone:" %>
-    <%= form.text_field :supplier_phone, class: 'form-control', autofocus: true, placeholder: 'XXX-XXX-XXXX', pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
+    <%= form.email_field :supplier_email, :required => true %>
   </div>
 
   <div class="field">
@@ -27,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :supplier_address, "Address:" %>
-    <%= form.text_area :supplier_address, :required => true %>
+    <%= form.label :supplier_address, "Address: %>
+    <%= form.email_field :supplier_address, :required => true %>
   </div>
 
   <h3>Products</h3>

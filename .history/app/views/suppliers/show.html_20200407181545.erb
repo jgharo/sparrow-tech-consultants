@@ -11,17 +11,12 @@
 
 <p>
   <strong>Phone:</strong>
-  <%= sanitize @supplier.supplier_phone %>
+  <%= sanitize @supplier.supplier_phone.html_safe %>
 </p>
 
 <p>
   <strong>Email:</strong>
   <%= sanitize @supplier.supplier_email.html_safe %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= sanitize @supplier.supplier_address.html_safe %>
 </p>
 
 <p>

@@ -33,7 +33,7 @@
     <% @suppliers.each do |supplier| %>
       <tr>
         <td><%= sanitize supplier.supplier_name.html_safe %></td>
-        <td><%= sanitize supplier.supplier_phone.html_safe %></td>
+        <td><%= sanitize supplier.supplier_phone %></td>
         <td><%= sanitize supplier.supplier_email.html_safe %></td>
         <td><%= sanitize supplier.supplier_address.html_safe %></td>
         <td><%= link_to 'Details', supplier %></td>
