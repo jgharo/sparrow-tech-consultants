@@ -10,7 +10,8 @@ require("channels")
 require('jquery')
 import "cocoon";
 import "bootstrap";
-import "../stylesheets/application"
+import "../stylesheets/application";
+import 'jquery-ujs';
  
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
