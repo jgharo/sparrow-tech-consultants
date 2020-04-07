@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>SparrowNav</title>
+    <title>Sparrow Tech Logistics Invoicing System</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,19 +13,15 @@
 </head>
 
 <body>
-    <header>
-            <%= image_tag("logo/SparrowLogo.png", size: "200x200", class: "mx-auto d-block", :alt => "Sparrow Tech Logo")%>
-            <div id ="application_login_header">
+<%= image_tag("logo/SparrowLogo.png", size: "400x500", class: "mx-auto d-block", :alt => "Sparrow Tech Logo")%>
                 <% if user_signed_in? %>
                 <%= current_user.username %>
                   <%= link_to "Home", '/home', method: :get%>
                   <%= button_to "Log out", destroy_user_session_path, method: :delete %>
                 <% else %>
-                  <%= link_to "Login", new_user_session_path %>
+                  <%#= link_to "Login", new_user_session_path %>
                   <%# <%= link_to "Sign Up", new_user_registration_path %>
                 <% end %>
-              </div>
-        </header>
         <main>
             <p class="alert"><%= alert %></p>
             <%= yield %>
