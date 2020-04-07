@@ -1,9 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag  "employees", :media => "all" %>
+<p class="alert alert-info alert-dismissible fade show"><%= notice %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
 
-<div class="subpage_header">
-  <h1>Chemical</h1>
-</div>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "75", height: "100", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
 
+<h4 class="pt-2 text-center" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Chemical</h4></strong>
+
+<div class="container border border-info">
   <p>
     <strong>Product name:</strong>
     <%= sanitize @chemical.product_name.html_safe %>
@@ -38,6 +55,9 @@
     <strong>Supplier:</strong>
     <%= sanitize @chemical.supplier.supplier_name.html_safe %>
   </p>
+</div>
 
-<%= link_to 'Edit', edit_chemical_path(@chemical) %> |
-<%= link_to 'Back', chemicals_path %>
+<div class="pt-3">
+  <button type="button" class="btn btn-secondary ml-5 mr-2"><%= link_to 'Edit', edit_chemical_path(@chemical), :class=>"text-light" %></button>
+  <button type="button" class="btn btn-secondary"><%= link_to 'Back', chemicals_path, :class=>"text-light" %></button>
+</div>
