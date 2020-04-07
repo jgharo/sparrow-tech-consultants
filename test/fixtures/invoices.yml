@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_updated: 2020-04-05
+  invoice_status: MyText
+  stlclient: one
+
+two:
+  date_updated: 2020-04-05
+  invoice_status: MyText
+  stlclient: two

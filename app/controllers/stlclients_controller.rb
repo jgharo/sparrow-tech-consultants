@@ -4,9 +4,10 @@ class StlclientsController < ApplicationController
 
   # GET /stlclients
   # GET /stlclients.json
-   helper_method :sort_column, :sort_direction
+
   def index
-    @stlclients = Stlclient.order(sort_column + " " + sort_direction)
+    @search = Stlclient.search(params[:q])
+    @stlclients = @search.result.includes(:employee)
   end
 
   # GET /stlclients/1
@@ -63,6 +64,7 @@ class StlclientsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_stlclient
@@ -74,11 +76,11 @@ class StlclientsController < ApplicationController
       params.require(:stlclient).permit(:client_fname, :client_lname, :client_email, :client_phonenumber, :client_companyname, :client_shippingaddress, :client_billingaddress, :employee_id)
     end
 
-  def sort_column
-    Stlclient.column_names.include?(params[:sort]) ? params[:sort] : "client_fname"
-  end
+    def sort_column
+      Stlclient.column_names.include?(params[:sort]) ? params[:sort] : "client_fname"
+    end
 
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
 end

@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Invoices</h1>
+
+<%= search_form_for @search do |f|%>
+  <div class="field">
+    <%=f.label :stlclient_client_fname_cont, "Client Name contains " %>
+    <%=f.text_field :stlclient_client_fname_cont %>
+  </div>
+
+  <div class="field">
+    <%=f.label :invstatus_status_cont, "Status contains" %>
+    <%=f.text_field :invstatus_status_cont %>
+  </div>
+
+<div class="field">
+    Date between
+    <% f.label :date_updated_gteq, "Date between" %>
+    <%=f.text_field :date_updated_gteq %>
+    <%=f.label :date_updated_lteq, "and" %>
+    <%=f.text_field :date_updated_lteq %>
+</div>
+
+  <div class="actions"><%=f.submit "Search" %></div>
+<%end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= sort_link @search, :date_updated, "Date Updated" %></th>
+      <th><%= sort_link @search, :stlclient_client_fname, "Client Name" %></th>
+      <th><%= sort_link @search, :invstatus_status, "Invoice Status" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invoices.each do |invoice| %>
+      <tr>
+        <td><%= invoice.date_updated %></td>
+        <td><%= invoice.stlclient.client_fname %></td>
+        <td><%= invoice.invstatus.status %></td>
+        <td><%= link_to 'Detail', invoice %></td>
+        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
+        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Invoice', new_invoice_path %>

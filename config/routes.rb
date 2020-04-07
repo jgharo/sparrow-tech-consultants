@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :invstatuses
+  resources :product_orders
+  resources :service_orders
+  resources :notes
+  resources :invoices
+  resources :transportations
+  resources :chemicals
   resources :suppliers
   resources :supplierpaymentinfos
   resources :supporting_companies
@@ -19,11 +26,12 @@ Rails.application.routes.draw do
 
   get 'home', to: 'home#index'
   get 'report', to: 'reports#show'
-  get 'transportation', to: 'stlservices#index'
+  get 'transportation', to: 'transportations#index'
   get 'product', to: 'products#index'
-  get 'chemical', to: 'chemicals#show'
+  get 'chemical', to: 'chemicals#index'
   get 'employee', to: 'employees#index'
   get 'stlclient', to: 'stlclients#index'
   get 'supporting', to: 'supporting_companies#index'
   get 'supplier', to: 'suppliers#index'
+  get 'invoice', to: 'invoices#index'
 end

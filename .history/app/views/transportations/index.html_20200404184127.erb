@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Transportation</h1>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= sortable "service_name", "Name"%></th>
+      <th><%= sortable "service_description", "Description"%></th>
+      <th><%= sortable "service_cost", "Cost/ Mile"%></th>
+      <th><%= sortable "service_category", "Category"%></th>
+      <th><%= sortable "service_status", "Status"%></th>
+      <th><%= sortable "date_modified", "Date Modified"%></th>
+      <th><%= sortable "supportingcomp_name", "Supporting Company"%></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transportations.each do |transportation| %>
+      <tr>
+        <td><%= transportation.service_name %></td>
+        <td><%= transportation.service_description %></td>
+        <td><%= transportation.service_cost %></td>
+        <td><%= transportation.servcategory.category %></td>
+        <td><%= transportation.servstatus.status %></td>
+        <td><%= transportation.date_modified %></td>
+        <td><%= transportation.supporting_company.strftime("%B %-d, %Y") %></td>
+        <td><%= link_to 'Show', transportation %></td>
+        <td><%= link_to 'Edit', edit_transportation_path(transportation) %></td>
+        <td><%= link_to 'Delete', transportation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transportation', new_transportation_path %>

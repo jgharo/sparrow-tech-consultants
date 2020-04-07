@@ -1,0 +1,32 @@
+<%= form_with(model: service_order, local: true) do |form| %>
+  <% if service_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service_order.errors.count, "error") %> prohibited this service_order from being saved:</h2>
+
+      <ul>
+        <% service_order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :service_cost_total %>
+    <%= form.text_field :service_cost_total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stlservice_id %>
+    <%= form.text_field :stlservice_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :invoice_id %>
+    <%= form.text_field :invoice_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

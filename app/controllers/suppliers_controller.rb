@@ -4,14 +4,14 @@ class SuppliersController < ApplicationController
 
   # GET /suppliers
   # GET /suppliers.json
-  helper_method :sort_column, :sort_direction
   def index
-    @suppliers = Supplier.order(sort_column + " " + sort_direction)
+    @search = Supplier.search(params[:q])
+    @suppliers = @search.result.includes(:products)
   end
-
   # GET /suppliers/1
   # GET /suppliers/1.json
   def show
+
   end
 
   # GET /suppliers/new
@@ -74,11 +74,4 @@ class SuppliersController < ApplicationController
       params.require(:supplier).permit(:supplier_name, :supplier_email, :product_id, supplierpaymentinfos_attributes: [:id, :payment_address, :account_number, :routing_number, :aba_number, :swift_code, :_destroy], products_attributes: [:id, :product_name, :product_description, :product_cost, :prodcategory_id, :prodstatus_id, :date_modified, :_destroy])
     end
 
-  def sort_column
-    Supplier.column_names.include?(params[:sort]) ? params[:sort] : "supplier_name"
-  end
-
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
 end

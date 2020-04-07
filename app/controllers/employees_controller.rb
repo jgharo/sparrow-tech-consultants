@@ -4,10 +4,14 @@ class EmployeesController < ApplicationController
 
   # GET /employees
   # GET /employees.json
-  helper_method :sort_column, :sort_direction
+
   def index
-    @employees = Employee.order(sort_column + " " + sort_direction)
+    @search = Employee.search(params[:q])
+    @employees = @search.result
   end
+
+
+
 
   # GET /employees/1
   # GET /employees/1.json
@@ -73,13 +77,7 @@ class EmployeesController < ApplicationController
     def employee_params
       params.require(:employee).permit(:employee_fname, :employee_lname, :employee_email, :employee_salary, :employee_hiredate)
     end
-  private
-  def sort_column
-    Employee.column_names.include?(params[:sort]) ? params[:sort] : "employee_fname"
-  end
 
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
+
 
 end

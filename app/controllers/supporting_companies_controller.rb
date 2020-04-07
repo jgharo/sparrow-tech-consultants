@@ -5,9 +5,10 @@ class SupportingCompaniesController < ApplicationController
   # GET /supporting_companies
   # GET /supporting_companies.json
 
-  helper_method :sort_column, :sort_direction
+
   def index
-    @supporting_companies = SupportingCompany.order(sort_column + " " + sort_direction)
+    @search = SupportingCompany.search(params[:q])
+    @supporting_companies = @search.result
   end
 
   # GET /supporting_companies/1
@@ -75,11 +76,11 @@ class SupportingCompaniesController < ApplicationController
       params.require(:supporting_company).permit(:supportingcomp_name, :supportingcomp_email, scpaymentinfos_attributes: [:id, :payment_address, :account_name, :account_number, :routing_number, :aba_number, :swift_code, :_destroy], stlservices_attributes: [:id, :service_name, :service_description, :service_cost, :servcategory_id, :servstatus_id, :date_modified, :_destroy ])
     end
 
-  def sort_column
-    SupportingCompany.column_names.include?(params[:sort]) ? params[:sort] : "supportingcomp_name"
-  end
+    def sort_column
+      SupportingCompany.column_names.include?(params[:sort]) ? params[:sort] : "supportingcomp_name"
+    end
 
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
 end

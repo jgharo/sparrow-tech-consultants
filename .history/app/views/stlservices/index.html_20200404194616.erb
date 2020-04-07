@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Service</h1>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= sortable "service_name", "Name"%></th>
+      <th><%= sortable "service_description", "Description"%></th>
+      <th><%= sortable "service_cost", "Cost/ Mile"%></th>
+      <th><%= sortable "service_category", "Category"%></th>
+      <th><%= sortable "service_status", "Status"%></th>
+      <th><%= sortable "date_modified", "Date Modified"%></th>
+      <th><%= sortable "supportingcomp_name", "Supporting Company"%></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stlservices.each do |stlservice| %>
+      <tr>
+        <td><%= sanitize stlservice.service_name.html_safe %></td>
+        <td><%= sanitize stlservice.service_description.html_safe %></td>
+        <td><%= sanitize number_to_currency stlservice.service_cost %></td>
+        <td><%= sanitize stlservice.servcategory.category.html_safe %></td>
+        <td><%= sanitize stlservice.servstatus.status.html_safe %></td>
+        <td><%= sanitize stlservice.date_modified.strftime("%B %-d, %Y").html_safe %></td>
+        <td><%= sanitize stlservice.supporting_company.supportingcomp_name.html_safe %></td>
+        <td><%= link_to 'Details', stlservice %></td>
+        <td><%= link_to 'Edit', edit_stlservice_path(stlservice) %></td>
+        <td><%= link_to 'Delete', stlservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

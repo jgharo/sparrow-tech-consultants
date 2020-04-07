@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Products</h1>
+</div>
+
+<%= search_form_for @search do |f|%>
+  <div class="field">
+    <% f.label :product_cost_gteq, "Price between" %>
+    <%=f.text_field :product_cost_gteq %>
+    <%=f.label :product_cost_lteq, "and" %>
+    <%=f.text_field :product_cost_lteq %>
+  </div>
+  <div class="actions"><%=f.submit "Search" %></div>
+<%end %>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th><%= sort_link @search, :product_name, "Name" %></th>
+      <th><%= sort_link @search, :product_description, "Description" %></th>
+      <th><%= sort_link @search, :product_cost, "Cost" %></th>
+      <th><%= sort_link @search, :prodcategory_category, "Category" %></th>
+      <th><%= sort_link @search, :prodstatus_status, "Status" %></th>
+      <th><%= sort_link @search, :date_modified, "Date Modified" %></th>
+      <th><%= sort_link @search, :supplier_supplier_name, "Supplier" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= sanitize product.product_name.html_safe %></td>
+        <td><%= sanitize product.product_description.html_safe %></td>
+        <td><%= sanitize number_to_currency(product.product_cost).html_safe %></td>
+        <td><%= sanitize product.prodcategory.category.html_safe %></td>
+        <td><%= sanitize product.prodstatus.status.html_safe %></td>
+        <td><%= sanitize product.date_modified.strftime("%B %-d, %Y").html_safe %></td>
+        <td><%= sanitize product.supplier.supplier_name.html_safe %></td>
+        <td><%= link_to 'Details', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
+

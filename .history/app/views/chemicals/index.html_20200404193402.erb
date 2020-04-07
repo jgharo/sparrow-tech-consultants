@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Chemicals</h1>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= sortable "product_name", "Name"%></th>
+      <th><%= sortable "product_description", "Description"%></th>
+      <th><%= sortable "product_cost", "Cost/Gallon"%></th>
+      <th><%= sortable "product_category", "Category"%></th>
+      <th><%= sortable "product_status", "Status"%></th>
+      <th><%= sortable "date_modified", "Date Modified"%></th>
+      <th><%= sortable "supplier_name", "Supplier"%></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chemicals.each do |chemical| %>
+      <tr>
+        <td><%= sanitize chemical.product_name.html_safe %></td>
+        <td><%= sanitize chemical.product_description %></td>
+        <td><%= sanitize number_to_currency(chemical.product_cost) %></td>
+        <td><%= sanitize chemical.prodcategory.category %></td>
+        <td><%= sanitize chemical.prodstatus.status %></td>
+        <td><%= sanitize chemical.date_modified.strftime("%B %-d, %Y") %></td>
+        <td><%= sanitize chemical.supplier.supplier_name %></td>
+        <td><%= link_to 'Details', chemical_path(chemical) %></td>
+        <td><%= link_to 'Edit', edit_chemical_path(chemical) %></td>
+        <td><%= link_to 'Delete', chemical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chemical', new_chemical_path %>

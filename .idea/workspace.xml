@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81161b67-994d-4627-b2bb-395be7e1f29b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/stlclients_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/stlclients_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/stlservices_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/stlservices_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/suppliers_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/suppliers_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/supporting_companies_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/supporting_companies_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/products/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/stlclients/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/stlclients/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/stlservices/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/stlservices/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/suppliers/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/suppliers/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/supporting_companies/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/supporting_companies/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/product_order.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product_order.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +11,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="sparrow-tech-consultants" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="ransack_sort_search" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -147,6 +141,11 @@
       <workItem from="1585865758511" duration="7171000" />
       <workItem from="1585965837921" duration="8001000" />
       <workItem from="1586018640194" duration="2403000" />
+      <workItem from="1586056490100" duration="2136000" />
+      <workItem from="1586063624254" duration="208000" />
+      <workItem from="1586063848488" duration="1245000" />
+      <workItem from="1586107629246" duration="12548000" />
+      <workItem from="1586185586022" duration="13910000" />
     </task>
     <servers />
   </component>

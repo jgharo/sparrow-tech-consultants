@@ -4,17 +4,36 @@
 <h1>Clients</h1>
 </div>
 
+<%= search_form_for @search do |f|%>
+  <div class="field">
+    <%=f.label :client_fname_cont, "Name contains" %>
+    <%=f.text_field :client_fname_cont %>
+  </div>
+  <div class="field">
+    <%=f.label :client_lname_cont, "Last Name contains" %>
+    <%=f.text_field :client_lname_cont %>
+  </div>
+
+  <div class="field">
+    <%=f.label :employee_employee_fname_cont, "Employee Assigned contains" %>
+    <%=f.text_field :employee_employee_fname_cont %>
+  </div>
+
+  <div class="actions"><%=f.submit "Search" %></div>
+<%end %>
+
+
 <table>
   <thead>
     <tr>
-      <th><%= sortable "client_fname", "First Name"%></th>
-      <th><%= sortable "client_lname","Last Name"%></th>
-      <th><%= sortable "client_email", "Email"%></th>
-      <th><%= sortable "client_phonenumber", "Phone Number"%></th>
-      <th><%= sortable "client_companyname", "Company Name"%></th>
-      <th><%= sortable "client_shippingaddress","Shipping Address"%></th>
-      <th><%= sortable "client_billingaddress", "Billing Address"%></th>
-      <th><%= sortable "employee_fname", "Employee Assigned"%></th>
+      <th><%= sort_link @search, :client_fname, "First Name" %></th>
+      <th><%= sort_link @search, :client_lname, "Last Name" %></th>
+      <th><%= sort_link @search, :client_email, "Email" %></th>
+      <th><%= sort_link @search, :client_phonenumber, "Phone Number" %></th>
+      <th><%= sort_link @search, :client_companyname, "Company Name" %></th>
+      <th><%= sort_link @search, :client_shippingaddress, "Shipping Address" %></th>
+      <th><%= sort_link @search, :client_billingaddress, "Billing Address" %></th>
+      <th><%= sort_link @search, :employee_employee_fname, "Employee Assigned" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,14 +41,14 @@
   <tbody>
     <% @stlclients.each do |stlclient| %>
       <tr>
-        <td><%= stlclient.client_fname %></td>
-        <td><%= stlclient.client_lname %></td>
-        <td><%= stlclient.client_email %></td>
-        <td><%= stlclient.client_phonenumber %></td>
-        <td><%= stlclient.client_companyname %></td>
-        <td><%= stlclient.client_shippingaddress %></td>
-        <td><%= stlclient.client_billingaddress %></td>
-        <td><%= stlclient.employee.employee_fname %></td>
+        <td><%= sanitize stlclient.client_fname.html_safe %></td>
+        <td><%= sanitize stlclient.client_lname.html_safe %></td>
+        <td><%= sanitize stlclient.client_email.html_safe %></td>
+        <td><%= sanitize stlclient.client_phonenumber.html_safe %></td>
+        <td><%= sanitize stlclient.client_companyname.html_safe %></td>
+        <td><%= sanitize stlclient.client_shippingaddress.html_safe %></td>
+        <td><%= sanitize stlclient.client_billingaddress.html_safe %></td>
+        <td><%= sanitize stlclient.employee.employee_fname.html_safe %></td>
         <td><%= link_to 'Details', stlclient %></td>
         <td><%= link_to 'Edit', edit_stlclient_path(stlclient) %></td>
         <td><%= link_to 'Delete', stlclient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Clients</h1>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= sortable "client_fname", "First Name"%></th>
+      <th><%= sortable "client_lname","Last Name"%></th>
+      <th><%= sortable "client_email", "Email"%></th>
+      <th><%= sortable "client_phonenumber", "Phone Number"%></th>
+      <th><%= sortable "client_companyname", "Company Name"%></th>
+      <th><%= sortable "client_shippingaddress","Shipping Address"%></th>
+      <th><%= sortable "client_billingaddress", "Billing Address"%></th>
+      <th><%= sortable "employee_fname", "Employee Assigned"%></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stlclients.each do |stlclient| %>
+      <tr>
+        <td><%= sanitize stlclient.client_fname.html_safe %></td>
+        <td><%= sanitize stlclient.client_lname.html_safe %></td>
+        <td><%= sanitize stlclient.client_email.html_safe %></td>
+        <td><%= sanitize stlclient.client_phonenumber.html_safe %></td>
+        <td><%= sanitize stlclient.client_companyname.html_safe %></td>
+        <td><%= sanitize stlclient.client_shippingaddress.html_safe %></td>
+        <td><%= sanitize stlclient.client_billingaddress.html_safe %></td>
+        <td><%= sanitize stlclient.employee.employee_fname.html_safe %></td>
+        <td><%= link_to 'Details', stlclient %></td>
+        <td><%= link_to 'Edit', edit_stlclient_path(stlclient) %></td>
+        <td><%= link_to 'Delete', stlclient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Client', new_stlclient_path %>
