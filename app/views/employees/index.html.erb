@@ -19,11 +19,11 @@
 <div class="p-2">
   <%= search_form_for @search do |f|%>
     <div class="field">
-      <%=f.label :employee_fname_cont, "First name contains" %>
+      <%=f.label :employee_fname_cont, "First name contains:" %>
       <%=f.text_field :employee_fname_cont %>
     </div>
     <div class="field">
-      <%=f.label :employee_lname_cont, "Last name contains" %>
+      <%=f.label :employee_lname_cont, "Last name contains:" %>
       <%=f.text_field :employee_lname_cont %>
     </div>
 </div>
