@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag  "employees", :media => "all" %>
+
 <nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
   <%= image_tag("logo/SparrowLogo.png", width: "75", height: "100", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
   <% if user_signed_in? %>
@@ -11,7 +13,7 @@
   <% end %>
 </nav>
 
-<h3 class="display-4"><strong>New Employee</h3></strong>
+<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>New Employees</h4></strong>
 <div class="d-flex justify-content-center flex-column">
     <div class="p-2 bd-highlight"><%= render 'form', employee: @employee %></div>
     <div class="p-2 bd-highlight"><%= link_to 'Back', employees_path, :class=>"btn btn-outline-primary" %></div>
