@@ -15,18 +15,19 @@
 </head>
 
 <body>
-                <% if user_signed_in? %>
-                <%= current_user.username %>
-                  <%= link_to "Home", '/home', method: :get%>
-                  <%= button_to "Log out", destroy_user_session_path, method: :delete %>
-                <% else %>
+                <%# if user_signed_in? %>
+                <%#= current_user.username %>
+                  <%#= link_to "Home", '/home', method: :get%>
+                  <%#= button_to "Log out", destroy_user_session_path, method: :delete %>
+                <%# else %>
                   <%#= link_to "Login", new_user_session_path %>
                   <%# <%= link_to "Sign Up", new_user_registration_path %>
-                <% end %>
-        <main>
+                <%# end %>
+         <main>
             <p class="alert"><%= alert %></p>
             <%= yield %>
         </main>
+    
 </body>
 
 </html>
