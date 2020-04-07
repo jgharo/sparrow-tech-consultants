@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Sparrow Tech Logistics Invoicing System</title>
+    <title>STL Invoicing System</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -24,10 +24,14 @@
                   <%# <%= link_to "Sign Up", new_user_registration_path %>
                 <%# end %>
          <main>
-            <p class="alert"><%= alert %></p>
+            <p class="alert alert-primary alert-dismissible fade show">
+              <%= alert %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </p>
             <%= yield %>
         </main>
-    
 </body>
 
 </html>

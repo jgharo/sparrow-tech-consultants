@@ -1,1 +1,152 @@
 @import "bootstrap/scss/bootstrap";
+
+.application_header{
+    background-color:white;
+    padding-top: 1px;
+    padding-bottom:3px;
+    padding-left:3px;
+    border: solid 2px;
+}
+
+
+  
+  .wrapper_signup {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 20%;
+    min-height: 10%;
+    padding: 10px;
+    padding-bottom: 100px;
+    
+  }
+  
+
+  #login_form {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
+  #header_style{
+    position: relative;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-right: 25px;
+  }
+
+  .subpage_header {
+    padding: 5px;
+    text-align: left;
+    background: #f7f7f7;
+    color: black;
+    font-size: 10px;
+    border: solid black 1px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    border: solid black 1.5px;
+    background-color: rgb(214, 255, 210);
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #ffffff}
+  
+  th {
+    background-color: rgb(111, 255, 116);
+    color: white;
+  }
+
+  #create_new_button {
+    background-color: #eeeeee; 
+    border: none;
+    color: white;
+    padding: 13px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border: solid black 1px;
+  }
+
+  #new_employee_form {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 10px;
+    width: 70%;
+    max-width: 400px;
+    position: relative;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: left;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  #new_product_form {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 10px;
+    width: 30%;
+    max-width: 500px;
+    position: relative;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: left;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  #new_client_form {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding-left: 10px;
+    width: 35%;
+    max-width: 430px;
+    position: relative;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: left;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: right;
+   padding-right: 0px;
+  }
+  #new_company_form {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 10px;
+    width: 35%;
+    max-width: 700px;
+    position: relative;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: left;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  label {
+    width: 240px;
+    display: inline-block;
+    width: 30%;
+  }
