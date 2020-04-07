@@ -2,7 +2,7 @@
 <script src ="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 -->
-<%#= stylesheet_pack_tag  "home", :media => "all" %>
+<%= stylesheet_link_tag  "home", :media => "all" %>
 
 <nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
   <%= image_tag("logo/SparrowLogo.png", width: "75", height: "100", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
@@ -18,31 +18,27 @@
 </nav>
 
 <div class="subpage_header">
-<h1>Sparrow Tech Logistics Home</h1>
+<h3 class="display-4 text-center"><strong>Sparrow Tech Logistics System</h1></strong>
 </div>
 
+<div class="d-flex justify-content-center">
+  <div class="d-flex p-2 bd-highlight">
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Report", '/report', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Invoices", '/invoice', method: :get %></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Transportations", '/transportation', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Chemicals", '/chemical', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Products", '/product', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Employees", '/employee', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Clients", '/stlclient', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Supporting Companies", '/supporting', method: :get%></button>
+    <button type="button" class="btn btn-outline-info"><%= link_to "Suppliers", '/supplier', method: :get%></button>
+  </div>
+</div>
 
+<!--
 <div class = "home_container">
   <div id = "home_navbar">
-    <div id =button1>
-      <%= button_to "Report", '/report', method: :get%>
-    </div>
 
-    <div id =button2>
-      <%= button_to "Invoices", '/invoice', method: :get %>
-    </div>
-
-    <div id =button3>
-      <%= button_to "Transportations", '/transportation', method: :get%>
-    </div>
-
-    <div id =button4>
-      <%= button_to "Chemicals", '/chemical', method: :get%>
-    </div>
-
-    <div id =button5>
-      <%= button_to "Products", '/product', method: :get%>
-    </div>
 
     <div id =button6>
       <%= button_to "Employees", '/employee', method: :get%>
@@ -61,6 +57,7 @@
     </div>  
   </div>
 </div>
+-->
 
 
 <!--
