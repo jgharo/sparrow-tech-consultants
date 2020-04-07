@@ -13,7 +13,6 @@
 </head>
 
 <body>
-<%= image_tag("logo/SparrowLogo.png", size: "400x500", class: "mx-auto d-block", :alt => "Sparrow Tech Logo")%>
                 <% if user_signed_in? %>
                 <%= current_user.username %>
                   <%= link_to "Home", '/home', method: :get%>
