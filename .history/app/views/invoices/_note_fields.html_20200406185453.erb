@@ -1,0 +1,13 @@
+<div class='nested-fields'>
+  <div class="field">
+    <%= f.label :comment %>
+    <%= f.text_field :comment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_updated%>
+    <%= f.date_select :date_updated%>
+  </div>
+
+  <%= link_to_remove_association "Remove Note", f%>
+</div>

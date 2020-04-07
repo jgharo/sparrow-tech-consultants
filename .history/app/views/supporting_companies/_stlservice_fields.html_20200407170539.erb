@@ -1,0 +1,33 @@
+<div class='nested-fields'>
+    <div class="field">
+        <%= f.label :service_name %>
+        <%= f.text_field :service_name, :required => true %>
+    </div>
+
+    <div class="field">
+        <%= f.label :service_description %>
+        <%= f.text_area :service_description, :required => true %>
+    </div>
+
+    <div class="field">
+        <%= f.label :service_cost %>
+        <%= f.text_field :service_cost, :required => true %>
+    </div>
+
+    <div class="field">
+        <%= f.label :servcategory_id %>
+        <%= f.collection_select :servcategory_id, Servcategory.all, :id, :category, :required => true %>
+    </div>
+
+    <div class="field">
+        <%= f.label :servstatus_id %>
+        <%= f.collection_select :servstatus_id, Servstatus.all, :id, :status, :required => true %>
+    </div>
+  
+    <div class="field">
+        <%= f.label :date_modified %>
+        <%= f.date_select :date_modified %>
+    </div>
+
+    <%= link_to_remove_association "Remove Service", f%>
+</div>
