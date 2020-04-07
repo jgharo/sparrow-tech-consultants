@@ -31,7 +31,7 @@ gem 'cocoon'
 
 gem 'bootstrap', '~>4.4.1'
 
-gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem 'jquery-rails' 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

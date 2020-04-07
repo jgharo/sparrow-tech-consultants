@@ -256,7 +256,7 @@ DEPENDENCIES
   cocoon
   devise (~> 4.7.1)
   jbuilder (~> 2.7)
-  jquery-rails (~> 4.3, >= 4.3.5)
+  jquery-rails
   listen (>= 3.0.5, < 3.2)
   pg (~> 1.2, >= 1.2.2)
   puma (~> 4.3)

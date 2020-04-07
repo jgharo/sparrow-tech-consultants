@@ -14,20 +14,17 @@
 
 <body>
     <header>
-           <nav>
-            <div class = "application_header">
-            <%= image_tag("logo/logo.jpg", width: '140px', height: '120px')%>
+            <%= image_tag("logo/SparrowLogo.png", size: "200x200", class: "mx-auto d-block", :alt => "Sparrow Tech Logo")%>
             <div id ="application_login_header">
                 <% if user_signed_in? %>
                 <%= current_user.username %>
-                  <%= button_to "Home", '/home', method: :get%>
+                  <%= link_to "Home", '/home', method: :get%>
                   <%= button_to "Log out", destroy_user_session_path, method: :delete %>
                 <% else %>
                   <%= link_to "Login", new_user_session_path %>
                   <%# <%= link_to "Sign Up", new_user_registration_path %>
                 <% end %>
               </div>
-            </nav>
         </header>
         <main>
             <p class="alert"><%= alert %></p>
