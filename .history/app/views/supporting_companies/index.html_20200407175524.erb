@@ -34,9 +34,7 @@
     <% @supporting_companies.each do |supporting_company| %>
       <tr>
         <td><%= sanitize supporting_company.supportingcomp_name.html_safe %></td>
-        <td><%= sanitize supporting_company.supportingcomp_phone.html_safe %></td>
         <td><%= sanitize supporting_company.supportingcomp_email.html_safe %></td>
-        <td><%= sanitize supporting_company.supportingcomp_address.html_safe %></td>
         <td><%= link_to 'Details', supporting_company %></td>
         <td><%= link_to 'Edit', edit_supporting_company_path(supporting_company) %></td>
         <td><%= link_to 'Delete', supporting_company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
