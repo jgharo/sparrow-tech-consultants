@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_214755) do
 
   create_table "products", force: :cascade do |t|
     t.string "product_name"
-    t.string "product_description"
+    t.text "product_description"
     t.decimal "product_cost"
     t.bigint "prodcategory_id", null: false
     t.bigint "prodstatus_id", null: false
