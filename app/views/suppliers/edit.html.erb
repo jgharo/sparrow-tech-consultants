@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag  "suppliers", :media => "all" %>
 
 <nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
-  <%= image_tag("logo/SparrowLogo.png", width: "75", height: "100", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <%= image_tag("logo/SparrowLogo.png", width: "100", height: "150", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
   <% if user_signed_in? %>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>

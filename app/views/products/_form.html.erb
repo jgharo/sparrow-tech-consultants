@@ -13,37 +13,43 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :product_name, 'Name:' %>
-    <%= form.text_field :product_name, :required => true %>
-  </div>
+<div class="container-md border border-primary pt-2 float-left rounded">
+  <div class="p-2">
+    <div class="field pt-2">
+      <%= form.label :product_name, 'Name:' %>
+      <%= form.text_field :product_name, :required => true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :product_description, 'Description:' %>
-    <%= form.text_area :product_description, :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :product_description, 'Description:' %>
+      <%= form.text_area :product_description, :required => true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :product_cost, 'Cost:' %>
-    <%= form.text_field :product_cost, :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :product_cost, 'Cost:' %>
+      <%= form.text_field :product_cost, :required => true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :prodcategory_id, 'Category:' %>
-    <%= form.collection_select :prodcategory_id, Prodcategory.all, :id, :category, :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :prodcategory_id, 'Category:' %>
+      <%= form.collection_select :prodcategory_id, Prodcategory.all, :id, :category, :required => true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :prodstatus_id, 'Status:' %>
-    <%= form.collection_select :prodstatus_id, Prodstatus.all, :id, :status , :required => true%>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :prodstatus_id, 'Status:' %>
+      <%= form.collection_select :prodstatus_id, Prodstatus.all, :id, :status , :required => true%>
+    </div>
 
-  <div class="field">
-    <%= form.label :date_modified, 'Date Modified:' %>
-    <%= form.date_select :date_modified, :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :date_modified, 'Date Modified:' %>
+      <%= form.date_select :date_modified, :required => true %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="d-flex p-2">
+      <div class="actions">
+        <%= form.submit "Save product", :class=>"btn btn-primary" %>
+      </div>
+    </div>
   </div>
+</div>
 <% end %>
