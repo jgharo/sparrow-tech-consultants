@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>\
+<%= stylesheet_link_tag    "invoices", :media => "all" %>
 
 <!-- Navbar for web app -->
 <nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
@@ -18,32 +18,33 @@
 
 
 
- <div class = "card" style="width: 300px;" >
+ <div class = "card" style="width: 900px;" >
   <div class="card-body">
 
-<%= search_form_for @search do |f|%>
-  <div class="field">
-    <%=f.label :stlclient_client_fname_cont, "Client Name" %>
-    <%=f.text_field :stlclient_client_fname_cont %>
+    <%= search_form_for @search do |f|%>
+      <div class="field">
+        <%=f.label :stlclient_client_fname_cont, "Client Name" %>
+        <%=f.text_field :stlclient_client_fname_cont %>
+      </div>
+
+      <div class="field">
+        <%=f.label :invstatus_status_cont, "Invoice Status" %>
+        <%=f.text_field :invstatus_status_cont %>
+      </div>
+
+
+      <div class="field">
+        <p>Date between 
+        <% f.label :date_updated_gteq, "Date between" %>
+        <%=f.text_field :date_updated_gteq %>
+        <%=f.label :date_updated_lteq, "and" %>
+        <%=f.text_field :date_updated_lteq %>
+        </p>
+      </div>
+
+      <div class="actions"><%=f.submit "Search", :class=>"btn btn-primary" %></div>
   </div>
-
-
-
-  <div class="field">
-    <%=f.label :invstatus_status_cont, "Invoice Status" %>
-    <%=f.text_field :invstatus_status_cont %>
- </div>
-
-
-<div class="field">
-    Date between
-    <% f.label :date_updated_gteq, "Date between" %>
-    <%=f.text_field :date_updated_gteq %>
-    <%=f.label :date_updated_lteq, "and" %>
-    <%=f.text_field :date_updated_lteq %>
 </div>
-</div></div>
-  <div class="actions"><%=f.submit "Search" %></div>
 <%end %>
 </div>
 
