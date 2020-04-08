@@ -15,49 +15,49 @@
 
 <div class="container-md border border-primary pt-2 float-left rounded">
   <div class="p-2">
-  <div class="field pt-2">
-    <%= form.label :client_fname, 'First Name:' %>
-    <%= form.text_field :client_fname, :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :client_fname, 'First Name:' %>
+      <%= form.text_field :client_fname, :required => true %>
+    </div>
 
-  <div class="field pt-2">
-    <%= form.label :client_lname, 'Last Name:' %>
-    <%= form.text_field :client_lname, :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :client_lname, 'Last Name:' %>
+      <%= form.text_field :client_lname, :required => true %>
+    </div>
 
-  <div class="field pt-2">
-    <%= form.label :client_email, 'Email:' %>
-    <%= form.email_field :client_email, autofocus: true, autocomplete: "email", :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :client_email, 'Email:' %>
+      <%= form.email_field :client_email, autofocus: true, autocomplete: "email", :required => true %>
+    </div>
 
-  <div class="field pt-2">
-    <%= form.label :client_phonenumber, 'Phone Number:' %>
-    <%= form.telephone_field :client_phonenumber , autofocus: true, placeholder: 'XXX-XXX-XXXX', pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :client_phonenumber, 'Phone Number:' %>
+      <%= form.telephone_field :client_phonenumber , autofocus: true, placeholder: 'XXX-XXX-XXXX', pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
+    </div>
 
-  <div class="field pt-2">
-    <%= form.label :client_companyname, 'Company Name:' %>
-    <%= form.text_field :client_companyname, :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :client_companyname, 'Company Name:' %>
+      <%= form.text_field :client_companyname, :required => true %>
+    </div>
 
-  <div class="field pt-2">
-    <%= form.label :client_shippingaddress, 'Shipping Address:' %>
-    <%= form.text_field :client_shippingaddress, :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :client_shippingaddress, 'Shipping Address:' %>
+      <%= form.text_field :client_shippingaddress, :required => true %>
+    </div>
 
-  <div class="field pt-2">
-    <%= form.label :client_billingaddress, 'Billing Address:' %>
-    <%= form.text_field :client_billingaddress, :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :client_billingaddress, 'Billing Address:' %>
+      <%= form.text_field :client_billingaddress, :required => true %>
+    </div>
 
-  <div class="field pt-2">
-    <%= form.label :employee_id, 'Employee' %>
-    <%= form.collection_select :employee_id, Employee.all, :id, :employee_fname, :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :employee_id, 'Employee' %>
+      <%= form.collection_select :employee_id, Employee.all, :id, :employee_fname, :required => true %>
+    </div>
 
-  <div class="actions pt-2">
-    <%= form.submit "Save client", :class=>"btn btn-primary" %>
-  </div>
+    <div class="actions pt-2">
+      <%= form.submit "Save client", :class=>"btn btn-primary" %>
+    </div>
   </div>
 </div>
 <% end %>
