@@ -1,0 +1,33 @@
+<div class='nested-fields'>
+  <div class="field">
+    <%= f.label :product_name, "Name" %>
+    <%= f.text_field :product_name, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :product_description, "Description" %>
+    <%= f.text_area :product_description , :required => true%>
+  </div>
+
+  <div class="field">
+    <%= f.label :product_cost, "Cost" %>
+    <%= f.text_field :product_cost, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prodcategory_id, "Category" %>
+    <%= f.collection_select :prodcategory_id, Prodcategory.all, :id, :category, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prodstatus_id, "Category" %>
+    <%= f.collection_select :prodstatus_id, Prodstatus.all, :id, :status%>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_modified, 'Date Modified:' %>
+    <%= f.date_select :date_modified, :required => true %>
+  </div>
+
+  <%= link_to_remove_association "Remove Product", f%>
+</div>

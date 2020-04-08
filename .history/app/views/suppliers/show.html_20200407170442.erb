@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Suppliers</h1>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= sanitize @supplier.supplier_name.html_safe %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= sanitize @supplier.supplier_email.html_safe %>
+</p>
+
+<p>
+<h3>Products</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Cost</th>
+    <th>Category</th>
+    <th>Status</th>
+    <th>Date Modified</th>
+
+  </tr>
+  <% @supplier.products.each do |product| %>
+    <tr> <td><%= sanitize product.product_name.html_safe %></td>
+      <td> <%= sanitize product.product_description.html_safe  %></td>
+      <td> <%= sanitize number_to_currency product.product_cost %></td>
+      <td> <%= sanitize product.prodcategory.category.html_safe %></td>
+      <td> <%= sanitize product.prodstatus.status.html_safe %></td>
+      <td> <%= sanitize product.date_modified.strftime("%B %-d, %Y").html_safe %></td>
+
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
+<%= link_to 'Back', suppliers_path %>

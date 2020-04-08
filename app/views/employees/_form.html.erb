@@ -14,27 +14,27 @@
 
   <div class="field">
     <%= form.label :employee_fname, 'First Name:' %>
-    <%= form.text_field :employee_fname %>
+    <%= form.text_field :employee_fname, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :employee_lname, 'Last Name:' %>
-    <%= form.text_field :employee_lname %>
+    <%= form.text_field :employee_lname, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :employee_email, 'Email:' %>
-    <%= form.email_field :employee_email, autofocus: true, autocomplete: "email" %>
+    <%= form.email_field :employee_email, autofocus: true, autocomplete: "email", :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :employee_salary, 'Salary:' %>
-    <%= form.text_field :employee_salary %>
+    <%= form.text_field :employee_salary, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :employee_hiredate, 'Hire Date:' %>
-    <%= form.date_select :employee_hiredate %>
+    <%= form.date_select :employee_hiredate, :required => true %>
   </div>
 
   <div class="d-flex p-2">

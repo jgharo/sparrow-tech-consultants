@@ -1,0 +1,34 @@
+<div class='nested-fields'>
+
+  <div class="field">
+    <%= f.label :payment_address %>
+    <%= f.text_area :payment_address, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :account_name %>
+    <%= f.text_field :account_name, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :account_number %>
+    <%= f.number_field :account_number, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :routing_number %>
+    <%= f.number_field :routing_number, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :aba_number %>
+    <%= f.number_field :aba_number, :required => true%>
+  </div>
+
+  <div class="field">
+    <%= f.label :swift_code %>
+    <%= f.text_field :swift_code, :required => true %>
+  </div>
+
+  <%= link_to_remove_association "Remove Payment Information", f %>
+</div>

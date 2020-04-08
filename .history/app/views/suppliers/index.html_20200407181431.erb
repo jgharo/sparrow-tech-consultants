@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<div class="subpage_header">
+<h1>Supplier</h1>
+</div>
+
+<%= search_form_for @search do |f|%>
+  <div class="field">
+    <%=f.label :supplier_name_cont, "Name contains" %>
+    <%=f.text_field :supplier_name_cont %>
+  </div>
+  <div class="field">
+    <%=f.label :supplier_email_cont, "Email contains" %>
+    <%=f.text_field :supplier_email_cont %>
+  </div>
+
+
+  <div class="actions"><%=f.submit "Search" %></div>
+<%end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= sort_link @search, :supplier_name, "Name" %></th>
+      <th><%= sort_link @search, :supplier_phone, "Phone" %></th>
+      <th><%= sort_link @search, :supplier_email, "Email" %></th>
+      <th><%= sort_link @search, :supplier_address, "Address" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suppliers.each do |supplier| %>
+      <tr>
+        <td><%= sanitize supplier.supplier_name.html_safe %></td>
+        <td><%= sanitize supplier.supplier_email.html_safe %></td>
+        <td><%= link_to 'Details', supplier %></td>
+        <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+        <td><%= link_to 'Delete', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<button id ="create_new_button">
+<%= link_to 'New Supplier', new_supplier_path %>
+</button>
