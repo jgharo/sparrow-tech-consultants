@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+<div class="pt-2">
   <div class="field">
     <%= form.label :supportingcomp_name, 'Name:' %>
     <%= form.text_field :supportingcomp_name, :required => true %>
@@ -18,7 +19,7 @@
 
   <div class="field">
     <%= form.label :supportingcomp_phone, 'Phone:' %>
-    <%= form.text_field :supportingcomp_phone, class: 'form-control', autofocus: true, placeholder: 'XXX-XXX-XXXX', pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
+    <%= form.text_field :supportingcomp_phone, autofocus: true, placeholder: 'XXX-XXX-XXXX', pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
   </div>
 
   <div class="field">
@@ -54,4 +55,5 @@
   <div class="actions pt-2">
     <%= form.submit "Save Supporting Company", :class=>"btn btn-primary" %>
   </div>
+</div>
 <% end %>

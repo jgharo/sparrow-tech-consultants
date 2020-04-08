@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag  "transportations", :media => "all" %>
+
 <!-- Navbar for web app -->
 <nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
   <%= image_tag("logo/SparrowLogo.png", width: "75", height: "100", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
@@ -15,8 +17,8 @@
 <h3 class="display-4 text-center pt-1"><strong>Transportation</h3></strong>
 
 
-<table>
-  <thead>
+<table class="table table-striped table-bordered table-sm">
+  <thead clas="thead-light">
     <tr>
       <th><%= sort_link @search, :service_name, "Name" %></th>
       <th><%= sort_link @search, :service_description, "Description" %></th>
@@ -49,4 +51,4 @@
 
 <br>
 
-<%= link_to 'New Transportation', new_transportation_path %>
+<%= link_to 'New Transportation', new_transportation_path, :class=>"btn btn-primary text-light" %>

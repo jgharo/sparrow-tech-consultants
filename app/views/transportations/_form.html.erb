@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag  "transportations", :media => "all" %>
+
 <%= form_with(model: transportation, local: true) do |form| %>
   <% if transportation.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +13,7 @@
     </div>
   <% end %>
 
+<div class="pt-2">
   <div class="field">
     <%= form.label :service_name %>
     <%= form.text_field :service_name %>
@@ -46,7 +49,8 @@
     <%= form.text_field :supporting_company_id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions pt-2">
+    <%= form.submit "Save transportation", :class=>"btn btn-primary" %>
   </div>
+</div>
 <% end %>
