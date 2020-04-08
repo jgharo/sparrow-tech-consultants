@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag  "suppliers", :media => "all" %>
+
 <%= form_with(model: supplier, local: true) do |form| %>
   <% if supplier.errors.any? %>
     <div id="error_explanation">
@@ -11,46 +13,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :supplier_name, "Name:" %>
-    <%= form.text_field :supplier_name, :required => true %>
-  </div>
+<div class="container-md border border-primary pt-2 float-left rounded">
+  <div class="p-2">
+    <div class="field pt-2">
+      <%= form.label :supplier_name, "Name:" %>
+      <%= form.text_field :supplier_name, :required => true %>
+    </div>
   
-  <div class="field">
-    <%= form.label :supplier_phone, "Phone:" %>
-    <%= form.text_field :supplier_phone, class: 'form-control', autofocus: true, placeholder: 'XXX-XXX-XXXX', pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :supplier_phone, "Phone:" %>
+      <%= form.text_field :supplier_phone, autofocus: true, placeholder: 'XXX-XXX-XXXX', pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :supplier_email, "Email:" %>
-    <%= form.email_field :supplier_email, :required => true %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :supplier_email, "Email:" %>
+      <%= form.email_field :supplier_email, :required => true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :supplier_address, "Address:" %>
-    <%= form.text_area :supplier_address, :required => true %>
-  </div>
+    <div class="pt-2">
+      <%= form.label :supplier_address, "Address:" %>
+      <%= form.text_area :supplier_address, :required => true %>
+    </div>
 
-  <h3>Products</h3>
-  <div id='products'>
-    <%= form.fields_for :products do |product| %>
-      <%= render 'product_fields', :f => product %>
-    <% end %>
+    <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Products</h4></strong>
+    <div class="pt-2">
+      <%= form.fields_for :products do |product| %>
+        <%= render 'product_fields', :f => product %>
+      <% end %>
     <div class='links'>
-      <%= link_to_add_association 'Add a Product', form, :products %>
+      <%= link_to_add_association 'Add a Product', form, :products, :class=>"btn btn-info text-light pt-2" %>
+    </div>
+    </div>
+
+    <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Products</h4></strong>
+    <div class="pt-2">
+      <%= form.fields_for :supplierpaymentinfos do |supplierpaymentinfo| %>
+        <%= render 'supplierpaymentinfo_fields', :f => supplierpaymentinfo %>
+      <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add Payment Information', form, :supplierpaymentinfos, :class=>"btn btn-info text-light pt-2" %>
+    </div>
+    </div>
+    <div class="actions pt-3">
+      <%= form.submit "Save supplier", :class=>"btn btn-primary" %>
     </div>
   </div>
-
-  <h3>Payment Information</h3>
-  <div id='supplierpaymentinfos'>
-    <%= form.fields_for :supplierpaymentinfos do |supplierpaymentinfo| %>
-      <%= render 'supplierpaymentinfo_fields', :f => supplierpaymentinfo %>
-    <% end %>
-    <div class='links'>
-      <%= link_to_add_association 'Add Payment Information', form, :supplierpaymentinfos %>
-    </div>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
 <% end %>
