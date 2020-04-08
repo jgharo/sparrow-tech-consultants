@@ -1,22 +1,22 @@
 <div class='nested-fields'>
 
     <div class="field">
-        <%= f.label :payment_address %>
+        <%= f.label :payment_address, "Payment Address" %>
         <%= f.text_area :payment_address, :required => true %>
     </div>
 
     <div class="field">
-        <%= f.label :account_name %>
+        <%= f.label :account_name, "Account Name" %>
         <%= f.text_field :account_name, :required => true%>
     </div>
 
     <div class="field">
-        <%= f.label :account_number %>
+        <%= f.label :account_number, "Account Number" %>
         <%= f.number_field :account_number, placeholder: 'Last-4-Digits', pattern: "[0-9]{4}", :required => true %>
     </div>
 
     <div class="field">
-        <%= f.label :routing_number %>
+        <%= f.label :routing_number, "Routing Number" %>
         <%= f.number_field :routing_number, placeholder: 'Last-4-Digits', pattern: "[0-9]{4}", :required => true %>
     </div>
 

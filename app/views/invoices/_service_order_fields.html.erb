@@ -5,10 +5,7 @@
     <%= f.collection_select :stlservice_id, Stlservice.all, :id, :service_name, :required => true %>
   </div>
 
-  <div class="field">
-    <%= f.label :stlservice_id, "Cost:" %>
-    <%= f.collection_select :stlservice_id, Stlservice.all, :id, :service_cost, :required => true %>
-  </div>
+
 
   <div class="field">
     <%= f.label :service_quantity, "Quantity:" %>

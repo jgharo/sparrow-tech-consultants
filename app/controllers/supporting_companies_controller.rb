@@ -73,7 +73,7 @@ class SupportingCompaniesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def supporting_company_params
-      params.require(:supporting_company).permit(:supportingcomp_name, :supportingcomp_phone, :supportingcomp_email, :supportingcomp_address, scpaymentinfos_attributes: [:id, :payment_address, :account_name, :account_number, :routing_number, :aba_number, :swift_code, :_destroy], stlservices_attributes: [:id, :service_name, :service_description, :service_cost, :servcategory_id, :servstatus_id, :date_modified, :_destroy ])
+      params.require(:supporting_company).permit(:supportingcomp_name, :supportingcomp_phone, :supportingcomp_email, :supportingcomp_address, scpaymentinfos_attributes: [:id, :payment_address, :account_name, :account_number, :routing_number,:_destroy], stlservices_attributes: [:id, :service_name, :service_description, :service_cost, :servcategory_id, :servstatus_id, :date_modified, :_destroy ])
     end
 
     def sort_column

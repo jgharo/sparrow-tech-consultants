@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :prodcategory_id %>
-    <%= form.collection_select :prodcategory_id, Prodcategory.all, :id, :category, :required => true  %>
+    <%= form.collection_select :prodcategory_id, Prodcategory.where("category = 'Chemical'"), :id, :category, :required => true  %>
   </div>
 
   <div class="field">

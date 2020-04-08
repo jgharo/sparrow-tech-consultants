@@ -15,6 +15,20 @@
   <%= sanitize @invoice.stlclient.client_fname.html_safe %>
 </p>
 
+
+
+<p>
+  <strong>Client Shipping Address</strong>
+  <%= sanitize @invoice.stlclient.client_shippingaddress %>
+</p>
+
+<p>
+  <strong>Client Billing Address</strong>
+  <%= sanitize @invoice.stlclient.client_billingaddress %>
+</p>
+
+
+
 <p>
 <h3>Product Order</h3>
 <table>
@@ -23,6 +37,7 @@
     <th>Cost</th>
     <th>Quantity</th>
     <th>Cost Total</th>
+    <th>Supplier Name</th>
 
   </tr>
   <% @invoice.product_orders.each do |product_order| %>
@@ -31,6 +46,8 @@
       <td><%= sanitize number_to_currency(product_order.product.product_cost).html_safe %></td>
       <td><%= product_order.product_quantity %></td>
       <td><%= sanitize number_to_currency(product_order.product_cost_total).html_safe %></td>
+      <td><%= product_order.product.supplier.supplier_name %></td>
+
 
     </tr>
   <% end %>

@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :servcategory_id %>
-    <%= form.text_field :servcategory_id %>
+    <%= form.collection_select :servcategory_id, Servcategory.where("category = 'Transportation'"), :id, :category, :required => true  %>
   </div>
 
   <div class="field">
     <%= form.label :servstatus_id %>
-    <%= form.text_field :servstatus_id %>
+    <%= form.collection_select :servstatus_id, Servstatus.all, :id, :status, :required => true  %>
   </div>
 
   <div class="field">
@@ -43,9 +43,8 @@
 
   <div class="field">
     <%= form.label :supporting_company_id %>
-    <%= form.text_field :supporting_company_id %>
+    <%= form.collection_select :supporting_company_id, SupportingCompany.all, :id, :supportingcomp_name, :required => true  %>
   </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
