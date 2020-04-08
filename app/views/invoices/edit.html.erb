@@ -14,9 +14,11 @@
   <% end %>
 </nav>
 
-<h1>Editing Invoice</h1>
+<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Editing Invoices</h4></strong>
 
-<%= render 'form', invoice: @invoice %>
+<div class="d-flex justify-content-center flex-column">
+    <%= render 'form', invoice: @invoice %>
+</div>
 
-<%= link_to 'Show', @invoice %> |
-<%= link_to 'Back', invoices_path %>
+<%= link_to 'Details', @invoice, :class=>"btn btn-secondary mr-2 text-light" %>
+<%= link_to 'Back', invoices_path, :class=>"btn btn-secondary text-light" %>
