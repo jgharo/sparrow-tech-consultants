@@ -1,17 +1,39 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>\
 
-<h1>Invoices</h1>
+<!-- Navbar for web app -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "75", height: "100", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
+
+<h3 class="display-4 text-center pt-1"><strong>Invoices</h3></strong>
+
+
+
+ <div class = "card" style="width: 300px;" >
+  <div class="card-body">
 
 <%= search_form_for @search do |f|%>
   <div class="field">
-    <%=f.label :stlclient_client_fname_cont, "Client Name contains " %>
+    <%=f.label :stlclient_client_fname_cont, "Client Name" %>
     <%=f.text_field :stlclient_client_fname_cont %>
   </div>
 
+
+
   <div class="field">
-    <%=f.label :invstatus_status_cont, "Status contains" %>
+    <%=f.label :invstatus_status_cont, "Invoice Status" %>
     <%=f.text_field :invstatus_status_cont %>
-  </div>
+ </div>
+
 
 <div class="field">
     Date between
@@ -20,9 +42,11 @@
     <%=f.label :date_updated_lteq, "and" %>
     <%=f.text_field :date_updated_lteq %>
 </div>
-
+</div></div>
   <div class="actions"><%=f.submit "Search" %></div>
 <%end %>
+</div>
+
 
 <table>
   <thead>
@@ -50,4 +74,6 @@
 
 <br>
 
-<%= link_to 'New Invoice', new_invoice_path %>
+<button type="submit" class="btn btn-primary">
+<%= link_to 'New Invoice', new_invoice_path, :class=>"text-light" %>
+</button>
