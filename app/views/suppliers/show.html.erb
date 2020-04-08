@@ -1,53 +1,75 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag  "suppliers", :media => "all" %>
 
-<div class="subpage_header">
-<h1>Suppliers</h1>
+<p class="alert alert-info alert-dismissible fade show"><%= notice %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "75", height: "100", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
+
+<h4 class="pt-2 text-center" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Supplier</h4></strong>
+
+<div class="container border border-info" style="background-color:white;">
+  <p>
+    <strong>Name:</strong>
+    <%= sanitize @supplier.supplier_name.html_safe %>
+  </p>
+
+  <p>
+    <strong>Phone:</strong>
+    <%= sanitize @supplier.supplier_phone %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= sanitize @supplier.supplier_email.html_safe %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= sanitize @supplier.supplier_address.html_safe %>
+  </p>
+
+  <p>
+    <h4 class="pt-2 text-center" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Products offered</h4></strong>
+    <div class="pt-3">
+      <table class="table table-striped table-bordered table-sm">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Cost</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Date Modified</th>
+        </tr>
+        <% @supplier.products.each do |product| %>
+        <tr> 
+          <td><%= sanitize product.product_name.html_safe %></td>
+          <td> <%= sanitize product.product_description.html_safe  %></td>
+          <td> <%= sanitize number_to_currency product.product_cost %></td>
+          <td> <%= sanitize product.prodcategory.category.html_safe %></td>
+          <td> <%= sanitize product.prodstatus.status.html_safe %></td>
+          <td> <%= sanitize product.date_modified.strftime("%B %-d, %Y").html_safe %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </p>
 </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= sanitize @supplier.supplier_name.html_safe %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= sanitize @supplier.supplier_phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= sanitize @supplier.supplier_email.html_safe %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= sanitize @supplier.supplier_address.html_safe %>
-</p>
-
-<p>
-<h3>Products</h3>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Cost</th>
-    <th>Category</th>
-    <th>Status</th>
-    <th>Date Modified</th>
-
-  </tr>
-  <% @supplier.products.each do |product| %>
-    <tr> <td><%= sanitize product.product_name.html_safe %></td>
-      <td> <%= sanitize product.product_description.html_safe  %></td>
-      <td> <%= sanitize number_to_currency product.product_cost %></td>
-      <td> <%= sanitize product.prodcategory.category.html_safe %></td>
-      <td> <%= sanitize product.prodstatus.status.html_safe %></td>
-      <td> <%= sanitize product.date_modified.strftime("%B %-d, %Y").html_safe %></td>
-
-    </tr>
-  <% end %>
-</table>
-</p>
-
-<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
-<%= link_to 'Back', suppliers_path %>
+<div class="pt-3">
+  <button type="button" class="btn btn-secondary ml-5 mr-2"><%= link_to 'Edit', edit_supplier_path(@supplier), :class=>"text-light" %></button>
+  <button type="button" class="btn btn-secondary"><%= link_to 'Back', suppliers_path, :class=>"text-light" %></button>
+</div>
