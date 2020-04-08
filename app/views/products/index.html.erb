@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag  "products", :media => "all" %>
 
 <!-- Navbar for web app -->
 <nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
@@ -17,73 +17,71 @@
 
 <h3 class="display-4 text-center pt-1"><strong>Products</h3></strong>
 
+<div class="pt-2 card">
+  <div class="card-body">
+    <%= search_form_for @search do |f|%>
+      <div class="field">
+        <%=f.label :product_name_cont, "Name contains" %>
+        <%=f.text_field :product_name_cont %>
+      </div>
 
+      <div class="field">
+        Cost Between
+        <% f.label :product_cost_gteq, "Cost Between" %>
+        <%=f.text_field :product_cost_gteq %>
+        <%=f.label :product_cost_lteq, " and" %>
+        <%=f.text_field :product_cost_lteq %>
+      </div>
 
+      <div class="field">
+        <%=f.label :prodstatus_status_cont, "Status contains" %>
+        <%=f.text_field :prodstatus_status_cont %>
+      </div>
 
-<%= search_form_for @search do |f|%>
-
-  <div class="field">
-    <%=f.label :product_name_cont, "Name contains" %>
-    <%=f.text_field :product_name_cont %>
+      <div class="field">
+        <%=f.label :supplier_supplier_name_cont, "Supplier contains" %>
+        <%=f.text_field :supplier_supplier_name_cont %>
+      </div>
+      <div class="actions pt-2"><%=f.submit "Search", :class=>"btn btn-primary" %></div>
+    <%end %>
   </div>
+</div>
 
-  <div class="field">
-    Cost Between
-    <% f.label :product_cost_gteq, "Cost between" %>
-    <%=f.text_field :product_cost_gteq %>
-    <%=f.label :product_cost_lteq, "and" %>
-    <%=f.text_field :product_cost_lteq %>
-  </div>
-
-  <div class="field">
-    <%=f.label :prodstatus_status_cont, "Status contains" %>
-    <%=f.text_field :prodstatus_status_cont %>
-  </div>
-
-  <div class="field">
-    <%=f.label :supplier_supplier_name_cont, "Supplier contains" %>
-    <%=f.text_field :supplier_supplier_name_cont %>
-  </div>
-
-  <div class="actions"><%=f.submit "Search" %></div>
-<%end %>
-
-
-
-<table>
-  <thead>
-    <tr>
-      <th><%= sort_link @search, :product_name, "Name" %></th>
-      <th><%= sort_link @search, :product_description, "Description" %></th>
-      <th><%= sort_link @search, :product_cost, "Cost" %></th>
-      <th><%= sort_link @search, :prodcategory_category, "Category" %></th>
-      <th><%= sort_link @search, :prodstatus_status, "Status" %></th>
-      <th><%= sort_link @search, :date_modified, "Date Modified" %></th>
-      <th><%= sort_link @search, :supplier_supplier_name, "Supplier" %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-</table>
-  <tbody>
-    <% @products.each do |product| %>
+<div class="pt-3">
+  <table class="table table-striped table-bordered table-sm">
+    <thead class="thead-light">
       <tr>
-        <td><%= sanitize product.product_name.html_safe %></td>
-        <td><%= sanitize product.product_description.html_safe %></td>
-        <td><%= sanitize number_to_currency(product.product_cost).html_safe %></td>
-        <td><%= sanitize product.prodcategory.category.html_safe %></td>
-        <td><%= sanitize product.prodstatus.status.html_safe %></td>
-        <td><%= sanitize product.date_modified.strftime("%B %-d, %Y").html_safe %></td>
-        <td><%= sanitize product.supplier.supplier_name.html_safe %></td>
-        <td><%= link_to 'Details', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><%= sort_link @search, :product_name, "Name" %></th>
+        <th><%= sort_link @search, :product_description, "Description" %></th>
+        <th><%= sort_link @search, :product_cost, "Cost" %></th>
+        <th><%= sort_link @search, :prodcategory_category, "Category" %></th>
+        <th><%= sort_link @search, :prodstatus_status, "Status" %></th>
+        <th><%= sort_link @search, :date_modified, "Date Modified" %></th>
+        <th><%= sort_link @search, :supplier_supplier_name, "Supplier" %></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+  
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= sanitize product.product_name.html_safe %></td>
+          <td><%= sanitize product.product_description.html_safe %></td>
+          <td><%= sanitize number_to_currency(product.product_cost).html_safe %></td>
+          <td><%= sanitize product.prodcategory.category.html_safe %></td>
+          <td><%= sanitize product.prodstatus.status.html_safe %></td>
+          <td><%= sanitize product.date_modified.strftime("%B %-d, %Y").html_safe %></td>
+          <td><%= sanitize product.supplier.supplier_name.html_safe %></td>
+          <td><%= link_to 'Details', product %></td>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-</br>
-
-<button id ="create_new_button">
-<%= link_to 'New Product', new_product_path %>
+<br>
+<button type="submit" class="btn btn-primary">
+<%= link_to 'New Product', new_product_path, :class=>"text-light" %>
 </button>
