@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag  "chemicals", :media => "all" %>
 <%= form_with(model: chemical, local: true) do |form| %>
   <% if chemical.errors.any? %>
     <div id="error_explanation">
@@ -10,45 +11,48 @@
       </ul>
     </div>
   <% end %>
+<div class="container-md border border-primary pt-2 float-left rounded">
+  <div class="p-2">
+    <div class="field pt-2">
+      <%= form.label :product_name %>
+      <%= form.text_field :product_name, :required => true  %>
+    </div>
 
-  <div class="field">
-    <%= form.label :product_name %>
-    <%= form.text_field :product_name, :required => true  %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :product_description %>
+      <%= form.text_area :product_description, :required => true  %>
+    </div>
 
-  <div class="field">
-    <%= form.label :product_description %>
-    <%= form.text_area :product_description, :required => true  %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :product_cost %>
+      <%= form.text_field :product_cost, :required => true  %>
+    </div>
 
-  <div class="field">
-    <%= form.label :product_cost %>
-    <%= form.text_field :product_cost, :required => true  %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :prodcategory_id %>
+      <%= form.collection_select :prodcategory_id, Prodcategory.all, :id, :category, :required => true  %>
+    </div>
 
-  <div class="field">
-    <%= form.label :prodcategory_id %>
-    <%= form.collection_select :prodcategory_id, Prodcategory.all, :id, :category, :required => true  %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :prodstatus_id %>
+      <%= form.collection_select :prodstatus_id, Prodstatus.all, :id, :status, :required => true  %>
+    </div>
 
-  <div class="field">
-    <%= form.label :prodstatus_id %>
-    <%= form.collection_select :prodstatus_id, Prodstatus.all, :id, :status, :required => true  %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :date_modified %>
+      <%= form.date_select :date_modified, :required => true  %>
+    </div>
 
-  <div class="field">
-    <%= form.label :date_modified %>
-    <%= form.date_select :date_modified, :required => true  %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :supplier_id %>
+      <%= form.collection_select :supplier_id, Supplier.all, :id, :supplier_name, :required => true  %>
+    </div>
 
-  <div class="field">
-    <%= form.label :supplier_id %>
-    <%= form.collection_select :supplier_id, Supplier.all, :id, :supplier_name, :required => true  %>
-  </div>
-
-  <div class="d-flex p-2">
-    <div class="actions">
-      <%= form.submit "Save Chemical", :class=>"btn btn-primary" %>
+    <div class="p-2">
+      <div class="actions">
+        <%= form.submit "Save chemical", :class=>"btn btn-primary" %>
+      </div>
     </div>
   </div>
+</div>
 <% end %>
