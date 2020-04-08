@@ -28,6 +28,7 @@ gem 'devise', '~> 4.7.1'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
 gem 'cocoon'
+gem 'wicked_pdf'
 
 
 # Use Active Storage variant

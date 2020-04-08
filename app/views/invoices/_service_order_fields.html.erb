@@ -2,7 +2,7 @@
 
   <div class="field">
     <%= f.label :service_id, "Service:" %>
-    <%= f.collection_select :stlservice_id, Stlservice.all, :id, :service_name => true %>
+    <%= f.collection_select :stlservice_id, Stlservice.all, :id, :service_name, :required => true %>
   </div>
 
   <div class="field">
