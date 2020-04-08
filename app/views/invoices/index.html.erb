@@ -18,7 +18,7 @@
 
 
 
- <div class = "card" style="width: 900px;" >
+ <div class="pt-2 card">
   <div class="card-body">
 
     <%= search_form_for @search do |f|%>
@@ -49,8 +49,9 @@
 </div>
 
 
-<table>
-  <thead>
+<div class="pt-3">
+  <table class="table table-striped table-bordered table-sm">
+    <thead class="thead-light">
     <tr>
       <th><%= sort_link @search, :date_updated, "Date Updated" %></th>
       <th><%= sort_link @search, :stlclient_client_fname, "Client Name" %></th>
@@ -72,7 +73,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <button type="submit" class="btn btn-primary">

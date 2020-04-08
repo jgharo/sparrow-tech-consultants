@@ -13,23 +13,28 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+<div class="container-md border border-primary pt-2 float-left rounded">
+  <div class="p-2 ">
+  <div class="field pt-2">
     <%= form.label :date_updated %>
     <%= form.date_select :date_updated %>
   </div>
 
-  <div class="field">
+  <div class="field pt-2">
     <%= form.label :invstatus_id, 'Invoice Status' %>
     <%= form.collection_select :invstatus_id, Invstatus.all, :id, :status, :required => true %>
   </div>
 
-  <div class="field">
+ <div class="field pt-2">
     <%= form.label :stlclient_id, 'Client' %>
     <%= form.collection_select :stlclient_id, Stlclient.all, :id, :client_fname, :required => true %>
   </div>
 
+
   <h3>Product Orders</h3>
   <div id='product_orders'>
+  
     <%= form.fields_for :product_orders do |product_order| %>
       <%= render 'product_order_fields', :f => product_order %>
     <% end %>
@@ -37,6 +42,7 @@
       <%= link_to_add_association 'Add a Product', form, :product_orders %>
     </div>
   </div>
+
 
   <h3>Service Orders</h3>
   <div id='service_orders'>
@@ -59,9 +65,10 @@
   </div>
 
 
-
+<div class="d-flex p-2">
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
 </div>
+</div></div></div>
