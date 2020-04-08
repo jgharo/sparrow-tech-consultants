@@ -1,0 +1,52 @@
+<%= form_with(model: chemical, local: true) do |form| %>
+  <% if chemical.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(chemical.errors.count, "error") %> prohibited this chemical from being saved:</h2>
+
+      <ul>
+        <% chemical.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :product_name %>
+    <%= form.text_field :product_name, :required => true  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_description %>
+    <%= form.text_area :product_description, :required => true  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_cost %>
+    <%= form.text_field :product_cost, :required => true  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prodcategory_id %>
+    <%= form.text_field :prodcategory_id, :required => true  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prodstatus_id %>
+    <%= form.collection_select :prodstatus_id, Product.all, :id,  :required => true  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_modified %>
+    <%= form.date_select :date_modified, :required => true  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :supplier_id %>
+    <%= form.text_field :supplier_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

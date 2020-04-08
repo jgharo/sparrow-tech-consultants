@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_214755) do
 
   create_table "products", force: :cascade do |t|
     t.string "product_name"
-    t.string "product_description"
+    t.text "product_description"
     t.decimal "product_cost"
     t.bigint "prodcategory_id", null: false
     t.bigint "prodstatus_id", null: false
@@ -93,8 +93,6 @@ ActiveRecord::Schema.define(version: 2020_04_05_214755) do
     t.string "account_name"
     t.integer "account_number"
     t.integer "routing_number"
-    t.integer "aba_number"
-    t.string "swift_code"
     t.bigint "supporting_company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -158,8 +156,6 @@ ActiveRecord::Schema.define(version: 2020_04_05_214755) do
     t.string "account_name"
     t.integer "account_number"
     t.integer "routing_number"
-    t.integer "aba_number"
-    t.string "swift_code"
     t.bigint "supplier_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -168,14 +164,18 @@ ActiveRecord::Schema.define(version: 2020_04_05_214755) do
 
   create_table "suppliers", force: :cascade do |t|
     t.string "supplier_name"
+    t.string "supplier_phone"
     t.string "supplier_email"
+    t.text "supplier_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "supporting_companies", force: :cascade do |t|
     t.string "supportingcomp_name"
+    t.string "supportingcomp_phone"
     t.string "supportingcomp_email"
+    t.text "supportingcomp_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

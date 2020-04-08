@@ -1,0 +1,51 @@
+<%= form_with(model: supplier, local: true) do |form| %>
+  <% if supplier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(supplier.errors.count, "error") %> prohibited this Supplier from being saved:</h2>
+
+      <ul>
+        <% supplier.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :supplier_name, "Name" %>
+    <%= form.text_field :supplier_name, :required => true %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :supplier_email, "Email" %>
+    <%= form.email_field :supplier_email, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :supplier_email, "Email" %>
+    <%= form.email_field :supplier_email, :required => true %>
+  </div>
+
+  <h3>Products</h3>
+  <div id='products'>
+    <%= form.fields_for :products do |product| %>
+      <%= render 'product_fields', :f => product %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Product', form, :products %>
+    </div>
+  </div>
+
+  <h3>Payment Information</h3>
+  <div id='supplierpaymentinfos'>
+    <%= form.fields_for :supplierpaymentinfos do |supplierpaymentinfo| %>
+      <%= render 'supplierpaymentinfo_fields', :f => supplierpaymentinfo %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add Payment Information', form, :supplierpaymentinfos %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

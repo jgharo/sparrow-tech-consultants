@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Supplierpaymentinfos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Payment address</th>
+      <th>Account name</th>
+      <th>Account number</th>
+      <th>Routing number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supplierpaymentinfos.each do |supplierpaymentinfo| %>
+      <tr>
+        <td><%#= sanitize supplierpaymentinfo.payment_address.html_safe %></td>
+        <td><%#= sanitize supplierpaymentinfo.account_name.html_safe %></td>
+        <td><%#= supplierpaymentinfo.account_number %></td>
+        <td><%#= supplierpaymentinfo.routing_number %></td>
+        <td><%= link_to 'Show', supplierpaymentinfo %></td>
+        <td><%= link_to 'Edit', edit_supplierpaymentinfo_path(supplierpaymentinfo) %></td>
+        <td><%= link_to 'Destroy', supplierpaymentinfo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supplierpaymentinfo', new_supplierpaymentinfo_path %>
