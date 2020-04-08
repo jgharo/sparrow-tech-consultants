@@ -1,3 +1,5 @@
+<div class ="invoice_class" style="font-family: Arial, Helvetica, sans-serif;">
+
 <%= form_with(model: invoice, local: true) do |form| %>
   <% if invoice.errors.any? %>
     <div id="error_explanation">
@@ -62,3 +64,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>
