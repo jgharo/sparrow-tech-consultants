@@ -8,7 +8,6 @@ class Supplier < ApplicationRecord
   validates :supplier_name, presence: true
   validates :supplier_phone, presence: true
   validates :supplier_email, presence: true
-  validates :supplier_address, presence: true
 
 
   #rename attributes in error message

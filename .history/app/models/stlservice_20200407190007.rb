@@ -9,4 +9,5 @@ class Stlservice < ApplicationRecord
   validates :servcategory, presence: true
   validates :servstatus, presence: true
   validates :date_modified, presence: true
+  validates :supporting_company, presence: true
 end

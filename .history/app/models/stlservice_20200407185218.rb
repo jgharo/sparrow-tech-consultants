@@ -6,7 +6,8 @@ class Stlservice < ApplicationRecord
   validates :service_name, presence: true
   validates :service_description, presence: true
   validates :service_cost, presence: true
-  validates :servcategory, presence: true
-  validates :servstatus, presence: true
-  validates :date_modified, presence: true
+      t.references :servcategory, null: false, foreign_key: true
+      t.references :servstatus, null: false, foreign_key: true
+      t.date :date_modified
+      t.references :supporting_company,
 end

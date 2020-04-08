@@ -8,7 +8,6 @@ class SupportingCompany < ApplicationRecord
   validates :supportingcomp_name, presence: true
   validates :supportingcomp_phone, presence: true
   validates :supportingcomp_email, presence: true
-  validates :supportingcomp_address, presence: true
 
   #rename attributes in error message
   HUMANIZED_ATTRIBUTES = {
