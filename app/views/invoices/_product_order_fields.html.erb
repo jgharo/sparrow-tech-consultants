@@ -5,10 +5,6 @@
     <%= f.collection_select :product_id, Product.all, :id, :product_name, :required => true %>
   </div>
 
-  <div class="field">
-    <%= f.label :product_id, "Cost:" %>
-    <%= f.collection_select :product_id, Product.all, :id, :product_cost, :required => true %>
-  </div>
 
   <div class="field">
     <%= f.label :product_quantity, "Quantity:" %>

@@ -1,6 +1,6 @@
 <div class='nested-fields pt-2'>
     <div class="field">
-        <%= f.label :service_name, "Name" %>
+        <%= f.label :service_name, "Service Name" %>
         <%= f.text_field :service_name, :required => true %>
     </div>
 
@@ -10,17 +10,17 @@
     </div>
 
     <div class="field">
-        <%= f.label :service_cost %>
+        <%= f.label :service_cost, "Cost" %>
         <%= f.text_field :service_cost, :required => true %>
     </div>
 
     <div class="field">
-        <%= f.label :servcategory_id %>
+        <%= f.label :servcategory_id, "Service Category" %>
         <%= f.collection_select :servcategory_id, Servcategory.all, :id, :category, :required => true %>
     </div>
 
     <div class="field">
-        <%= f.label :servstatus_id %>
+        <%= f.label :servstatus_id, "Service Status" %>
         <%= f.collection_select :servstatus_id, Servstatus.all, :id, :status, :required => true %>
     </div>
   

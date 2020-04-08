@@ -2,6 +2,8 @@
 
 <h1>Invoices</h1>
 
+
+
 <%= search_form_for @search do |f|%>
   <div class="field">
     <%=f.label :stlclient_client_fname_cont, "Client Name contains " %>
@@ -27,6 +29,7 @@
 <table>
   <thead>
     <tr>
+
       <th><%= sort_link @search, :date_updated, "Date Updated" %></th>
       <th><%= sort_link @search, :stlclient_client_fname, "Client Name" %></th>
       <th><%= sort_link @search, :invstatus_status, "Invoice Status" %></th>
@@ -37,7 +40,9 @@
   <tbody>
     <% @invoices.each do |invoice| %>
       <tr>
+
         <td><%= sanitize invoice.date_updated.strftime("%B %-d, %Y").html_safe %></td>
+
         <td><%= sanitize invoice.stlclient.client_fname.html_safe %></td>
         <td><%= sanitize invoice.invstatus.status.html_safe %></td>
         <td><%= link_to 'Details', invoice %></td>

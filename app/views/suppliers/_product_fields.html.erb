@@ -1,6 +1,6 @@
 <div class='nested-fields'>
   <div class="field">
-    <%= f.label :product_name, "Name:" %>
+    <%= f.label :product_name, "Product Name:" %>
     <%= f.text_field :product_name, :required => true %>
   </div>
 
@@ -15,12 +15,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :prodcategory_id, "Category:" %>
+    <%= f.label :prodcategory_id, "Product Category:" %>
     <%= f.collection_select :prodcategory_id, Prodcategory.all, :id, :category, :required => true %>
   </div>
 
   <div class="field">
-    <%= f.label :prodstatus_id, "Status:" %>
+    <%= f.label :prodstatus_id, "Product Status:" %>
     <%= f.collection_select :prodstatus_id, Prodstatus.all, :id, :status%>
   </div>
 

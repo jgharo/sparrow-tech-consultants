@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :supportingcomp_name, 'Name:' %>
+    <%= form.label :supportingcomp_name, 'Company Name:' %>
     <%= form.text_field :supportingcomp_name, :required => true %>
   </div>
 
   <div class="field">
-    <%= form.label :supportingcomp_phone, 'Phone:' %>
+    <%= form.label :supportingcomp_phone, 'Phone number:' %>
     <%= form.text_field :supportingcomp_phone, class: 'form-control', autofocus: true, placeholder: 'XXX-XXX-XXXX', pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
   </div>
 
   <div class="field">
-    <%= form.label :supportingcomp_email, 'Email:' %>
+    <%= form.label :supportingcomp_email, 'Email Address:' %>
     <%= form.email_field :supportingcomp_email, :required => true %>
   </div>
 
   <div class="field">
-    <%= form.label :supportingcomp_address, 'Address:' %>
+    <%= form.label :supportingcomp_address, 'Company Address:' %>
     <%= form.text_area :supportingcomp_address, :required => true %>
   </div>
 
