@@ -4,32 +4,47 @@
 -->
 <%= stylesheet_link_tag  "home", :media => "all" %>
 
-<div class="subpage_header">
-<h1>SparrowNav Home</h1>
+<!-- Alert for some pages -->
+<p class="alert alert-info alert-dismissible fade show"><%= notice %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+
+<!-- Navbar -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "75", height: "100", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
+
+<h3 class="display-4 text-center"><strong>Sparrow Tech Logistics System</h3></strong>
+
+<div class="d-flex justify-content-center">
+  <div class="d-flex p-2 bd-highlight">
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Report", '/report', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Invoices", '/invoice', method: :get %></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Transportations", '/transportation', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Chemicals", '/chemical', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Products", '/product', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Employees", '/employee', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Clients", '/stlclient', method: :get%></button>
+    <button type="button" class="btn btn-outline-info mr-2"><%= link_to "Supporting Companies", '/supporting', method: :get%></button>
+    <button type="button" class="btn btn-outline-info"><%= link_to "Suppliers", '/supplier', method: :get%></button>
+  </div>
 </div>
 
-
+<!--
 <div class = "home_container">
   <div id = "home_navbar">
-    <div id =button1>
-      <%= button_to "Report", '/report', method: :get%>
-    </div>
 
-    <div id =button2>
-      <%= button_to "Invoices", '/invoice', method: :get %>
-    </div>
-
-    <div id =button3>
-      <%= button_to "Transportations", '/transportation', method: :get%>
-    </div>
-
-    <div id =button4>
-      <%= button_to "Chemicals", '/chemical', method: :get%>
-    </div>
-
-    <div id =button5>
-      <%= button_to "Products", '/product', method: :get%>
-    </div>
 
     <div id =button6>
       <%= button_to "Employees", '/employee', method: :get%>
@@ -48,6 +63,7 @@
     </div>  
   </div>
 </div>
+-->
 
 
 <!--

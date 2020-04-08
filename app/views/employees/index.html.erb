@@ -1,30 +1,48 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag  "employees", :media => "all" %>
 
-<div class="subpage_header">
-<h1>Employees</h1>
+<!-- Navbar for web app -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "75", height: "100", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
+
+<h3 class="display-4 text-center pt-1"><strong>Employees</h3></strong>
+
+<div class="p-2">
+  <%= search_form_for @search do |f|%>
+    <div class="field">
+      <%=f.label :employee_fname_cont, "First name contains:" %>
+      <%=f.text_field :employee_fname_cont %>
+    </div>
+    <div class="field">
+      <%=f.label :employee_lname_cont, "Last name contains:" %>
+      <%=f.text_field :employee_lname_cont %>
+    </div>
 </div>
 
-<%= search_form_for @search do |f|%>
-  <div class="field">
-    <%=f.label :employee_fname_cont, "Name contains" %>
-    <%=f.text_field :employee_fname_cont %>
+  <div class="actions">
+    <div class="d-flex justify-content-start pb-2">
+      <%=f.submit "Search", :class => "btn btn-primary" %>
+    </div>
   </div>
-  <div class="field">
-    <%=f.label :employee_lname_cont, "Last Name contains" %>
-    <%=f.text_field :employee_lname_cont %>
-  </div>
-
-  <div class="actions"><%=f.submit "Search" %></div>
 <%end %>
 
-<table>
-  <thead>
+<table class="table table-striped table-bordered table-sm">
+  <thead class ="thead-light">
     <tr>
-      <th><%= sort_link @search, :employee_fname, "First Name" %></th>
-      <th><%= sort_link @search, :employee_lname, "Last Name" %></th>
-      <th><%= sort_link @search, :employee_email, "Email" %></th>
-      <th><%= sort_link @search, :employee_salary, "Salary" %></th>
-      <th><%= sort_link @search, :employee_hiredate, "Hire Date" %></th>
+      <th scope="col"><%= sort_link @search, :employee_fname, "First Name" %></th>
+      <th scope="col"><%= sort_link @search, :employee_lname, "Last Name" %></th>
+      <th scope="col"><%= sort_link @search, :employee_email, "Email" %></th>
+      <th scope="col"><%= sort_link @search, :employee_salary, "Salary" %></th>
+      <th scope="col"><%= sort_link @search, :employee_hiredate, "Hire Date" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -46,6 +64,6 @@
 </table>
 
 <br>
-<button id ="create_new_button">
-<%= link_to 'New Employee', new_employee_path %>
+<button type="submit" class="btn btn-primary">
+<%= link_to 'New Employee', new_employee_path, :class=>"text-light" %>
 </button>

@@ -2,34 +2,28 @@
 <html>
 
 <head>
-    <title>SparrowNav</title>
+    <title>STL Invoicing System</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= favicon_link_tag asset_path('favicon.ico') %>
 
 </head>
 
 <body>
-    <header>
-           <nav>
-            <div class = "application_header">
-            <%= image_tag("logo/logo.jpg", width: '140px', height: '120px')%>
-            <div id ="application_login_header">
-                <% if user_signed_in? %>
-                <%= current_user.username %>
-                  <%= link_to "Home", '/home', method: :get%>
-                  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-                <% else %>
-                  <%= link_to "Login", new_user_session_path %>
+                <%# if user_signed_in? %>
+                <%#= current_user.username %>
+                  <%#= link_to "Home", '/home', method: :get%>
+                  <%#= button_to "Log out", destroy_user_session_path, method: :delete %>
+                <%# else %>
+                  <%#= link_to "Login", new_user_session_path %>
                   <%# <%= link_to "Sign Up", new_user_registration_path %>
-                <% end %>
-              </div>
-            </nav>
-        </header>
-        <main>
-            <p class="alert"><%= alert %></p>
+                <%# end %>
+         <main>
             <%= yield %>
         </main>
 </body>

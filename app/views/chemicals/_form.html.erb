@@ -46,7 +46,9 @@
     <%= form.collection_select :supplier_id, Supplier.all, :id, :supplier_name, :required => true  %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="d-flex p-2">
+    <div class="actions">
+      <%= form.submit "Save Chemical", :class=>"btn btn-primary" %>
+    </div>
   </div>
 <% end %>

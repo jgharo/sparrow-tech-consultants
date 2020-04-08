@@ -1,10 +1,13 @@
-<%= stylesheet_link_tag    "sessions_layout", :media => "all" %>
+<%#= stylesheet_link_tag    "sessions_layout", :media => "all" %>
 
-
-<div class='wrapper'>
-<div id='header_style'>
-<h1>Welcome to SparrowNav</h1>
-</div>
+<p class="alert alert-danger alert-dismissible fade show"><%= alert %> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+<%= image_tag("logo/SparrowLogo.png", size: "400x500", class: "mx-auto d-block", :alt => "Sparrow Tech Logo")%>
+<div class= "d-flex justify-content-center align-items-center flex-column flex-wrap">
+<h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">Invoicing System</h1>
 
 <div id = 'login_form'>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

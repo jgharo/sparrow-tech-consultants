@@ -1,33 +1,53 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag  "employees", :media => "all" %>
+<p class="alert alert-info alert-dismissible fade show"><%= notice %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
 
-<div class="subpage_header">
-<h1>Employee</h1>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "75", height: "100", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
+
+<h4 class="pt-2 text-center" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Employee</h4></strong>
+
+<div class="container border border-info">
+  <p>
+    <strong>First Name:</strong>
+    <%= sanitize @employee.employee_fname.html_safe %>
+  </p>
+
+  <p>
+   <strong>Last Name:</strong>
+    <%= sanitize @employee.employee_lname.html_safe %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= sanitize @employee.employee_email.html_safe %>
+  </p>
+
+  <p>
+    <strong>Salary:</strong>
+    <%= sanitize number_to_currency @employee.employee_salary %>
+  </p>
+
+  <p>
+    <strong>Hire Date:</strong>
+    <%= sanitize @employee.employee_hiredate.strftime("%B %-d, %Y") %>
+  </p>
 </div>
 
-<p>
-  <strong>First Name:</strong>
-  <%= sanitize @employee.employee_fname.html_safe %>
-</p>
-
-<p>
-  <strong>Last Name:</strong>
-  <%= sanitize @employee.employee_lname.html_safe %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= sanitize @employee.employee_email.html_safe %>
-</p>
-
-<p>
-  <strong>Salary:</strong>
-  <%= sanitize number_to_currency @employee.employee_salary %>
-</p>
-
-<p>
-  <strong>Hire Date:</strong>
-  <%= sanitize @employee.employee_hiredate.strftime("%B %-d, %Y") %>
-</p>
-
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+<div class="pt-3">
+  <button type="button" class="btn btn-secondary ml-5 mr-2"><%= link_to 'Edit', edit_employee_path(@employee), :class=>"text-light" %></button>
+  <button type="button" class="btn btn-secondary"><%= link_to 'Back', employees_path, :class=>"text-light" %></button>
+</div>

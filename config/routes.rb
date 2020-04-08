@@ -34,4 +34,5 @@ Rails.application.routes.draw do
   get 'supporting', to: 'supporting_companies#index'
   get 'supplier', to: 'suppliers#index'
   get 'invoice', to: 'invoices#index'
+  
 end
