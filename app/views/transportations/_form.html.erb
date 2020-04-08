@@ -13,44 +13,46 @@
     </div>
   <% end %>
 
-<div class="pt-2">
-  <div class="field">
-    <%= form.label :service_name %>
-    <%= form.text_field :service_name %>
-  </div>
+<div class="container-md border border-primary pt-2 float-left rounded">
+  <div class="p-2">
+    <div class="field pt-2">
+      <%= form.label :service_name %>
+      <%= form.text_field :service_name %>
+    </div>
 
-  <div class="field">
-    <%= form.label :service_description %>
-    <%= form.text_area :service_description %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :service_description %>
+      <%= form.text_area :service_description %>
+    </div>
 
-  <div class="field">
-    <%= form.label :service_cost %>
-    <%= form.text_field :service_cost %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :service_cost %>
+      <%= form.text_field :service_cost %>
+    </div>
 
-  <div class="field">
-    <%= form.label :servcategory_id %>
-    <%= form.text_field :servcategory_id %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :servcategory_id %>
+      <%= form.text_field :servcategory_id %>
+    </div>
 
-  <div class="field">
-    <%= form.label :servstatus_id %>
-    <%= form.text_field :servstatus_id %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :servstatus_id %>
+      <%= form.text_field :servstatus_id %>
+    </div>
 
-  <div class="field">
-    <%= form.label :date_modified %>
-    <%= form.date_select :date_modified %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :date_modified %>
+      <%= form.date_select :date_modified %>
+    </div>
 
-  <div class="field">
-    <%= form.label :supporting_company_id %>
-    <%= form.text_field :supporting_company_id %>
-  </div>
+    <div class="field pt-2">
+      <%= form.label :supporting_company_id %>
+      <%= form.text_field :supporting_company_id %>
+    </div>
 
-  <div class="actions pt-2">
-    <%= form.submit "Save transportation", :class=>"btn btn-primary" %>
+    <div class="actions pt-2">
+      <%= form.submit "Save transportation", :class=>"btn btn-primary" %>
+    </div>
   </div>
 </div>
 <% end %>
