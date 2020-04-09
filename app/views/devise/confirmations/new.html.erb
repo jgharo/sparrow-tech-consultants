@@ -1,3 +1,9 @@
+<%= stylesheet_link_tag    "registration", :media => "all" %>
+
+<%= image_tag("logo/SparrowLogo.png", size: "250x350", class: "mx-auto d-block", :alt => "Sparrow Tech Logo")%>
+
+<h4 class="text-center"><strong>Sparrow Tech Logistics System</h4></strong>
+
 <h2>Resend confirmation instructions</h2>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>

@@ -1,5 +1,21 @@
-<h1>New Transportation</h1>
+<%= stylesheet_link_tag  "transportations", :media => "all" %>
 
-<%= render 'form', transportation: @transportation %>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "75", height: "100", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
 
-<%= link_to 'Back', transportations_path %>
+<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>New Transportation Record</h4></strong>
+
+<div class="d-flex justify-content-center flex-column">
+    <div class="p-2 bd-highlight"><%= render 'form', transportation: @transportation %></div>
+    <div class="p-2 bd-highlight"><%= link_to 'Back', transportations_path, :class=>"btn btn-outline-primary" %></div>
+</div>
