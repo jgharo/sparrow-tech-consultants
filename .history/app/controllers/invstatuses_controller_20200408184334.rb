@@ -1,5 +1,4 @@
 class InvstatusesController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_invstatus, only: [:show, :edit, :update, :destroy]
 
   # GET /invstatuses
