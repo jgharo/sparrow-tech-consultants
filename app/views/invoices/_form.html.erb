@@ -22,18 +22,18 @@
   </div>
 
   <div class="field pt-2">
-    <%= form.label :invstatus_id, 'Invoice Status' %>
+    <%= form.label :invstatus_id, 'Invoice Status: ' %>
     <%= form.collection_select :invstatus_id, Invstatus.all, :id, :status, :required => true %>
   </div>
 
  <div class="field pt-2">
-    <%= form.label :stlclient_id, 'Client' %>
+    <%= form.label :stlclient_id, 'Client: ' %>
     <%= form.collection_select :stlclient_id, Stlclient.all, :id, :client_fname, :required => true %>
   </div>
 
 
-  <h4>Product Orders</h4>
-  <div id='product_orders'>
+  <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Product Orders</h4></strong>
+  <div class="pt-2">
   
     <%= form.fields_for :product_orders do |product_order| %>
       <%= render 'product_order_fields', :f => product_order %>
@@ -44,8 +44,8 @@
   </div>
 
 
-  <h4>Service Orders</h4>
-  <div id='service_orders'>
+  <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Service Orders</h4></strong>
+  <div class="pt-2">
     <%= form.fields_for :service_orders do |service_order| %>
       <%= render 'service_order_fields', :f => service_order %>
     <% end %>
@@ -54,8 +54,8 @@
     </div>
   </div>
 
-  <h4>Notes</h4>
-  <div id='notes'>
+  <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Notes</h4></strong>
+  <div class="pt-2">
     <%= form.fields_for :notes do |note| %>
       <%= render 'note_fields', :f => note %>
     <% end %>
@@ -64,10 +64,8 @@
     </div>
   </div>
 
-
-<div class="d-flex p-2">
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions pt-3">
+      <%= form.submit "Create invoice", :class=>"btn btn-primary" %>
   </div>
 <% end %>
 </div>
