@@ -14,31 +14,46 @@
   <% end %>
 </nav>
 <p>
+  <strong>Invoice ID:
+  <%= @invoice.id%></strong>
+</p>
+
+<p>
   <strong>Date updated:</strong>
   <%= sanitize @invoice.date_updated.strftime("%B %-d, %Y").html_safe %>
 </p>
 
 <p>
-  <strong>Invoice status:</strong>
-  <%= sanitize @invoice.invstatus.status.html_safe %>
+  <strong>BILL TO:</strong>
+  8319 Silent Deep Dr.<br/>
+  Rosenberg, TX 77469 <br/>
+  <strong>SHIP TO:</strong>
+  3506 Dripping Point Lane</br>
+  Katy, TX 77494
 </p>
 
 <p>
-  <strong>Stlclient:</strong>
-  <%= sanitize @invoice.stlclient.client_fname.html_safe %>
+  <strong>BILL TO:</strong>
+  <%= sanitize @invoice.stlclient.client_fname.html_safe %></br>
+  <strong>TERMS: DUE UPON RECEIPT</br>
+  Checks Payable To: Sparrow Tech & Logistics </strong>
 </p>
 
 
 
 <p>
-  <strong>Client Shipping Address</strong>
+  <strong>Client Shipping Address</br></strong>
   <%= sanitize @invoice.stlclient.client_shippingaddress %>
 </p>
 
 <p>
-  <strong>Client Billing Address</strong>
+  <strong>Client Billing Address</br></strong>
   <%= sanitize @invoice.stlclient.client_billingaddress %>
 </p>
+
+<p>  <%= sanitize @invoice.stlclient.client_phonenumber.html_safe %></br>
+  <%= sanitize @invoice.stlclient.client_email.html_safe %></p>
+
 
 
 
@@ -102,6 +117,13 @@
     </tr>
   <% end %>
 </table>
+</p>
+
+<p><strong>Thanks for your business,   <%= sanitize @invoice.stlclient.client_fname.html_safe %>! </strong></p>
+
+<p>
+  If you have any questions about this invoice, please contact:</br>
+  Jimmy Martinez, (832)504-0196 jimmymartinez@sparrowtl.com
 </p>
 
 <p><%= link_to "Printable Invoice (PDF)", invoice_path(@invoice, format:"pdf") %></p>
