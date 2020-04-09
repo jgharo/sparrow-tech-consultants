@@ -104,7 +104,9 @@
 </table>
 </p>
 
-<p><%= link_to "Printable Invoice (PDF)", invoice_path(@invoice, format:"pdf") %></p>
+<p><%= link_to "Printable Invoice (PDF)", invoice_path(@invoice, format:"pdf"), :class=>"btn btn-success" %></p>
 
-<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>
+<div class="pt-3">
+  <button type="button" class="btn btn-secondary ml-5 mr-2"><%= link_to 'Edit', edit_invoice_path(@invoice), :class=>"text-light" %></button>
+  <button type="button" class="btn btn-secondary"><%= link_to 'Back', invoices_path, :class=>"text-light" %></button>
+</div>
