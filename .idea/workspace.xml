@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81161b67-994d-4627-b2bb-395be7e1f29b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/transportations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/transportations_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/invoices/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/invoices/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/products/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/transportations/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/transportations/index.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +150,7 @@
       <workItem from="1586326908281" duration="2583000" />
       <workItem from="1586375126352" duration="8071000" />
       <workItem from="1586395866302" duration="3188000" />
-      <workItem from="1586454385985" duration="3546000" />
+      <workItem from="1586454385985" duration="6658000" />
     </task>
     <servers />
   </component>
