@@ -32,35 +32,35 @@
   </div>
 
 
-  <h3>Product Orders</h3>
+  <h4>Product Orders</h4>
   <div id='product_orders'>
   
     <%= form.fields_for :product_orders do |product_order| %>
       <%= render 'product_order_fields', :f => product_order %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'Add a Product', form, :product_orders %>
+      <%= link_to_add_association 'Add a Product', form, :product_orders,  :class=>"btn btn-info text-light pt-2" %>
     </div>
   </div>
 
 
-  <h3>Service Orders</h3>
+  <h4>Service Orders</h4>
   <div id='service_orders'>
     <%= form.fields_for :service_orders do |service_order| %>
       <%= render 'service_order_fields', :f => service_order %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'Add a Service', form, :service_orders %>
+      <%= link_to_add_association 'Add a Service', form, :service_orders,  :class=>"btn btn-info text-light pt-2" %>
     </div>
   </div>
 
-  <h3>Notes</h3>
+  <h4>Notes</h4>
   <div id='notes'>
     <%= form.fields_for :notes do |note| %>
       <%= render 'note_fields', :f => note %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'Add a Note', form, :notes %>
+      <%= link_to_add_association 'Add a Note', form, :notes,  :class=>"btn btn-info text-light pt-2" %>
     </div>
   </div>
 
