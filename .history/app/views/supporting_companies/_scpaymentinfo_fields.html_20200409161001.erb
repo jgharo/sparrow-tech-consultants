@@ -2,22 +2,22 @@
 
     <div class="field">
         <%= f.label :payment_address, "Payment Address" %>
-        <%= f.text_area :payment_address, pattern: "[a-zA-Z0-9]+", :required => true %>
+        <%= f.text_area :payment_address, :required => true %>
     </div>
 
     <div class="field">
         <%= f.label :account_name, "Account Name" %>
-        <%= f.text_field :account_name, size: 20, maxlength: 30, pattern: "[a-zA-Z0-9]+", :required => true%>
+        <%= f.text_field :account_name, :required => true%>
     </div>
 
     <div class="field">
         <%= f.label :account_number, "Account Number" %>
-        <%= f.text_field :account_number, placeholder: 'Last-4-Digits', size: 20, maxlength: 4, pattern: "[0-9]{4}", :required => true %>
+        <%= f.number_field :account_number, placeholder: 'Last-4-Digits', :maxlength => '4', pattern: "[0-9]{4}", :required => true %>
     </div>
 
     <div class="field">
         <%= f.label :routing_number, "Routing Number" %>
-        <%= f.text_field :routing_number, size: 20, maxlength: 9, pattern: "[0-9]{9}", :required => true %>
+        <%= f.number_field :routing_number, pattern: "[0-9]{4}", :required => true %>
     </div>
 
     <%= link_to_remove_association "Remove Payment Information", f %>
