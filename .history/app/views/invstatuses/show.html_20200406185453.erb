@@ -2,7 +2,7 @@
 
 <p>
   <strong>Status:</strong>
-  <%= sanitize @invstatus.status.html_safe %>
+  <%= @invstatus.status %>
 </p>
 
 <%= link_to 'Edit', edit_invstatus_path(@invstatus) %> |

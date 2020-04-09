@@ -17,7 +17,7 @@
     <% @product_orders.each do |product_order| %>
       <tr>
         <td><%= sanitize product_order.product_quantity.html_safe %></td>
-        <td><%= sanitize product_order.product_cost_total.html_safe %></td>
+        <td><%= sanitize product_order.product_cost_total %></td>
         <td><%= sanitize product_order.product_id %></td>
         <td><%= sanitize product_order.invoice_id %></td>
         <td><%= link_to 'Show', product_order %></td>

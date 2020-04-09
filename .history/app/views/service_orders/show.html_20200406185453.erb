@@ -2,17 +2,17 @@
 
 <p>
   <strong>Service cost total:</strong>
-  <%= sanitize @service_order.service_cost_total.html_safe %>
+  <%= @service_order.service_cost_total %>
 </p>
 
 <p>
   <strong>Stlservice:</strong>
-  <%= sanitize @service_order.stlservice_id %>
+  <%= @service_order.stlservice_id %>
 </p>
 
 <p>
   <strong>Invoice:</strong>
-  <%= sanitize @service_order.invoice_id %>
+  <%= @service_order.invoice_id %>
 </p>
 
 <%= link_to 'Edit', edit_service_order_path(@service_order) %> |

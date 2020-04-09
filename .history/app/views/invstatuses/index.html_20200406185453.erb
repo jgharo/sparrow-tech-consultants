@@ -13,7 +13,7 @@
   <tbody>
     <% @invstatuses.each do |invstatus| %>
       <tr>
-        <td><%= sanitize invstatus.status.html_safe %></td>
+        <td><%= invstatus.status %></td>
         <td><%= link_to 'Show', invstatus %></td>
         <td><%= link_to 'Edit', edit_invstatus_path(invstatus) %></td>
         <td><%= link_to 'Destroy', invstatus, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -2,22 +2,22 @@
 
 <p>
   <strong>Product quantity:</strong>
-  <%= sanitize @product_order.product_quantity.html_safe %>
+  <%= @product_order.product_quantity %>
 </p>
 
 <p>
   <strong>Product cost total:</strong>
-  <%= sanitize @product_order.product_cost_total.html_safe %>
+  <%= @product_order.product_cost_total %>
 </p>
 
 <p>
   <strong>Product:</strong>
-  <%= sanitize @product_order.product.product_name.html_safe %>
+  <%= @product_order.product.product_name %>
 </p>
 
 <p>
   <strong>Invoice:</strong>
-  <%= sanitize @product_order.invoice_id %>
+  <%= @product_order.invoice_id %>
 </p>
 
 <%= link_to 'Edit', edit_product_order_path(@product_order) %> |

@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<!--
+<!-
 <p>
   <strong>Payment address:</strong>
   <%#= sanitize @scpaymentinfo.payment_address %>
@@ -34,6 +34,6 @@
   <strong>Supporting Company:</strong>
   <%#= sanitize @scpaymentinfo.supporting_company_id %>
 </p>
->
-<%#= link_to 'Edit', edit_scpaymentinfo_path(@scpaymentinfo) %> |
-<%#= link_to 'Back', scpaymentinfos_path %>
+->
+<%= link_to 'Edit', edit_scpaymentinfo_path(@scpaymentinfo) %> |
+<%= link_to 'Back', scpaymentinfos_path %>
