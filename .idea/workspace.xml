@@ -3,29 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="81161b67-994d-4627-b2bb-395be7e1f29b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/suppliers_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/suppliers_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/supporting_companies_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/supporting_companies_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/invoice.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/invoice.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/chemicals/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/chemicals/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/chemicals/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/chemicals/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/employees/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/employees/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/employees/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/employees/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/employees/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/employees/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/invoices/_product_order_fields.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/invoices/_product_order_fields.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/invoices/_service_order_fields.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/invoices/_service_order_fields.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/invoices/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/invoices/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/transportations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/transportations_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/invoices/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/invoices/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/suppliers/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/suppliers/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/suppliers/_product_fields.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/suppliers/_product_fields.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/suppliers/_supplierpaymentinfo_fields.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/suppliers/_supplierpaymentinfo_fields.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/suppliers/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/suppliers/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/suppliers/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/suppliers/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/supporting_companies/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/supporting_companies/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/supporting_companies/_scpaymentinfo_fields.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/supporting_companies/_scpaymentinfo_fields.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/supporting_companies/_stlservice_fields.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/supporting_companies/_stlservice_fields.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/supporting_companies/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/supporting_companies/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/supporting_companies/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/supporting_companies/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/transportations/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/transportations/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/products/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/transportations/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/transportations/index.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Invoice_Total_cost" />
+        <entry key="$PROJECT_DIR$" value="General_fix" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -171,6 +153,8 @@
       <workItem from="1586185586022" duration="13910000" />
       <workItem from="1586326908281" duration="2583000" />
       <workItem from="1586375126352" duration="8071000" />
+      <workItem from="1586395866302" duration="3188000" />
+      <workItem from="1586454385985" duration="3546000" />
     </task>
     <servers />
   </component>
