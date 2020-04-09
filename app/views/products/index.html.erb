@@ -21,25 +21,24 @@
   <div class="card-body">
     <%= search_form_for @search do |f|%>
       <div class="field">
-        <%=f.label :product_name_cont, "Name contains" %>
+        <%=f.label :product_name_cont, "Name contains: " %>
         <%=f.text_field :product_name_cont %>
       </div>
 
       <div class="field">
-        Cost Between
-        <% f.label :product_cost_gteq, "Cost Between" %>
+        <%= f.label :product_cost_gteq, "Cost between:" %>
         <%=f.text_field :product_cost_gteq %>
-        <%=f.label :product_cost_lteq, " and" %>
+        and
         <%=f.text_field :product_cost_lteq %>
       </div>
 
       <div class="field">
-        <%=f.label :prodstatus_status_cont, "Status contains" %>
+        <%=f.label :prodstatus_status_cont, "Status contains: " %>
         <%=f.text_field :prodstatus_status_cont %>
       </div>
 
       <div class="field">
-        <%=f.label :supplier_supplier_name_cont, "Supplier contains" %>
+        <%=f.label :supplier_supplier_name_cont, "Supplier contains: " %>
         <%=f.text_field :supplier_supplier_name_cont %>
       </div>
       <div class="actions pt-2"><%=f.submit "Search", :class=>"btn btn-primary" %></div>

@@ -19,11 +19,11 @@
   <div class="card-body">
     <%= search_form_for @search do |f|%>
       <div class="field">
-        <%=f.label :supplier_name_cont, "Name contains" %>
+        <%=f.label :supplier_name_cont, "Name contains: " %>
         <%=f.text_field :supplier_name_cont %>
       </div>
       <div class="field">
-        <%=f.label :supplier_email_cont, "Email contains" %>
+        <%=f.label :supplier_email_cont, "Email contains: " %>
         <%=f.text_field :supplier_email_cont %>
       </div>
       <div class="actions pt-2"><%=f.submit "Search", :class=>"btn btn-primary" %></div>
