@@ -65,7 +65,7 @@
     <th>Cost</th>
     <th>Quantity</th>
     <th>Cost Total</th>
-    <th>Supplier Name</th>
+    <th>total</th>
 
   </tr>
   <% @invoice.product_orders.each do |product_order| %>
@@ -74,15 +74,18 @@
       <td><%= sanitize number_to_currency(product_order.product.product_cost).html_safe %></td>
       <td><%= product_order.product_quantity %></td>
       <td><%= sanitize number_to_currency(product_order.product_cost_total).html_safe %></td>
-      <td><%= product_order.product.supplier.supplier_name %></td>
-
-
     </tr>
+
+
+
   <% end %>
 </table>
+
+<p>Product Cost Subtotal:
+  <%= number_to_currency(@invoice.product_orders.sum(:product_cost_total)) %>
 </p>
 
-<p>
+
 <h3>Service Order</h3>
 <table>
   <tr>
@@ -102,6 +105,16 @@
     </tr>
   <% end %>
 </table>
+</p>
+
+<p>
+  Service Cost Subtotal:
+  <%= number_to_currency(@invoice.service_orders.sum(:service_cost_total)) %>
+</p>
+
+<p>
+<strong>TOTAL:</strong>
+<%= number_to_currency(@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total)) %>
 </p>
 
 <p>
