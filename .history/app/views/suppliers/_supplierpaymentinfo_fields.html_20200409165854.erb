@@ -1,0 +1,24 @@
+<div class='nested-fields'>
+
+  <div class="field">
+    <%= f.label :payment_address, "Payment Address" %>
+    <%= f.text_area :payment_address, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :account_name, "Account Name" %>
+    <%= f.text_field :account_name, size: 20, maxlength: 9, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :account_number, "Account Number" %>
+    <%= f.number_field :account_number, size: 20, maxlength: 4, placeholder: 'Last-4-Digits', pattern: "[0-9]{4}", :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :routing_number, "Routing Number" %>
+    <%= f.number_field :routing_number, size: 20, maxlength: 9, pattern: "[0-9]{4}", :required => true %>
+  </div>
+
+  <%= link_to_remove_association "Remove Payment Information", f %>
+</div>

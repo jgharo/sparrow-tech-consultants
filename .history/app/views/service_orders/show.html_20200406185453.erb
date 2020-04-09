@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Service cost total:</strong>
+  <%= @service_order.service_cost_total %>
+</p>
+
+<p>
+  <strong>Stlservice:</strong>
+  <%= @service_order.stlservice_id %>
+</p>
+
+<p>
+  <strong>Invoice:</strong>
+  <%= @service_order.invoice_id %>
+</p>
+
+<%= link_to 'Edit', edit_service_order_path(@service_order) %> |
+<%= link_to 'Back', service_orders_path %>
