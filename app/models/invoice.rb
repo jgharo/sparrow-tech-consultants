@@ -10,4 +10,7 @@ class Invoice < ApplicationRecord
 
   has_many :service_orders, inverse_of: :invoice, dependent: :destroy
   accepts_nested_attributes_for :service_orders, reject_if: :all_blank, allow_destroy:true
+
+
+
 end

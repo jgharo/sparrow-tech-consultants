@@ -1,0 +1,69 @@
+<%= stylesheet_link_tag  "employees", :media => "all" %>
+
+<!-- Navbar for web app -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "100", height: "150", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
+
+<h3 class="display-4 text-center pt-1"><strong>Employees</h3></strong>
+
+<div class="pt-2 card">
+  <div class="card-body">
+  <%= search_form_for @search do |f|%>
+    <div class="field">
+      <%=f.label :employee_fname_cont, "First name contains:" %>
+      <%=f.text_field :employee_fname_cont %>
+    </div>
+    <div class="field">
+      <%=f.label :employee_lname_cont, "Last name contains:" %>
+      <%=f.text_field :employee_lname_cont %>
+    </div>
+
+    <div class="actions pt-2"><%=f.submit "Search", :class=>"btn btn-primary" %></div>
+  <%end %>
+  </div>
+</div>
+
+<div class="pt-3">
+  <table class="table table-striped table-bordered table-sm">
+    <thead class ="thead-light">
+      <tr>
+        <th scope="col"><%= sort_link @search, :employee_fname, "First Name" %></th>
+        <th scope="col"><%= sort_link @search, :employee_lname, "Last Name" %></th>
+        <th scope="col"><%= sort_link @search, :employee_email, "Email" %></th>
+        <th scope="col"><%= sort_link @search, :employee_salary, "Salary" %></th>
+        <th scope="col"><%= sort_link @search, :employee_hiredate, "Hire Date" %></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @employees.each do |employee| %>
+        <tr>
+          <td><%= sanitize employee.employee_fname.html_safe %></td>
+          <td><%= sanitize employee.employee_lname.html_safe %></td>
+          <td><%= sanitize employee.employee_email.html_safe %></td>
+          <td><%= sanitize number_to_currency(employee.employee_salary).html_safe %></td>
+          <td><%= sanitize employee.employee_hiredate.strftime("%B %-d, %Y").html_safe %></td>
+          <td><%= link_to 'Details', employee %></td>
+          <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+          <td><%= link_to 'Delete', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<button type="submit" class="btn btn-primary">
+<%= link_to 'New Employee', new_employee_path, :class=>"text-light" %>
+</button>

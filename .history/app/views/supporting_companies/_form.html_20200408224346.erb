@@ -1,0 +1,60 @@
+<%= form_with(model: supporting_companies, local: true) do |form| %>
+  <% if supporting_company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(supporting_company.errors.count, "error") %> prohibited this Supporting Company from being saved:</h2>
+
+      <ul>
+        <% supporting_company.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="container-md border border-primary pt-2 float-left rounded">
+  <div class="p-2">
+    <div class="field pt-2">
+      <%= form.label :supportingcomp_name, 'Company Name:' %>
+      <%= form.text_field :supportingcomp_name, :required => true %>
+    </div>
+
+    <div class="field pt-2">
+      <%= form.label :supportingcomp_phone, 'Phone Number:' %>
+      <%= form.text_field :supportingcomp_phone, autofocus: true, placeholder: 'XXX-XXX-XXXX', pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
+    </div>
+
+    <div class="field pt-2">
+      <%= form.label :supportingcomp_email, 'Email Address:' %>
+      <%= form.email_field :supportingcomp_email, :required => true %>
+    </div>
+
+    <div class="field pt-2">
+      <%= form.label :supportingcomp_address, 'Company Address:' %>
+      <%= form.text_area :supportingcomp_address, :required => true %>
+    </div>
+
+    <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Services</h4></strong>
+    <div class="pt-2">
+      <%= form.fields_for :stlservices do |stlservice| %>
+        <%= render 'stlservice_fields', :f => stlservice %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'Add a Service', form, :stlservices, :class=>"btn btn-info text-light pt-2" %>
+      </div>
+    </div>
+
+    <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Payment Information</h4></strong>
+    <div class="pt-2">
+      <%= form.fields_for :scpaymentinfos do |scpaymentinfo| %>
+        <%= render 'scpaymentinfo_fields', :f => scpaymentinfo %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'Add Payment Information', form, :scpaymentinfos, :class=>"btn btn-info text-light pt-2" %>
+      </div>
+    </div> 
+
+    <div class="actions pt-3">
+      <%= form.submit "Save supporting company", :class=>"btn btn-primary" %>
+    </div>
+  </div>
+</div>
+<% end %>
