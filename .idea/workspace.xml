@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81161b67-994d-4627-b2bb-395be7e1f29b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/application.pdf.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/invoices_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/invoices_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/invoices/_invoice.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/invoices/_invoice.json.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/invoices/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/invoices/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/wicked_pdf.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/wicked_pdf.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="wicked_bootstrap" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -157,7 +150,8 @@
       <workItem from="1586375126352" duration="8071000" />
       <workItem from="1586395866302" duration="3188000" />
       <workItem from="1586454385985" duration="6658000" />
-      <workItem from="1586497734868" duration="4496000" />
+      <workItem from="1586497734868" duration="5110000" />
+      <workItem from="1586531903489" duration="2614000" />
     </task>
     <servers />
   </component>
