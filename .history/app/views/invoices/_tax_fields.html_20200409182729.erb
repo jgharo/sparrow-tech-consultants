@@ -1,0 +1,9 @@
+<div class='nested-fields'>
+
+  <div class="field">
+    <%= f.label :tax_id, "Tax Rate:" %>
+    <%= f.collection_select :tax_id, Tax.all, :id, :rate, :required => true%>
+  </div>
+
+  <%= link_to_remove_association "Remove Service", f%>
+</div>

@@ -28,11 +28,13 @@ ActiveRecord::Schema.define(version: 2020_04_05_214755) do
   create_table "invoices", force: :cascade do |t|
     t.date "date_updated"
     t.bigint "stlclient_id", null: false
+    t.bigint "tax_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "invstatus_id", null: false
     t.index ["invstatus_id"], name: "index_invoices_on_invstatus_id"
     t.index ["stlclient_id"], name: "index_invoices_on_stlclient_id"
+    t.index ["tax_id"], name: "index_invoices_on_tax_id"
   end
 
   create_table "invstatuses", force: :cascade do |t|
@@ -180,6 +182,13 @@ ActiveRecord::Schema.define(version: 2020_04_05_214755) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "taxes", force: :cascade do |t|
+    t.string "name"
+    t.decimal "rate"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -204,6 +213,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_214755) do
 
   add_foreign_key "invoices", "invstatuses"
   add_foreign_key "invoices", "stlclients"
+  add_foreign_key "invoices", "taxes"
   add_foreign_key "notes", "invoices"
   add_foreign_key "product_orders", "invoices"
   add_foreign_key "product_orders", "products"

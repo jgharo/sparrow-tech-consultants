@@ -1,0 +1,158 @@
+<%= stylesheet_link_tag    "invoices", :media => "all" %>
+
+<!-- Navbar for web app -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "100", height: "150", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
+
+  <p>
+    <strong>Invoice ID:
+    <%= @invoice.id%></strong>
+  </p>
+
+  <p>
+    <strong>Date updated:</strong>
+    <%= sanitize @invoice.date_updated.strftime("%B %-d, %Y").html_safe %>
+  </p>
+
+  <p>
+    <strong>BILL TO:</strong>
+    8319 Silent Deep Dr.<br/>
+    Rosenberg, TX 77469 <br/>
+    <strong>SHIP TO:</strong>
+    3506 Dripping Point Lane</br>
+    Katy, TX 77494
+  </p>
+
+  <p>
+    <strong>BILL TO:</strong>
+    <%= sanitize @invoice.stlclient.client_fname.html_safe %></br>
+    <strong>TERMS: DUE UPON RECEIPT</br>
+    Checks Payable To: Sparrow Tech & Logistics </strong>
+  </p>
+
+
+
+  <p>
+    <strong>Client Shipping Address</br></strong>
+    <%= sanitize @invoice.stlclient.client_shippingaddress %>
+  </p>
+
+  <p>
+    <strong>Client Billing Address</br></strong>
+    <%= sanitize @invoice.stlclient.client_billingaddress %>
+  </p>
+
+  <p>  <%= sanitize @invoice.stlclient.client_phonenumber.html_safe %></br>
+    <%= sanitize @invoice.stlclient.client_email.html_safe %></p>
+
+
+
+
+  <p>
+  <h3>Product Order</h3>
+  <table>
+    <tr>
+      <th>Product</th>
+      <th>Cost</th>
+      <th>Quantity</th>
+      <th>Cost Total</th>
+      <th>total</th>
+
+    </tr>
+    <% @invoice.product_orders.each do |product_order| %>
+      <tr>
+        <td><%= sanitize product_order.product.product_name.html_safe %></td>
+        <td><%= sanitize number_to_currency(product_order.product.product_cost).html_safe %></td>
+        <td><%= product_order.product_quantity %></td>
+        <td><%= sanitize number_to_currency(product_order.product_cost_total).html_safe %></td>
+      </tr>
+
+
+
+    <% end %>
+  </table>
+
+  <p>Product Cost Subtotal:
+    <%= number_to_currency(@invoice.product_orders.sum(:product_cost_total)) %>
+  </p>
+
+
+  <h3>Service Order</h3>
+  <table>
+    <tr>
+      <th>Service</th>
+      <th>Cost</th>
+      <th>Quantity</th>
+      <th>Cost Total</th>
+
+    </tr>
+    <% @invoice.service_orders.each do |service_order| %>
+      <tr>
+        <td><%= sanitize service_order.stlservice.service_name.html_safe %></td>
+        <td><%= sanitize number_to_currency(service_order.stlservice.service_cost).html_safe %></td>
+        <td><%= service_order.service_quantity %></td>
+        <td><%= sanitize number_to_currency(service_order.service_cost_total).html_safe %></td>
+
+      </tr>
+    <% end %>
+  </table>
+  </p>
+
+  <p>
+    Service Cost Subtotal:
+    <%= number_to_currency(@invoice.service_orders.sum(:service_cost_total)) %>
+  </p>
+    
+  <p>
+    Tax Rate:
+    <%= number_to_percentage(@invoice.tax.rate) %>
+  </p>
+
+  <p>
+    Tax:
+    <%= number_to_currency((@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total)).to_d * @invoice.tax.rate.to_d) %>
+  </p>
+
+  <p>
+  <strong>TOTAL:</strong>
+  <%= number_to_currency(@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total)) + number_to_currency((@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total)).to_d * @invoice.tax.rate.to_d)%>
+  </p>
+
+  <p>
+  <h3>Notes</h3>
+  <table>
+    <tr>
+      <th>Comment</th>
+      <th>Date Modified</th>
+    </tr>
+    <% @invoice.notes.each do |note| %>
+      <tr> <td><%= sanitize note.comment.html_safe %></td>
+        <td> <%= sanitize note.date_updated.strftime("%B %-d, %Y").html_safe %></td>
+      </tr>
+    <% end %>
+  </table>
+  </p>
+
+  <p><strong>Thanks for your business,   <%= sanitize @invoice.stlclient.client_fname.html_safe %>! </strong></p>
+
+  <p>
+    If you have any questions about this invoice, please contact:</br>
+    Jimmy Martinez, (832)504-0196 jimmymartinez@sparrowtl.com
+  </p>
+
+  <p><%= link_to "Printable Invoice (PDF)", invoice_path(@invoice, format:"pdf"), :class=>"btn btn-success" %></p>
+
+<div class="pt-3">
+  <button type="button" class="btn btn-secondary ml-5 mr-2"><%= link_to 'Edit', edit_invoice_path(@invoice), :class=>"text-light" %></button>
+  <button type="button" class="btn btn-secondary"><%= link_to 'Back', invoices_path, :class=>"text-light" %></button>
+</div>

@@ -1,0 +1,82 @@
+<div class ="invoice_class" style="font-family: Arial, Helvetica, sans-serif;">
+
+<%= form_with(model: invoice, local: true) do |form| %>
+  <% if invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+        <% invoice.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="container-md border border-primary pt-2 float-left rounded">
+  <div class="p-2 ">
+  <div class="field pt-2">
+    <%= form.label :date_updated %>
+    <%= form.date_select :date_updated %>
+  </div>
+
+  <div class="field pt-2">
+    <%= form.label :invstatus_id, 'Invoice Status: ' %>
+    <%= form.collection_select :invstatus_id, Invstatus.all, :id, :status, :required => true %>
+  </div>
+
+ <div class="field pt-2">
+    <%= form.label :stlclient_id, 'Client: ' %>
+    <%= form.collection_select :stlclient_id, Stlclient.all, :id, :client_fname, :required => true %>
+  </div>
+
+
+  <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Product Orders</h4></strong>
+  <div class="pt-2">
+  
+    <%= form.fields_for :product_orders do |product_order| %>
+      <%= render 'product_order_fields', :f => product_order %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Product', form, :product_orders,  :class=>"btn btn-info text-light pt-2" %>
+    </div>
+  </div>
+
+
+  <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Service Orders</h4></strong>
+  <div class="pt-2">
+    <%= form.fields_for :service_orders do |service_order| %>
+      <%= render 'service_order_fields', :f => service_order %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Service', form, :service_orders,  :class=>"btn btn-info text-light pt-2" %>
+    </div>
+  </div>
+
+  <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Tax Rate</h4></strong>
+  <div class="pt-2">
+    <%= form.fields_for :taxess do |tax| %>
+      <%= render 'tax_fields', :f => tax %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Tax', form, :taxes,  :class=>"btn btn-info text-light pt-2" %>
+    </div>
+  </div>
+
+  <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Notes</h4></strong>
+  <div class="pt-2">
+    <%= form.fields_for :notes do |note| %>
+      <%= render 'note_fields', :f => note %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add a Note', form, :notes,  :class=>"btn btn-info text-light pt-2" %>
+    </div>
+  </div>
+
+  <div class="actions pt-3">
+      <%= form.submit "Create invoice", :class=>"btn btn-primary" %>
+  </div>
+<% end %>
+</div>
+</div></div></div>
