@@ -57,6 +57,7 @@
         <th><%= sort_link @search, :prodstatus_status, "Status" %></th>
         <th><%= sort_link @search, :date_modified, "Date Modified" %></th>
         <th><%= sort_link @search, :supplier_supplier_name, "Supplier" %></th>
+        <th colspan=3></th>
       </tr>
     </thead>
 
@@ -81,4 +82,4 @@
 
 <br>
 
-<button type="submit" class="btn btn-primary"><%= link_to 'New Chemical', new_chemical_path, :class=>"text-light" %></button>
+<%= link_to 'New Chemical', new_chemical_path, :class=>"text-light btn btn-success" %>
