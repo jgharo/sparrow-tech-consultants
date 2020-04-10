@@ -1,0 +1,183 @@
+<%= stylesheet_link_tag    "print_invoice", :media => "all" %>
+
+<div class="offset-xl-1 col-xl-8 col-lg-12 col-md-12 col-sm-10 col-10 padding">
+  <div class="card" style="width:1000px; background-color:white;">
+    <div class="card-header">
+      <div  class="d-inline-block center-block"><%= wicked_pdf_image_tag("logo/SparrowLogo.png", width: "300", height: "350", :alt => "Sparrow Tech Logo")%></div>
+      <div class="float-right text-danger"><h4><strong>INVOICE</strong></h4></div>
+    </div>
+
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col-sm-6">
+          <strong>BILL TO: </strong>
+          8319 Silent Deep Dr.<br/>
+          Rosenberg, TX 77469 <br/>
+          <br>
+          <strong>SHIP TO:</strong>
+          3506 Dripping Point Lane<br>
+          Katy, TX 77494<br>
+          <br>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="p-3 mb-2 bg-secondary text-light"><strong>INVOICE #: </strong><%= @invoice.id %>
+            <strong><div class="d-inline-block text-right ml-5">DATE: </strong><%= sanitize @invoice.date_updated.strftime("%B %-d, %Y").html_safe %></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-sm-6">
+        <div class="p-3 mb-2 bg-secondary text-light"><strong>BILL TO: </strong></div>
+        <%= sanitize @invoice.stlclient.client_fname.html_safe %> <%= sanitize @invoice.stlclient.client_lname.html_safe %><br>
+        <%= sanitize @invoice.stlclient.client_phonenumber.html_safe %><br>
+        <%= sanitize @invoice.stlclient.client_email.html_safe %><br>
+        <br>
+        <strong>Client Billing Address: <br></strong>
+        <%= sanitize @invoice.stlclient.client_billingaddress %><br>
+        <br>
+        <strong>Client Shipping Address: <br></strong>
+        <%= sanitize @invoice.stlclient.client_shippingaddress %><br>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="p-3 mb-2 bg-secondary text-light"><strong>TERMS:</strong></div>
+        Due upon receipt<br>
+        Checks payable to: Sparrow Tech & Logistics<br>
+      </div>
+    </div>
+
+    <h5><strong>Product Order</h5></strong>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th>Product</th>
+        <th>Cost</th>
+        <th>Quantity</th>
+        <th>Cost Total</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @invoice.product_orders.each do |product_order| %>
+        <tr>
+          <td><%= sanitize product_order.product.product_name.html_safe %></td>
+          <td><%= sanitize number_to_currency(product_order.product.product_cost).html_safe %></td>
+          <td><%= product_order.product_quantity %></td>
+          <td><%= sanitize number_to_currency(product_order.product_cost_total).html_safe %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <div class="float-right">
+      <div class="p-3 mb-2 bg-info text-light">
+        <strong>PRODUCT COST SUBTOTAL: </strong><%= number_to_currency(@invoice.product_orders.sum(:product_cost_total)) %>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <h5><strong>Service Order</h5></strong>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th>Service</th>
+        <th>Cost</th>
+        <th>Quantity</th>
+        <th>Cost Total</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @invoice.service_orders.each do |service_order| %>
+        <tr>
+          <td><%= sanitize service_order.stlservice.service_name.html_safe %></td>
+          <td><%= sanitize number_to_currency(service_order.stlservice.service_cost).html_safe %></td>
+          <td><%= service_order.service_quantity %></td>
+          <td><%= sanitize number_to_currency(service_order.service_cost_total).html_safe %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <div class="float-right">
+      <div class="p-3 mb-2 bg-info text-light">
+        <strong>SERVICE COST SUBTOTAL: </strong><%= number_to_currency(@invoice.service_orders.sum(:service_cost_total)) %>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="float-right">
+      <div class="p-3 mb-2 bg-info text-light">
+        <strong>TAX RATE: </strong><%= number_to_percentage(@invoice.tax.rate, delimiter: '.') %>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="float-right">
+      <div class="p-3 mb-2 bg-info text-light">
+        <strong>Tax: </strong><%= number_to_currency((@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total)).to_d * @invoice.tax.rate.to_d / 100.0) %>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="float-right">
+      <div class="p-3 mb-2 bg-danger text-light">
+        <strong>TOTAL: </strong><%= number_to_currency(@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total) + (@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total)).to_d * @invoice.tax.rate.to_d)%>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h5><strong>Notes</h5></strong>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th>Comment</th>
+        <th>Date Modified</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @invoice.notes.each do |note| %>
+        <tr>
+          <td><%= sanitize note.comment.html_safe %></td>
+          <td> <%= sanitize note.date_updated.strftime("%B %-d, %Y").html_safe %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <p><div class="text-primary font-italic text-center">
+    <strong>Thank you for your business,   <%= sanitize @invoice.stlclient.client_fname.html_safe %>!</strong>
+  </div></p>
+
+    <br>
+
+    <p><div class="text-center">If you have any questions about this invoice, please contact:<br>
+    <strong>Jimmy Martinez, (832)504-0196 jimmymartinez@sparrowtl.com</strong></p>
+
+  </div>
+</div>
+</div>
