@@ -55,76 +55,82 @@
       <br>
       <strong>Client Shipping Address: <br></strong>
       <%= sanitize @invoice.stlclient.client_shippingaddress %><br>
-</p>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="p-3 mb-2 bg-secondary text-light"><strong>TERMS:</strong></div>
+      Due upon receipt<br>
+      Checks payable to: Sparrow Tech & Logistics<br>
+    </div>
   </div>
 
+  <h5><strong>Product Order</h5></strong>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>Product</th>
+        <th>Cost</th>
+        <th>Quantity</th>
+        <th>Cost Total</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @invoice.product_orders.each do |product_order| %>
+        <tr>
+          <td><%= sanitize product_order.product.product_name.html_safe %></td>
+          <td><%= sanitize number_to_currency(product_order.product.product_cost).html_safe %></td>
+          <td><%= product_order.product_quantity %></td>
+          <td><%= sanitize number_to_currency(product_order.product_cost_total).html_safe %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="float-right">
+    <div class="p-3 mb-2 bg-danger text-light">
+      <strong>PRODUCT COST SUBTOTAL: </strong><%= number_to_currency(@invoice.product_orders.sum(:product_cost_total)) %>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <h5><strong>Service Order</h5></strong>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>Service</th>
+        <th>Cost</th>
+        <th>Quantity</th>
+        <th>Cost Total</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @invoice.service_orders.each do |service_order| %>
+        <tr>
+          <td><%= sanitize service_order.stlservice.service_name.html_safe %></td>
+          <td><%= sanitize number_to_currency(service_order.stlservice.service_cost).html_safe %></td>
+          <td><%= service_order.service_quantity %></td>
+          <td><%= sanitize number_to_currency(service_order.service_cost_total).html_safe %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="float-right">
+    <div class="p-3 mb-2 bg-danger text-light">
+      <strong>SERVICE COST SUBTOTAL: </strong><%= number_to_currency(@invoice.service_orders.sum(:service_cost_total)) %>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
 </div>
-
-<p>
-  <strong>BILL TO:</strong>
-  <%= sanitize @invoice.stlclient.client_fname.html_safe %> <%= sanitize @invoice.stlclient.client_lname.html_safe %></br>
-  <strong>TERMS: DUE UPON RECEIPT</br>
-  Checks Payable To: Sparrow Tech & Logistics </strong>
-</p>
-
-
-
-
-
-<p>
-<h3>Product Order</h3>
-<table>
-  <tr>
-    <th>Product</th>
-    <th>Cost</th>
-    <th>Quantity</th>
-    <th>Cost Total</th>
-    <th>total</th>
-
-  </tr>
-  <% @invoice.product_orders.each do |product_order| %>
-    <tr>
-      <td><%= sanitize product_order.product.product_name.html_safe %></td>
-      <td><%= sanitize number_to_currency(product_order.product.product_cost).html_safe %></td>
-      <td><%= product_order.product_quantity %></td>
-      <td><%= sanitize number_to_currency(product_order.product_cost_total).html_safe %></td>
-    </tr>
-
-
-
-  <% end %>
-</table>
-
-<p>Product Cost Subtotal:
-  <%= number_to_currency(@invoice.product_orders.sum(:product_cost_total)) %>
-</p>
-
-
-<h3>Service Order</h3>
-<table>
-  <tr>
-    <th>Service</th>
-    <th>Cost</th>
-    <th>Quantity</th>
-    <th>Cost Total</th>
-
-  </tr>
-  <% @invoice.service_orders.each do |service_order| %>
-    <tr>
-      <td><%= sanitize service_order.stlservice.service_name.html_safe %></td>
-      <td><%= sanitize number_to_currency(service_order.stlservice.service_cost).html_safe %></td>
-      <td><%= service_order.service_quantity %></td>
-      <td><%= sanitize number_to_currency(service_order.service_cost_total).html_safe %></td>
-
-    </tr>
-  <% end %>
-</table>
-</p>
-
-<p>
-  Service Cost Subtotal:
-  <%= number_to_currency(@invoice.service_orders.sum(:service_cost_total)) %>
-</p>
+  
 
 <p>
 <strong>TOTAL:</strong>
