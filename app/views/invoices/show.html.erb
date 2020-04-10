@@ -16,7 +16,7 @@
 </nav>
 
 <div class="offset-xl-1 col-xl-8 col-lg-12 col-md-12 col-sm-10 col-10 padding">
-  <div class="card" style="width:1000px; background-color:white;">
+  <div class="card" style="width:1063px; height=1375px; background-color:white;">
     <div class="card-header">
        <div  class="d-inline-block center-block"><%= image_tag("logo/SparrowLogo.png", width: "300", height: "350", :alt => "Sparrow Tech Logo")%></div>
        <div class="float-right text-danger"><h4><strong>INVOICE</strong></h4></div>
@@ -128,25 +128,15 @@
       <br>
       <br>
       <br>
-      <br>
 
       <div class="float-right">
         <div class="p-3 mb-2 bg-info text-light">
-          <strong>TAX RATE: </strong><%= number_to_percentage(@invoice.tax.rate, delimiter: '.') %>
+          <strong>TAX RATE: </strong><%= number_to_percentage(@invoice.tax.rate, delimiter: '.') %><br>
+          <strong>Tax: </strong><%= number_to_currency((@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total)).to_d * @invoice.tax.rate.to_d / 100.0) %><br>
         </div>
       </div>
 
       <br>
-      <br>
-      <br>
-      <br>
-
-      <div class="float-right">
-            <div class="p-3 mb-2 bg-info text-light">
-              <strong>Tax: </strong><%= number_to_currency((@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total)).to_d * @invoice.tax.rate.to_d / 100.0) %>
-            </div>
-      </div>
-
       <br>
       <br>
       <br>
@@ -198,7 +188,7 @@
 </div>
 
 <div class="pt-3">
-  <%= link_to "Printable Invoice (PDF)", invoice_path(@invoice, format:"pdf"), :class=>"btn btn-success pb-2" %>
-  <button type="button" class="btn btn-secondary ml-5 mr-2"><%= link_to 'Edit', edit_invoice_path(@invoice), :class=>"text-light" %></button>
-  <button type="button" class="btn btn-secondary"><%= link_to 'Back', invoices_path, :class=>"text-light" %></button>
+  <%= link_to 'Edit', edit_invoice_path(@invoice), :class=>"text-light btn btn-secondary ml-1 mr-2" %>
+  <%= link_to 'Back', invoices_path, :class=>"text-light btn btn-secondary ml-2 mr-5" %>
+  <%= link_to "Printable Invoice (PDF)", invoice_path(@invoice, format:"pdf"), :class=>"btn btn-success" %>
 </div>

@@ -13,13 +13,13 @@
   <% end %>
 </nav>
 
-<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Editing Chemicals</strong></h4>
+<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Editing Chemical Record</strong></h4>
 
 <div class="d-flex justify-content-center flex-column">
     <%= render 'form', chemical: @chemical %>
 </div>
 
 <div class="pt-3">
-  <button type="button" class="btn btn-secondary ml-2 mr-2"><%= link_to 'Show', @chemical, :class=>"text-light" %></button>
-  <button type="button" class="btn btn-secondary"><%= link_to 'Back', chemicals_path, :class=>"text-light" %></button>
+  <%= link_to 'Show', @chemical, :class=>"text-light btn btn-secondary ml-2 mr-2" %>
+  <%= link_to 'Back', chemicals_path, :class=>"text-light btn btn-secondary mr-2" %>
 </div>

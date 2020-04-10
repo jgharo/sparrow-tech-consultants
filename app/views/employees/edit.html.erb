@@ -13,12 +13,12 @@
   <% end %>
 </nav>
 
-<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Editing Employees</h4></strong>
+<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Editing Employee Record</h4></strong>
 <div class="d-flex justify-content-center flex-column">
     <%= render 'form', employee: @employee %>
 </div>
 
 <div class="pt-3">
-  <button type="button" class="btn btn-secondary ml-2 mr-2"><%= link_to 'Details', @employee, :class=>"text-light" %></button>
-  <button type="button" class="btn btn-secondary"><%= link_to 'Back', employees_path, :class=>"text-light" %></button>
+  <%= link_to 'Details', @employee, :class=>"text-light btn btn-secondary ml-2 mr-2" %>
+  <%= link_to 'Back', employees_path, :class=>"text-light btn btn-secondary mr-2" %>
 </div>

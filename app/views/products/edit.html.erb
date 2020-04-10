@@ -13,11 +13,13 @@
   <% end %>
 </nav>
 
-<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Editing Product</h4></strong>
+<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Editing Product Record</h4></strong>
 
 <div class="d-flex justify-content-center flex-column">
     <%= render 'form', product: @product %>
 </div>
 
-<%= link_to 'Details', @product, :class=>"btn btn-secondary mr-2 text-light" %>
-<%= link_to 'Back', products_path, :class=>"btn btn-secondary text-light" %>
+<div class="pt-3">
+  <%= link_to 'Details', @product, :class=>"btn btn-secondary mr-2 text-light" %>
+  <%= link_to 'Back', products_path, :class=>"btn btn-secondary text-light" %>
+</div>
