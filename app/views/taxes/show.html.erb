@@ -1,0 +1,45 @@
+<%= stylesheet_link_tag  "products", :media => "all" %>
+
+<p class="alert alert-info alert-dismissible fade show"><%= notice %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "100", height: "150", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
+
+<h4 class="pt-2 text-center" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Product</h4></strong>
+
+<div class="container border border-info">
+    <table>
+      <tr>
+        <p>
+          <strong>Name:</strong>
+          <%= sanitize @tax.name.html_safe %>
+        </p>
+      </tr>
+      <tr>
+        <p>
+          <strong>Rate:</strong>
+          <%= number_to_percentage @tax.rate %>
+        </p>
+      </tr>
+    </table>
+</div>
+
+<div class="pt-3">
+  <button type="button" class="btn btn-secondary ml-5 mr-2"><%= link_to 'Edit', edit_tax_path(@tax), :class=>"text-light" %></button>
+  <button type="button" class="btn btn-secondary"><%= link_to 'Back', taxes_path, :class=>"text-light"  %></button>
+</div>
+

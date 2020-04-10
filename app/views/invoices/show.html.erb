@@ -130,8 +130,30 @@
       <br>
 
       <div class="float-right">
+        <div class="p-3 mb-2 bg-info text-light">
+          <strong>TAX RATE: </strong><%= number_to_percentage(@invoice.tax.rate, delimiter: '.') %>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <div class="float-right">
+            <div class="p-3 mb-2 bg-info text-light">
+              <strong>Tax: </strong><%= number_to_currency((@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total)).to_d * @invoice.tax.rate.to_d / 100.0) %>
+            </div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <div class="float-right">
         <div class="p-3 mb-2 bg-danger text-light">
-          <strong>TOTAL: </strong><%= number_to_currency(@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total)) %>
+          <strong>TOTAL: </strong><%= number_to_currency(@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total) + (@invoice.product_orders.sum(:product_cost_total) + @invoice.service_orders.sum(:service_cost_total)).to_d * @invoice.tax.rate.to_d)%>
         </div>
       </div>
 

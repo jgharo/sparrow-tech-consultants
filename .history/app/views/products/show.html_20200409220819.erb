@@ -1,0 +1,75 @@
+<%= stylesheet_link_tag  "products", :media => "all" %>
+
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "100", height: "150", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
+
+<h4 class="pt-2 text-center" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Product</h4></strong>
+
+<div class="container border border-info">
+  <table>
+    <tr>
+      <p>
+        <strong>Name:</strong>
+        <%= sanitize @product.product_name.html_safe %>
+      </p>
+    </tr>
+    
+    <tr>
+      <p>
+        <strong>Description:</strong>
+        <%= sanitize @product.product_description.html_safe %>
+      </p>
+    </tr>
+
+    <tr>
+      <p>
+        <strong>Cost:</strong>
+        <%= sanitize number_to_currency @product.product_cost %>
+      </p>
+    </tr>
+
+    <tr>
+      <p>
+        <strong>Category:</strong>
+        <%= sanitize @product.prodcategory.category.html_safe %>
+      </p>
+    </tr>
+
+    <tr>
+      <p>
+        <strong>Status:</strong>
+        <%= sanitize @product.prodstatus.status.html_safe %>
+      </p>
+    </tr>
+
+    <tr>
+      <p>
+        <strong>Date Modified:</strong>
+        <%= sanitize @product.date_modified.strftime("%B %-d, %Y") %>
+      </p>
+    </tr>
+
+    <tr>
+      <p>
+        <strong>Supplier:</strong>
+        <%= sanitize @product.supplier.supplier_name.html_safe %>
+      </p>
+    </tr>
+  </table>
+</div>
+
+<div class="pt-3">
+  <button type="button" class="btn btn-secondary ml-5 mr-2"><%= link_to 'Edit', edit_product_path(@product), :class=>"text-light" %></button>
+  <button type="button" class="btn btn-secondary"><%= link_to 'Back', products_path, :class=>"text-light" %></button>
+</div>
