@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag    "invoices", :media => "all" %>
+<%= stylesheet_link_tag    "print_invoice", :media => "all" %>
 
 <!-- Navbar for web app -->
 <nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
@@ -13,46 +13,60 @@
     </ul>
   <% end %>
 </nav>
-<p>
-  <strong>Invoice ID:
-  <%= @invoice.id%></strong>
-</p>
 
-<p>
-  <strong>Date updated:</strong>
-  <%= sanitize @invoice.date_updated.strftime("%B %-d, %Y").html_safe %>
+ <div class="offset-xl-1 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
+  <div class="card" style="width:1000px; background-color:white;">
+    <div class="card-header" style="background-color: #fff;
+    border-bottom: 1px solid #e6e6f2">
+       <div  class="d-inline-block center-block"><%= image_tag("logo/SparrowLogo.png", width: "300", height: "350", :alt => "Sparrow Tech Logo")%></div>
+       <div class="float-right text-danger"><h4><strong>INVOICE</strong></h4></div>
+    </div>
+  </div>
+
+<div class="card-body">
+  <div class="row mb-4">
+    <div class="col-sm-6">
+      <strong>BILL TO: </strong>
+      8319 Silent Deep Dr.<br/>
+      Rosenberg, TX 77469 <br/>
+      <br>
+      <strong>SHIP TO:</strong>
+      3506 Dripping Point Lane<br>
+      Katy, TX 77494<br>
+      <br>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="p-3 mb-2 bg-secondary text-light"><strong>INVOICE #: </strong><%= @invoice.id %>
+      <strong><div class="d-inline-block text-right ml-5">DATE: </strong><%= sanitize @invoice.date_updated.strftime("%B %-d, %Y").html_safe %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-sm-6">
+      <div class="p-3 mb-2 bg-secondary text-light"><strong>BILL TO: </strong></div>
+      <%= sanitize @invoice.stlclient.client_fname.html_safe %> <%= sanitize @invoice.stlclient.client_lname.html_safe %><br>
+      <%= sanitize @invoice.stlclient.client_phonenumber.html_safe %><br>
+      <%= sanitize @invoice.stlclient.client_email.html_safe %><br>
+      <br>
+      <strong>Client Billing Address: <br></strong>
+      <%= sanitize @invoice.stlclient.client_billingaddress %><br>
+      <br>
+      <strong>Client Shipping Address: <br></strong>
+      <%= sanitize @invoice.stlclient.client_shippingaddress %><br>
 </p>
+  </div>
+
+</div>
 
 <p>
   <strong>BILL TO:</strong>
-  8319 Silent Deep Dr.<br/>
-  Rosenberg, TX 77469 <br/>
-  <strong>SHIP TO:</strong>
-  3506 Dripping Point Lane</br>
-  Katy, TX 77494
-</p>
-
-<p>
-  <strong>BILL TO:</strong>
-  <%= sanitize @invoice.stlclient.client_fname.html_safe %></br>
+  <%= sanitize @invoice.stlclient.client_fname.html_safe %> <%= sanitize @invoice.stlclient.client_lname.html_safe %></br>
   <strong>TERMS: DUE UPON RECEIPT</br>
   Checks Payable To: Sparrow Tech & Logistics </strong>
 </p>
 
-
-
-<p>
-  <strong>Client Shipping Address</br></strong>
-  <%= sanitize @invoice.stlclient.client_shippingaddress %>
-</p>
-
-<p>
-  <strong>Client Billing Address</br></strong>
-  <%= sanitize @invoice.stlclient.client_billingaddress %>
-</p>
-
-<p>  <%= sanitize @invoice.stlclient.client_phonenumber.html_safe %></br>
-  <%= sanitize @invoice.stlclient.client_email.html_safe %></p>
 
 
 
@@ -135,9 +149,12 @@
 <p><strong>Thanks for your business,   <%= sanitize @invoice.stlclient.client_fname.html_safe %>! </strong></p>
 
 <p>
-  If you have any questions about this invoice, please contact:</br>
+  If you have any questions about this invoice, please contact:<br>
   Jimmy Martinez, (832)504-0196 jimmymartinez@sparrowtl.com
 </p>
+</div>
+</div>
+</div>
 
 <p><%= link_to "Printable Invoice (PDF)", invoice_path(@invoice, format:"pdf"), :class=>"btn btn-success" %></p>
 
