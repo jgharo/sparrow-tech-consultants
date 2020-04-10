@@ -9,7 +9,7 @@
 
   <div class="field">
     <%= f.label :service_quantity, "Quantity:" %>
-    <%= f.number_field :service_quantity, :required => true %>
+    <%= f.number_field :service_quantity, min: 0, :required => true %>
   </div>
 
   <%= link_to_remove_association "Remove Service", f%>

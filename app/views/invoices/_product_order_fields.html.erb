@@ -8,7 +8,7 @@
 
   <div class="field">
     <%= f.label :product_quantity, "Quantity:" %>
-    <%= f.number_field :product_quantity, :required => true %>
+    <%= f.number_field :product_quantity, min: 0, :required => true %>
   </div>
 
   <%= link_to_remove_association "Remove Product", f%>
