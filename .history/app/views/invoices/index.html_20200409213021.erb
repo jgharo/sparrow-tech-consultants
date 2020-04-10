@@ -43,28 +43,28 @@
 <div class="pt-3">
   <table class="table table-striped table-bordered table-sm">
     <thead class="thead-light">
+    <tr>
+
+      <th><%= sort_link @search, :date_updated, "Date Updated" %></th>
+      <th><%= sort_link @search, :stlclient_client_fname, "Client Name" %></th>
+      <th><%= sort_link @search, :invstatus_status, "Invoice Status" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invoices.each do |invoice| %>
       <tr>
-
-        <th><%= sort_link @search, :date_updated, "Date Updated" %></th>
-        <th><%= sort_link @search, :stlclient_client_fname, "Client Name" %></th>
-        <th><%= sort_link @search, :invstatus_status, "Invoice Status" %></th>
-        <th colspan="3"></th>
+        <td><%= sanitize invoice.date_updated.strftime("%B %-d, %Y").html_safe %></td>
+        <td><%= sanitize invoice.stlclient.client_fname.html_safe %></td>
+        <td><%= sanitize invoice.invstatus.status.html_safe %></td>
+        <td><%= link_to 'Details', invoice %></td>
+        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
+        <td><%= link_to 'Delete', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    </thead>
-
-    <tbody>
-      <% @invoices.each do |invoice| %>
-        <tr>
-          <td><%= sanitize invoice.date_updated.strftime("%B %-d, %Y").html_safe %></td>
-          <td><%= sanitize invoice.stlclient.client_fname.html_safe %></td>
-          <td><%= sanitize invoice.invstatus.status.html_safe %></td>
-          <td><%= link_to 'Details', invoice %></td>
-          <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-          <td><%= link_to 'Delete', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <% end %>
+  </tbody>
+</table>
 </div>
 <br>
 

@@ -7,9 +7,6 @@
     <ul class="navbar-nav mr-3">
       <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
     </ul>
-    <ul class="navbar-nav mr-3">
-      <li class="nav-item"><%= link_to "Invoice", '/invoice', method: :get%></li>
-    </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
       <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
@@ -44,6 +41,4 @@
 </div>
 <br>
 
-<button type="submit" class="btn btn-primary">
 <%= link_to 'New Tax', new_tax_path %>
-</button>
