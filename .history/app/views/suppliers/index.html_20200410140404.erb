@@ -1,0 +1,63 @@
+<%= stylesheet_link_tag  "suppliers", :media => "all" %>
+<!-- Navbar for web app -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "100", height: "150", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
+
+<h3 class="display-4 text-center pt-1"><strong>Supplier</h3></strong>
+
+<div class="pt-2 card">
+  <div class="card-body">
+    <%= search_form_for @search do |f|%>
+      <div class="field">
+        <%=f.label :supplier_name_cont, "Name contains: " %>
+        <%=f.text_field :supplier_name_cont %>
+      </div>
+      <div class="field">
+        <%=f.label :supplier_email_cont, "Email contains: " %>
+        <%=f.text_field :supplier_email_cont %>
+      </div>
+      <div class="actions pt-2"><%=f.submit "Search", :class=>"btn btn-primary" %></div>
+    <%end %>
+  </div>
+</div>
+
+<div class="pt-3">
+  <table class="table table-striped table-bordered table-sm">
+    <thead class="thead-light">
+      <tr>
+        <th><%= sort_link @search, :supplier_name, "Supplier Name" %></th>
+        <th><%= sort_link @search, :supplier_phone, "Phone Number" %></th>
+        <th><%= sort_link @search, :supplier_email, "Email Address" %></th>
+        <th><%= sort_link @search, :supplier_address, "Supplier Address" %></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @suppliers.each do |supplier| %>
+        <tr>
+          <td><%= sanitize supplier.supplier_name.html_safe %></td>
+          <td><%= sanitize supplier.supplier_phone.html_safe %></td>
+          <td><%= sanitize supplier.supplier_email.html_safe %></td>
+          <td><%= sanitize supplier.supplier_address.html_safe %></td>
+          <td><%= link_to 'Details', supplier %></td>
+          <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+          <td><%= link_to 'Delete', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<%= link_to 'New Supplier', new_supplier_path, :class=>"text-light btn btn-success" %>

@@ -9,6 +9,14 @@ class ProductsController < ApplicationController
     @search = Product.search(params[:q])
     @products = @search.result.includes(:supplier, :prodcategory, :prodstatus)
 
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf =>"product_catalogue", :template => 'layouts/product.pdf.erb',
+               layout: 'layouts/application.html.erb', disposition: 'attachment'
+      end
+    end
+
   end
 
   # GET /products/1
