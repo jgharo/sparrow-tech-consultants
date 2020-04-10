@@ -94,7 +94,7 @@ Rails.application.configure do
   # middleware. The `delay` is used to determine how long to wait after a write
   # to send a subsequent read to the primary.
   #
-  # The `database_resolver` class is used by the middleware to determine which 
+  # The `database_resolver` class is used by the middleware to determine which
   # database is appropriate to use based on the time delay.
   #
   # The `database_resolver_context` class is used by the middleware to set
@@ -109,20 +109,4 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-
-      workers Integer(ENV['WEB_CONCURRENCY'] || 2)
-      threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
-      threads threads_count, threads_count
-
-      preload_app!
-
-      rackup      DefaultRackup
-      port        ENV['PORT']     || 3000
-      environment ENV['RACK_ENV'] || 'development'
-
-      on_worker_boot do
-        # Worker specific setup for Rails 4.1+
-        # See: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#on-worker-boot
-      ActiveRecord::Base.establish_connection
-      end
 end
