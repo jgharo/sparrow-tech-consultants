@@ -1,0 +1,77 @@
+<%= stylesheet_link_tag  "products", :media => "all" %>
+
+<!-- Navbar for web app -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
+  <%= image_tag("logo/SparrowLogo.png", width: "100", height: "150", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
+  <% if user_signed_in? %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
+      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  <% end %>
+</nav>
+
+<h3 class="display-4 text-center pt-1"><strong>Transportation</h3></strong>
+ <div class="pt-2 card">
+  <div class="card-body">
+    <%= search_form_for @search do |f|%>
+      <div class="field">
+        <%=f.label :service_name_cont, "Name contains:" %>
+        <%=f.text_field :service_name_cont %>
+      </div>
+      <div class="field">
+        <%=f.label :servstatus_status_cont, "Status contains:" %>
+        <%=f.text_field :servstatus_status_cont %>
+      </div>
+      <div class="field">
+        <%= f.label :date_modified_gteq, "Date between:" %>
+        <%=f.text_field :date_modified_gteq %>
+        and
+        <%=f.text_field :date_modified_lteq %>
+      </div>
+      <div class="actions pt-2"><%=f.submit "Search", :class=>"btn btn-primary" %></div>
+    <%end %>
+  </div>
+</div>
+
+<div class="pt-3">
+  <table class="table table-striped table-bordered table-sm">
+    <thead clas="thead-light">
+      <tr>
+        <th><%= sort_link @search, :service_name, "Name" %></th>
+        <th><%= sort_link @search, :service_description, "Description" %></th>
+        <th><%= sort_link @search, :service_cost, "Cost/Mile" %></th>
+        <th><%= sort_link @search, :servcategory_category, "Category" %></th>
+        <th><%= sort_link @search, :servstatus_status, "Status" %></th>
+        <th><%= sort_link @search, :date_modified, "Date Modified" %></th>
+        <th><%= sort_link @search, :supporting_company_supportingcomp_name, "Supporting Company" %></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @transportations.each do |transportation| %>
+        <tr>
+          <td><%= sanitize transportation.service_name.html_safe %></td>
+          <td><%= sanitize transportation.service_description.html_safe %></td>
+          <td><%= sanitize number_to_currency transportation.service_cost %></td>
+          <td><%= sanitize transportation.servcategory.category.html_safe %></td>
+          <td><%= sanitize transportation.servstatus.status.html_safe %></td>
+          <td><%= sanitize transportation.date_modified.strftime("%B %-d, %Y").html_safe %></td>
+          <td><%= sanitize transportation.supporting_company.supportingcomp_name.html_safe %></td>
+          <td><%= link_to 'Details', transportation_path(transportation) %></td>
+          <td><%= link_to 'Edit', edit_transportation_path(transportation) %></td>
+          <td><%= link_to 'Delete', transportation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<button type="submit" class="btn btn-primary">
+<%= link_to 'New Transportation', new_transportation_path, :class=>"text-light" %>
+</button>

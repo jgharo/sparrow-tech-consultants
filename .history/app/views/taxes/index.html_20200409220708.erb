@@ -33,7 +33,7 @@
         <% @taxes.each do |tax| %>
           <tr>
             <td><%= sanitize tax.name.html_safe %></td>
-            <td><%= sanitize number_to_percentage(tax.rate).html_safe %></td>
+            <td><%= tax.rate %></td>
             <td><%= link_to 'Details', tax %></td>
             <td><%= link_to 'Edit', edit_tax_path(tax) %></td>
             <td><%= link_to 'Delete', tax, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag  "chemicals", :media => "all" %>
+<%= stylesheet_link_tag  "taxes", :media => "all" %>
 
 <nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
   <%= image_tag("logo/SparrowLogo.png", width: "100", height: "150", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
@@ -13,13 +13,8 @@
   <% end %>
 </nav>
 
-<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Editing Chemicals</strong></h4>
+<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>New Tax</h4></strong>
 
-<div class="d-flex justify-content-center flex-column">
-    <%= render 'form', chemical: @chemical %>
-</div>
+<%= render 'form', tax: @tax %>
 
-<div class="pt-3">
-  <button type="button" class="btn btn-secondary ml-2 mr-2"><%= link_to 'Show', @chemical, :class=>"text-light" %></button>
-  <button type="button" class="btn btn-secondary"><%= link_to 'Back', chemicals_path, :class=>"text-light" %></button>
-</div>
+<%= link_to 'Back', taxes_path %>

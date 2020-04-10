@@ -33,8 +33,8 @@
         <% @taxes.each do |tax| %>
           <tr>
             <td><%= sanitize tax.name.html_safe %></td>
-            <td><%= sanitize number_to_percentage(tax.rate).html_safe %></td>
-            <td><%= link_to 'Details', tax %></td>
+            <td><%= tax.rate %></td>
+            <td><%= link_to 'Show', tax %></td>
             <td><%= link_to 'Edit', edit_tax_path(tax) %></td>
             <td><%= link_to 'Delete', tax, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
@@ -45,5 +45,5 @@
 <br>
 
 <button type="submit" class="btn btn-primary">
-<%= link_to 'New Tax', new_tax_path, :class=>"text-light" %>
+<%= link_to 'New Tax', new_tax_path %>
 </button>

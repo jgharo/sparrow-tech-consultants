@@ -13,22 +13,20 @@
       </div>
   <% end %>
 
-<div class="container-md border border-primary pt-2 float-left rounded">
-  <div class="p-2">
+  <div class="container-md border border-primary pt-2 float-left rounded">
+    <div class="p-2">
       <div class="field pt-2">
-        <%= form.label :name, "Tax:" %>
-        <%= form.text_field :name, :required => true %>
-      </div>
-
-      <div class="field pt-2">
-        <%= form.label :rate, "Tax Rate" %>
-        <%= form.number_field :rate, step: 0.001, :required => true %>
-      </div>
-
-      <div class="actions pt-2">
-        <%= form.submit "Save Tax", :class=>"btn btn-primary" %>
-      </div>
+    <div class="field">
+      <%= form.label :name, "Tax:" %>
+      <%= form.text_field :name, :required => true %>
     </div>
-  </div>
-</div>
+
+    <div class="field">
+      <%= form.label :rate, "Tax Rate" %>
+      <%= form.text_field :rate, :required => true %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
 <% end %>

@@ -32,14 +32,10 @@
       <tr>
         <p>
           <strong>Rate:</strong>
-          <%= number_to_percentage @tax.rate %>
+          <%= @tax.rate %>
         </p>
       </tr>
     </table>
 </div>
-
-<div class="pt-3">
-  <button type="button" class="btn btn-secondary ml-5 mr-2"><%= link_to 'Edit', edit_tax_path(@tax), :class=>"text-light" %></button>
-  <button type="button" class="btn btn-secondary"><%= link_to 'Back', taxes_path, :class=>"text-light"  %></button>
-</div>
-
+<%= link_to 'Edit', edit_tax_path(@tax) %> |
+<%= link_to 'Back', taxes_path %>

@@ -22,24 +22,20 @@
 <h4 class="pt-2 text-center" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Product</h4></strong>
 
 <div class="container border border-info">
-    <table>
-      <tr>
-        <p>
-          <strong>Name:</strong>
-          <%= sanitize @tax.name.html_safe %>
-        </p>
-      </tr>
-      <tr>
-        <p>
-          <strong>Rate:</strong>
-          <%= number_to_percentage @tax.rate %>
-        </p>
-      </tr>
-    </table>
-</div>
 
-<div class="pt-3">
-  <button type="button" class="btn btn-secondary ml-5 mr-2"><%= link_to 'Edit', edit_tax_path(@tax), :class=>"text-light" %></button>
-  <button type="button" class="btn btn-secondary"><%= link_to 'Back', taxes_path, :class=>"text-light"  %></button>
-</div>
-
+<table>
+  <tr>
+    <p>
+      <strong>Name:</strong>
+      <%= sanitize @tax.name.html_safe %>
+    </p>
+  </tr>
+  <tr>
+    <p>
+      <strong>Rate:</strong>
+      <%= @tax.rate %>
+    </p>
+  </tr>
+</table>
+<%= link_to 'Edit', edit_tax_path(@tax) %> |
+<%= link_to 'Back', taxes_path %>
