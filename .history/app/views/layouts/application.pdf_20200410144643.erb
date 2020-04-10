@@ -22,14 +22,14 @@
 
         <div class="col-sm-6">
           <div class="p-2 mb-1 bg-secondary text-light"><strong>INVOICE #: </strong><%= @invoice.id %>
-          <div class="d-inline-block text-center ml-5"><strong>DATE: </strong><%= sanitize @invoice.date_updated.strftime("%B %-d, %Y").html_safe %></div>
+          <div class="d-inline-block text-right ml-5"><strong>DATE: </strong><%= sanitize @invoice.date_updated.strftime("%B %-d, %Y").html_safe %></div>
           </div>
         </div>
       </div>
-      
+
     <div class="row mb-4">
       <div class="col-sm-6">
-        <div class="p-3 mb-2 bg-secondary text-light"><strong>BILL TO: </strong></div>
+        <div class="p-2 mb-1 bg-secondary text-light"><strong>BILL TO: </strong></div>
         <%= sanitize @invoice.stlclient.client_fname.html_safe %> <%= sanitize @invoice.stlclient.client_lname.html_safe %><br>
         <%= sanitize @invoice.stlclient.client_phonenumber.html_safe %><br>
         <%= sanitize @invoice.stlclient.client_email.html_safe %><br>
@@ -42,7 +42,7 @@
       </div>
 
       <div class="col-sm-6">
-        <div class="p-3 mb-2 bg-secondary text-light"><strong>TERMS:</strong></div>
+        <div class="p-2 mb-1 bg-secondary text-light"><strong>TERMS:</strong></div>
         Due upon receipt<br>
         Checks payable to: Sparrow Tech & Logistics<br>
       </div>

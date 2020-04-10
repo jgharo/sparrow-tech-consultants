@@ -1,20 +1,5 @@
 <%= stylesheet_link_tag    "print_invoice", :media => "all" %>
 
-
-<!-- Navbar for web app -->
-<nav class="navbar navbar-light" style="background-color: #e3f2fd; padding-top: 0 !important; padding-bottom:0 !important;">
-  <%= image_tag("logo/SparrowLogo.png", width: "100", height: "150", class: "navbar-brand d-inline-block align-top", :alt => "Sparrow Tech Logo")%>
-  <% if user_signed_in? %>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><%= link_to "Home", '/home', method: :get%></li>
-    </ul>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item"><p>Hi, <%= current_user.username %></p></li>
-      <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-    </ul>
-  <% end %>
-</nav>
-
 <div class="offset-xl-1 col-xl-8 col-lg-12 col-md-12 col-sm-10 col-10 padding">
   <div class="card" style="width:1063px; height=1375px; background-color:white;">
     <div class="card-header">
@@ -185,10 +170,4 @@
 
     </div>
   </div>
-</div>
-
-<div class="pt-3">
-  <%= link_to 'Edit', edit_invoice_path(@invoice), :class=>"text-light btn btn-secondary ml-1 mr-2" %>
-  <%= link_to 'Back', invoices_path, :class=>"text-light btn btn-secondary ml-2 mr-5" %>
-  <%= link_to "Printable Invoice (PDF)", invoice_path(@invoice, format:"pdf"), :class=>"btn btn-success" %>
 </div>
