@@ -20,5 +20,7 @@
     <%= render 'form', invoice: @invoice %>
 </div>
 
-<%= link_to 'Details', @invoice, :class=>"btn btn-secondary mr-2 text-light" %>
-<%= link_to 'Back', invoices_path, :class=>"btn btn-secondary text-light" %>
+<div class="pt-3">
+  <%= link_to 'Details', @invoice, :class=>"btn btn-secondary mr-2 text-light" %>
+  <%= link_to 'Back', invoices_path, :class=>"btn btn-secondary text-light" %>
+</div>
