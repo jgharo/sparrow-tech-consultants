@@ -25,7 +25,7 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # Workers do not work on JRuby or Windows (both of which do not support
 # processes).
 #
-workers ENV.fetch("WEB_CONCURRENCY") { 2 }
+# workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 
 # Use the `preload_app!` method when specifying a `workers` number.
 # This directive tells Puma to first boot the application and load code
@@ -36,9 +36,3 @@ workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
-
-on_worker_boot do
-    # Worker specific setup for Rails 4.1+
-    # See: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#on-worker-boot
-    ActiveRecord::Base.establish_connection
-end
