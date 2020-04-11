@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81161b67-994d-4627-b2bb-395be7e1f29b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/product.pdf.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/layouts/chemical.pdf.erb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/views/layouts/transportation.pdf.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sparrow-tech-consultants.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sparrow-tech-consultants.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/products/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/stlservices.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/stlservices.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/chemicals_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/chemicals_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/transportations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/transportations_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/chemicals/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/chemicals/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/transportations/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/transportations/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/transportations/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/transportations/index.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Error_Fix" />
+        <entry key="$PROJECT_DIR$" value="More_Fixes" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -155,7 +160,7 @@
       <workItem from="1586395866302" duration="3188000" />
       <workItem from="1586454385985" duration="6658000" />
       <workItem from="1586497734868" duration="5110000" />
-      <workItem from="1586531903489" duration="5428000" />
+      <workItem from="1586531903489" duration="12591000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,14 @@ class ChemicalsController < ApplicationController
   def index
     @search = Product.search(params[:q])
     @chemicals = @search.result.where(prodcategory: '1').includes(:supplier, :prodcategory, :prodstatus)
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf =>"chemical_catalogue", :template => 'layouts/chemical.pdf.erb',
+               layout: 'layouts/application.html.erb', disposition: 'attachment'
+      end
+    end
   end
 
   # GET /chemicals/1

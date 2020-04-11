@@ -10,6 +10,14 @@ class TransportationsController < ApplicationController
     @search = Stlservice.search(params[:q])
     @transportations = @search.result.where(servcategory: '1').includes(:supporting_company, :servcategory, :servstatus)
 
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf =>"transportation_catalogue", :template => 'layouts/transportation.pdf.erb',
+               layout: 'layouts/application.html.erb', disposition: 'attachment'
+      end
+    end
+
   end
 
   # GET /transportations/1
