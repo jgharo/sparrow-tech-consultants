@@ -46,8 +46,6 @@
     </div>
 </div>
 
-<p><%= link_to "Printable Chemical Catalogue(PDF)", chemicals_path(format: :pdf), :class=>"btn btn-success pb-2" %></p>
-
 <div class="pt-3">
   <table class="table table-striped table-bordered table-sm">
     <thead class ="thead-light">
@@ -80,3 +78,5 @@
 </div>
 
 <br>
+
+<%= link_to 'New Chemical', new_chemical_path, :class=>"text-light btn btn-success" %>
