@@ -16,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="service_catalogue" />
+        <entry key="$PROJECT_DIR$" value="Invoice_Pdf_Cost_Fix" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -151,7 +151,7 @@
       <workItem from="1586395866302" duration="3188000" />
       <workItem from="1586454385985" duration="6658000" />
       <workItem from="1586497734868" duration="5110000" />
-      <workItem from="1586531903489" duration="17013000" />
+      <workItem from="1586531903489" duration="17576000" />
     </task>
     <servers />
   </component>
