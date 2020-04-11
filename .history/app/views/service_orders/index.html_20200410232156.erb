@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Service Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Service cost total</th>
+      <th>Stlservice</th>
+      <th>Invoice</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @service_orders.each do |service_order| %>
+      <tr>
+        <td><%= sanitize service_order.service_cost_total.html_safe %></td>
+        <td><%= sanitize service_order.stlservice_id %></td>
+        <td><%= sanitize service_order.invoice_id %></td>
+        <td><%= link_to 'Show', service_order %></td>
+        <td><%= link_to 'Edit', edit_service_order_path(service_order) %></td>
+        <td><%= link_to 'Destroy', service_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Service Order', new_service_order_path %>
