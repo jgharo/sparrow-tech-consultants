@@ -1,7 +1,6 @@
 class ProductOrder < ApplicationRecord
   belongs_to :product
   belongs_to :invoice
-  
   before_save :calculate_product_cost_total
 
   def calculate_product_cost_total
