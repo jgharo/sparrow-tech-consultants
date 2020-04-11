@@ -17,17 +17,17 @@
   <div class="p-2">
     <div class="field pt-2">
       <%= form.label :employee_fname, 'First Name:' %>
-      <%= form.text_field :employee_fname, maxlength: 30, :required => true %>
+      <%= form.text_field :employee_fname, :required => true %>
     </div>
 
     <div class="field pt-2">
       <%= form.label :employee_lname, 'Last Name:' %>
-      <%= form.text_field :employee_lname, maxlength: 30, :required => true %>
+      <%= form.text_field :employee_lname, :required => true %>
     </div>
 
     <div class="field pt-2">
       <%= form.label :employee_email, 'Email Address:' %>
-      <%= form.email_field :employee_email, autofocus: true, autocomplete: "email", maxlength: 125, size: 30, :required => true %>
+      <%= form.email_field :employee_email, autofocus: true, autocomplete: "email", :required => true %>
     </div>
 
     <div class="field pt-2">
