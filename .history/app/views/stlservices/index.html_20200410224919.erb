@@ -16,35 +16,6 @@
 
 <h3 class="display-4 text-center pt-1"><strong>Service</h3></strong>
 
-<div class="pt-2 card">
-  <div class="card-body">
-    <%= search_form_for @search do |f|%>
-      <div class="field">
-        <%=f.label :service_name_cont, "Name contains: " %>
-        <%=f.text_field :service_name_cont %>
-      </div>
-
-      <div class="field">
-        <%= f.label :service_cost_gteq, "Cost between:" %>
-        <%=f.text_field :service_cost_gteq %>
-        and
-        <%=f.text_field :service_cost_lteq %>
-      </div>
-
-      <div class="field">
-        <%=f.label :servstatus_status_cont, "Status contains: " %>
-        <%=f.text_field :servstatus_status_cont %>
-      </div>
-
-      <div class="field">
-        <%=f.label :supporting_company_supportingcomp_name, "Supplier contains: " %>
-        <%=f.text_field :supporting_company_supportingcomp_name_cont %>
-      </div>
-      <div class="actions pt-2"><%=f.submit "Search", :class=>"btn btn-primary" %></div>
-    <%end %>
-  </div>
-</div>
-
 <div class="pt-3">
   <table class="table table-striped table-bordered table-sm">
     <thead class="thead-light">

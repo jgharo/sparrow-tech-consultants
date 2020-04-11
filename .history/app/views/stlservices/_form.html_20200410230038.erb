@@ -41,13 +41,13 @@
       </div>
 
       <div class="field pt-2">
-        <%= form.label :supporting_company_id, "Date Modified" %>
+        <%= form.label :supporting_company_id %>
         <%= form.collection_select :supporting_company_id, SupportingCompany.all, :id, :supportingcomp_name, :required => true %>
       </div>
 
     <div class="d-flex p-2">
       <div class="actions">
-        <%= form.submit "Save service", :class=>"btn btn-primary"  %>
+        <%= form.submit %>
       </div>
     </div>
   </div>
