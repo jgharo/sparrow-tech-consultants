@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get 'chemical', to: 'chemicals#index'
   get 'employee', to: 'employees#index'
   get 'stlclient', to: 'stlclients#index'
-  get 'stlservice', to: 'stlservices#index'
+  get 'stlservice', to: 'stlservice#index'
   get 'supporting', to: 'supporting_companies#index'
   get 'supplier', to: 'suppliers#index'
   get 'invoice', to: 'invoices#index'

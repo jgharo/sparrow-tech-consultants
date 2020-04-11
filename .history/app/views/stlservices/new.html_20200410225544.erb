@@ -13,13 +13,8 @@
   <% end %>
 </nav>
 
-<h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Editing Service Record</h4></strong>
-
+h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>New Service Record</h4></strong>
 <div class="d-flex justify-content-center flex-column">
-    <%= render 'form', stlservice: @stlservice %>
-</div>
-
-<div class="pt-3">
-    <%= link_to 'Details', @stlservice, :class=>"btn btn-secondary mr-2 text-light" %>
-    <%= link_to 'Back', stlservices_path, :class=>"btn btn-secondary mr-2 text-light" %>
+    <div class="p-2 bd-highlight"><%= render 'form', stlservice: @stlservice%></div>
+    <div class="p-2 bd-highlight"><%= link_to 'Back', stlservices_path, :class=>"btn btn-primary text-light" %></div>
 </div>
