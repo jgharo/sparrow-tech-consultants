@@ -4,10 +4,10 @@ class Stlclient < ApplicationRecord
   validates :client_fname, presence: true, length: {maximum: 30}, on: :create, allow_nil: false
   validates :client_lname, presence: true, length: {maximum: 30}, on: :create, allow_nil: false
   validates :client_email, presence: true, length: {maximum: 125}, on: :create, allow_nil: false
-  validates :client_phonenumber, presence: true, length: {maximum: 12}, on: :create, allow_nil: false
-  validates :client_companyname, presence: true, length: {maximum: 30}, on: :create, allow_nil: false
-  validates :client_shippingaddress, presence: true, length: {maximum: 250}, on: :create, allow_nil: false
-  validates :client_billingaddress, presence: true, length: {maximum: 250}, on: :create, allow_nil: false
+  validates :client_phonenumber, presence: true
+  validates :client_companyname, presence: true
+  validates :client_shippingaddress, presence: true
+  validates :client_billingaddress, presence: true
       
   #rename attributes in error message
   HUMANIZED_ATTRIBUTES = {
