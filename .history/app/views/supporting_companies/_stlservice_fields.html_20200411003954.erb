@@ -20,12 +20,12 @@
     </div>
 
     <div class="field">
-        <%= f.label :servstatus_id, "Service Status:" %>
+        <%= f.label :servstatus_id, "Service Status" %>
         <%= f.collection_select :servstatus_id, Servstatus.all, :id, :status, :required => true %>
     </div>
   
     <div class="field">
-        <%= f.label :date_modified, "Date Modified:" %>
+        <%= f.label :date_modified %>
         <%= f.date_select :date_modified, :required => true %>
     </div>
 
