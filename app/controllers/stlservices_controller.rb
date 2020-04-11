@@ -9,6 +9,14 @@ class StlservicesController < ApplicationController
   def index
     @search = Stlservice.search(params[:q])
     @stlservices = @search.result.includes(:supporting_company, :servcategory, :servstatus)
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf =>"service_catalogue", :template => 'layouts/stlservice.pdf.erb',
+               layout: 'layouts/application.html.erb', disposition: 'attachment'
+      end
+    end
   end
 
   # GET /stlservices/1

@@ -7,6 +7,7 @@ class SuppliersController < ApplicationController
   def index
     @search = Supplier.search(params[:q])
     @suppliers = @search.result.includes(:products)
+
   end
   # GET /suppliers/1
   # GET /suppliers/1.json
