@@ -1,0 +1,48 @@
+<%= stylesheet_link_tag  "products", :media => "all" %>
+
+<div class="card-header">
+  <div  class="d-inline-block center-block"><%= wicked_pdf_image_tag("logo/SparrowLogo.png", width: "300", height: "350", :alt => "Sparrow Tech Logo")%></div>
+  <div class="float-right text-danger"><h4><strong>Service Catalogue <%=Time.now.strftime("%m/%d/%Y") %></strong></h4></div>
+</div>
+
+
+<h3 class="display-4 text-center pt-1"><strong>Service Catalogue</h3></strong>
+
+
+
+<div class="pt-3">
+  <table class="table table-striped table-bordered table-sm">
+    <thead class="thead-light">
+    <tr>
+      <th><%= sort_link @search, :stlservice_service_name, "Name" %></th>
+      <th><%= sort_link @search, :service_description, "Description" %></th>
+      <th><%= sort_link @search, :service_cost, "Cost" %></th>
+      <th><%= sort_link @search, :servcategory_category, "Category" %></th>
+      <th><%= sort_link @search, :servstatus_status, "Status" %></th>
+      <th><%= sort_link @search, :date_modified, "Date Modified" %></th>
+      <th><%= sort_link @search, :supporting_company_supportingcomp_name, "Supplier" %></th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @stlservices.each do |stlservice| %>
+      <tr>
+        <td><%= sanitize stlservice.service_name.html_safe %></td>
+        <td><%= sanitize stlservice.service_description.html_safe %></td>
+        <td><%= sanitize number_to_currency stlservice.service_cost %></td>
+        <td><%= sanitize stlservice.servcategory.category.html_safe %></td>
+        <td><%= sanitize stlservice.servstatus.status.html_safe %></td>
+        <td><%= sanitize stlservice.date_modified.strftime("%B %-d, %Y").html_safe %></td>
+        <td><%= sanitize stlservice.supporting_company.supportingcomp_name.html_safe %></td>
+        <td><%= link_to 'Details', stlservice %></td>
+        <td><%= link_to 'Edit', edit_stlservice_path(stlservice) %></td>
+        <td><%= link_to 'Delete', stlservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
