@@ -22,16 +22,24 @@
         <%=f.label :service_name_cont, "Name contains:" %>
         <%=f.text_field :service_name_cont %>
       </div>
+
+      <div class="field">
+        <%= f.label :service_cost_gteq, "Cost between:" %>
+        <%=f.text_field :service_cost_gteq %>
+        and
+        <%=f.text_field :service_cost_lteq %>
+      </div>
+
       <div class="field">
         <%=f.label :servstatus_status_cont, "Status contains:" %>
         <%=f.text_field :servstatus_status_cont %>
       </div>
+
       <div class="field">
-        <%= f.label :date_modified_gteq, "Date between:" %>
-        <%=f.text_field :date_modified_gteq %>
-        and
-        <%=f.text_field :date_modified_lteq %>
+        <%=f.label :supporting_company_supportingcomp_name_cont, "Supporting Company contains:" %>
+        <%=f.text_field :supporting_company_supportingcomp_name_cont %>
       </div>
+
       <div class="actions pt-2"><%=f.submit "Search", :class=>"btn btn-primary" %></div>
     <%end %>
   </div>
