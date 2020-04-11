@@ -22,17 +22,17 @@
   
     <div class="field pt-2">
       <%= form.label :supplier_phone, "Phone Number:" %>
-      <%= form.text_field :supplier_phone, autofocus: true, placeholder: 'XXX-XXX-XXXX', maxlength: 12, size: 20, pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
+      <%= form.text_field :supplier_phone, autofocus: true, placeholder: 'XXX-XXX-XXXX', maxlength: 12, pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
     </div>
 
     <div class="field pt-2">
       <%= form.label :supplier_email, "Email Address:" %>
-      <%= form.email_field :supplier_email, maxlength: 125, size: 20, :required => true %>
+      <%= form.email_field :supplier_email, :required => true %>
     </div>
 
     <div class="pt-2">
       <%= form.label :supplier_address, "Supplier Address:" %>
-      <%= form.text_area :supplier_address, maxlength: 250, :required => true %>
+      <%= form.text_area :supplier_address, :required => true %>
     </div>
 
     <h4 class="pt-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Products</h4></strong>

@@ -16,17 +16,17 @@
   <div class="p-2">
     <div class="field pt-2">
       <%= form.label :supportingcomp_name, 'Company Name:' %>
-      <%= form.text_field :supportingcomp_name, maxlength: 30, size: 20, :required => true %>
+      <%= form.text_field :supportingcomp_name, maxlength: 30, :required => true %>
     </div>
 
     <div class="field pt-2">
       <%= form.label :supportingcomp_phone, 'Phone Number:' %>
-      <%= form.text_field :supportingcomp_phone, autofocus: true, placeholder: 'XXX-XXX-XXXX', maxlength: 12, size: 20, pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
+      <%= form.text_field :supportingcomp_phone, autofocus: true, placeholder: 'XXX-XXX-XXXX', maxlength: 12, pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", :required => true %>
     </div>
 
     <div class="field pt-2">
       <%= form.label :supportingcomp_email, 'Email Address:' %>
-      <%= form.email_field :supportingcomp_email, maxlength: 125, size: 20, :required => true %>
+      <%= form.email_field :supportingcomp_email, maxlength: 125, :required => true %>
     </div>
 
     <div class="field pt-2">
