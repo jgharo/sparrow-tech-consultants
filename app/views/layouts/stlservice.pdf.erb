@@ -35,9 +35,6 @@
         <td><%= sanitize stlservice.servstatus.status.html_safe %></td>
         <td><%= sanitize stlservice.date_modified.strftime("%B %-d, %Y").html_safe %></td>
         <td><%= sanitize stlservice.supporting_company.supportingcomp_name.html_safe %></td>
-        <td><%= link_to 'Details', stlservice %></td>
-        <td><%= link_to 'Edit', edit_stlservice_path(stlservice) %></td>
-        <td><%= link_to 'Delete', stlservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     </tbody>
