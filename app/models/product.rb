@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   belongs_to :prodcategory
   belongs_to :prodstatus
   belongs_to :supplier
+  has_many :product_orders, dependent: :destroy
 
   validates :product_name, presence: true, length: {maximum: 30}, on: :create, allow_nil: false
   validates :product_description, presence: true, length: {maximum: 140}, on: :create, allow_nil: false

@@ -1,5 +1,5 @@
 class Employee < ApplicationRecord
-    has_many :stlclients
+    has_many :stlclients, dependent: :destroy
     
     validates :employee_fname, presence: true, length: {maximum: 30}, on: :create, allow_nil: false
     validates :employee_lname, presence: true, length: {maximum: 30}, on: :create, allow_nil: false
