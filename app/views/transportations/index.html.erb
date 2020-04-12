@@ -40,6 +40,11 @@
         <%=f.text_field :supporting_company_supportingcomp_name_cont %>
       </div>
 
+      <div class="field">
+        <%=f.label :servcategory_category_cont, "Category contains:" %>
+        <%=f.text_field :servcategory_category_cont, :value => "Transportation", :readonly => true %>
+      </div>
+
       <div class="actions pt-2"><%=f.submit "Search", :class=>"btn btn-primary" %></div>
     <%end %>
   </div>
