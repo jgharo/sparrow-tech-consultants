@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81161b67-994d-4627-b2bb-395be7e1f29b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/employee.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/employee.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/product.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/stlclient.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/stlclient.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/stlservice.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/stlservice.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/wicked_pdf.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/wicked_pdf.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/transportations/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/transportations/index.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +153,7 @@
       <workItem from="1586454385985" duration="6658000" />
       <workItem from="1586497734868" duration="5110000" />
       <workItem from="1586531903489" duration="18445000" />
-      <workItem from="1586641883903" duration="4132000" />
+      <workItem from="1586641883903" duration="5052000" />
     </task>
     <servers />
   </component>
