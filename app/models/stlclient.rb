@@ -1,5 +1,6 @@
 class Stlclient < ApplicationRecord
   belongs_to :employee
+  has_many :invoices, dependent: :destroy
 
   validates :client_fname, presence: true, length: {maximum: 30}, on: :create, allow_nil: false
   validates :client_lname, presence: true, length: {maximum: 30}, on: :create, allow_nil: false

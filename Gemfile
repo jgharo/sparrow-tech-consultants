@@ -32,7 +32,7 @@ gem 'cocoon'
 gem 'wicked_pdf'
 
 # comment the gem below if you're on windows and configure wicked_pdf.rb to link to local wkdtohtml.exe file
-gem 'wkhtmltopdf-binary'
+#gem 'wkhtmltopdf-binary'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
